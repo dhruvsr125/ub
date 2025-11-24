@@ -162,13 +162,18 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16 sm:h-20">
           {/* Logo */}
-          <div className="flex items-center h-200">
+          <div className="flex items-center h-16 sm:h-20">
             <button
               onClick={(e) => handleNavClick({ href: "/", section: "hero" }, e)}
-              className="flex items-center space-x-2 sm:space-x-3 cursor-pointer group"
+              className="flex items-center cursor-pointer group"
             >
-              <div className="flex flex-col">
-                <img src="/Urbantech_logo.png" alt="Urbantech" className="h-80 w-80 sm:h-20 sm:w-auto" />
+              <div className="flex-shrink-0">
+                <img 
+                  src="/Urbantech_logo.png" 
+                  alt="Urbantech" 
+                  className="h-12 w-auto sm:h-14 md:h-16 lg:h-20 object-contain"
+                  style={{ maxWidth: '200px' }}
+                />
               </div>
             </button>
           </div>

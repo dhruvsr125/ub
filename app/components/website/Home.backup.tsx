@@ -15,6 +15,11 @@ import {
 import { useRouter } from "next/navigation"
 import { motion, useInView, useAnimation } from "framer-motion"
 import { useEffect, useRef } from "react"
+import { 
+  allAnimations, 
+  getAnimationPreset, 
+  createStaggerContainer 
+} from "../../../lib/animations"
 
 export default function Home() {
   const router = useRouter();
@@ -35,102 +40,14 @@ export default function Home() {
   const isProcessInView = useInView(processRef, { amount: 0.15 });
   const isTestimonialsInView = useInView(testimonialsRef, { amount: 0.15 });
   
-  // Enhanced Animation variants for smooth scroll up/down
-  const container = {
-    hidden: { opacity: 0 },
-    show: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.15,
-        delayChildren: 0.1
-      }
-    }
-  };
-  
-  const item = {
-    hidden: { opacity: 0, y: 40 },
-    show: { 
-      opacity: 1, 
-      y: 0, 
-      transition: { 
-        duration: 0.7,
-        type: "spring" as const,
-        stiffness: 100,
-        damping: 15
-      } 
-    }
-  };
-  
-  const fadeIn = {
-    hidden: { opacity: 0, y: 50 },
-    show: { 
-      opacity: 1, 
-      y: 0, 
-      transition: { 
-        duration: 0.8,
-        type: "spring" as const,
-        stiffness: 80,
-        damping: 12
-      } 
-    }
-  };
-  
-  const slideInFromLeft = {
-    hidden: { opacity: 0, x: -80 },
-    show: { 
-      opacity: 1, 
-      x: 0, 
-      transition: { 
-        duration: 0.9,
-        type: "spring" as const,
-        stiffness: 70,
-        damping: 15
-      } 
-    }
-  };
-  
-  const slideInFromRight = {
-    hidden: { opacity: 0, x: 80 },
-    show: { 
-      opacity: 1, 
-      x: 0, 
-      transition: { 
-        duration: 0.9,
-        type: "spring" as const,
-        stiffness: 70,
-        damping: 15
-      } 
-    }
-  };
-  
-  const scaleUp = {
-    hidden: { opacity: 0, scale: 0.8, y: 30 },
-    show: { 
-      opacity: 1, 
-      scale: 1, 
-      y: 0,
-      transition: { 
-        duration: 0.7,
-        type: "spring" as const,
-        stiffness: 100,
-        damping: 12
-      } 
-    }
-  };
-  
-  const slideUp = {
-    hidden: { opacity: 0, y: 60 },
-    show: { 
-      opacity: 1, 
-      y: 0, 
-      transition: { 
-        duration: 0.8,
-        type: "spring" as const,
-        stiffness: 90,
-        damping: 14
-      } 
-    }
-  };
+  // Use global animations from the animation library
+  const container = createStaggerContainer(0.15, 0.1);
+  const item = allAnimations.stagger.staggerItem;
+  const fadeIn = allAnimations.fade.fadeInUp;
+  const slideInFromLeft = allAnimations.slide.slideRight;
+  const slideInFromRight = allAnimations.slide.slideLeft;
+  const scaleUp = allAnimations.scale.scaleInUp;
+  const slideUp = allAnimations.slide.slideUp;
   
   // Animation controls
   const controls = useAnimation();
@@ -256,7 +173,7 @@ export default function Home() {
         ref={heroRef}
         initial="hidden"
         animate={isHeroInView ? "show" : "hidden"}
-        variants={fadeIn}
+        variants={allAnimations.hero.heroTitle}
         className="relative bg-gradient-to-br from-gray-900 via-slate-800 to-blue-900 text-white py-16 sm:py-24 lg:py-32 overflow-hidden"
       >
         <div className="absolute inset-0 bg-black/30"></div>
@@ -268,15 +185,26 @@ export default function Home() {
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center">
             {/* Left Content */}
-            <div className="text-center lg:text-left">
+            <motion.div 
+              className="text-center lg:text-left"
+              variants={container}
+              initial="hidden"
+              animate={isHeroInView ? "show" : "hidden"}
+            >
               {/* Trust Badge */}
-              <div className="inline-flex items-center bg-white/10 backdrop-blur-sm rounded-full px-4 sm:px-6 py-2 sm:py-3 mb-6 sm:mb-8 border border-white/20">
+              <motion.div 
+                variants={item}
+                className="inline-flex items-center bg-white/10 backdrop-blur-sm rounded-full px-4 sm:px-6 py-2 sm:py-3 mb-6 sm:mb-8 border border-white/20"
+              >
                 <span className="text-yellow-400 mr-2 sm:mr-3 text-sm sm:text-base">⭐⭐⭐⭐⭐</span>
                 <span className="text-xs sm:text-sm font-medium">Trusted by 500+ Growing Brands</span>
-              </div>
+              </motion.div>
 
               {/* Main Headline */}
-              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold mb-6 sm:mb-8 leading-tight">
+              <motion.h1 
+                variants={allAnimations.hero.heroTitle}
+                className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold mb-6 sm:mb-8 leading-tight"
+              >
                 <span className="block text-white">Scale Your</span>
                 <span className="block bg-gradient-to-r from-blue-400 to-gray-300 bg-clip-text text-transparent">
                   E-Commerce Empire
@@ -284,13 +212,16 @@ export default function Home() {
                 <span className="block text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl text-gray-200 mt-2 sm:mt-4">
                   with AI-Powered Solutions
                 </span>
-              </h1>
+              </motion.h1>
 
               {/* Subheadline */}
-              <p className="text-base sm:text-lg md:text-xl lg:text-2xl mb-8 sm:mb-10 text-gray-200 max-w-2xl mx-auto lg:mx-0 leading-relaxed px-4 sm:px-0">
+              <motion.p 
+                variants={allAnimations.hero.heroSubtitle}
+                className="text-base sm:text-lg md:text-xl lg:text-2xl mb-8 sm:mb-10 text-gray-200 max-w-2xl mx-auto lg:mx-0 leading-relaxed px-4 sm:px-0"
+              >
                 Transform your online business with cutting-edge automation, optimization, and analytics that deliver{" "}
                 <span className="text-blue-400 font-semibold">150% average ROI increase</span>
-              </p>
+              </motion.p>
 
               {/* Key Benefits */}
               <div className="flex flex-wrap justify-center lg:justify-start gap-2 sm:gap-4 mb-8 sm:mb-10 px-4 sm:px-0">
