@@ -1,29 +1,49 @@
-"use client"
+"use client";
 
-import Link from "next/link"
-import { ArrowRight, Users, Target, Award, TrendingUp, ImageIcon, CheckCircle } from "lucide-react"
-import { useRouter } from "next/navigation"
+import Link from "next/link";
+import {
+  ArrowRight,
+  Users,
+  Target,
+  Award,
+  TrendingUp,
+  ImageIcon,
+  CheckCircle,
+} from "lucide-react";
+import { useRouter } from "next/navigation";
 
 export default function AboutUs() {
-  const router = useRouter()
+  const router = useRouter();
 
   const navigateToPage = (href: string) => {
-    router.push(href)
+    router.push(href);
     setTimeout(() => {
-      window.scrollTo({ top: 0, behavior: "smooth" })
-    }, 200)
-  }
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }, 200);
+  };
 
   const stats = [
-    { number: "500+", label: "Successful Clients", icon: <Users className="h-6 w-6 sm:h-8 sm:w-8 text-blue-400" /> },
+    {
+      number: "500+",
+      label: "Successful Clients",
+      icon: <Users className="h-6 w-6 sm:h-8 sm:w-8 text-blue-400" />,
+    },
     {
       number: "150%",
       label: "Average Sales Increase",
       icon: <TrendingUp className="h-6 w-6 sm:h-8 sm:w-8 text-blue-400" />,
     },
-    { number: "5+", label: "Years of Experience", icon: <Award className="h-6 w-6 sm:h-8 sm:w-8 text-blue-400" /> },
-    { number: "24/7", label: "Support Available", icon: <Target className="h-6 w-6 sm:h-8 sm:w-8 text-blue-400" /> },
-  ]
+    {
+      number: "5+",
+      label: "Years of Experience",
+      icon: <Award className="h-6 w-6 sm:h-8 sm:w-8 text-blue-400" />,
+    },
+    {
+      number: "24/7",
+      label: "Support Available",
+      icon: <Target className="h-6 w-6 sm:h-8 sm:w-8 text-blue-400" />,
+    },
+  ];
 
   const team = [
     {
@@ -31,44 +51,58 @@ export default function AboutUs() {
       role: "CEO & Founder",
       bio: "Former Amazon executive with 10+ years in e-commerce optimization and advanced solutions",
       imageAlt: "Sarah Johnson - CEO & Founder professional headshot",
-      expertise: ["E-commerce Strategy", "Business Development", "Leadership"]
+      expertise: ["E-commerce Strategy", "Business Development", "Leadership"],
     },
     {
       name: "Mike Chen",
       role: "Head of Strategy",
       bio: "E-commerce strategist specializing in marketplace growth and advanced automation systems",
       imageAlt: "Mike Chen - Head of Strategy professional headshot",
-      expertise: ["Market Analysis", "Automation", "Growth Hacking"]
+      expertise: ["Market Analysis", "Automation", "Growth Hacking"],
     },
     {
       name: "Emily Rodriguez",
       role: "Lead Marketing Specialist",
       bio: "PPC expert with proven track record in marketplace advertising and conversion optimization",
-      imageAlt: "Emily Rodriguez - Lead Marketing Specialist professional headshot",
-      expertise: ["PPC Management", "Conversion Optimization", "Digital Marketing"]
+      imageAlt:
+        "Emily Rodriguez - Lead Marketing Specialist professional headshot",
+      expertise: [
+        "PPC Management",
+        "Conversion Optimization",
+        "Digital Marketing",
+      ],
     },
     {
       name: "David Park",
       role: "Technical Director",
       bio: "Full-stack developer focused on e-commerce automation and integration solutions",
       imageAlt: "David Park - Technical Director professional headshot",
-      expertise: ["System Architecture", "API Integration", "Automation"]
+      expertise: ["System Architecture", "API Integration", "Automation"],
     },
     {
       name: "Jessica Williams",
       role: "Customer Success Manager",
       bio: "Dedicated to ensuring client satisfaction and maximizing the value of our services",
-      imageAlt: "Jessica Williams - Customer Success Manager professional headshot",
-      expertise: ["Client Relations", "Account Management", "Customer Experience"]
+      imageAlt:
+        "Jessica Williams - Customer Success Manager professional headshot",
+      expertise: [
+        "Client Relations",
+        "Account Management",
+        "Customer Experience",
+      ],
     },
     {
       name: "Alex Thompson",
       role: "Data Analytics Lead",
       bio: "Data scientist specializing in e-commerce analytics and performance optimization",
       imageAlt: "Alex Thompson - Data Analytics Lead professional headshot",
-      expertise: ["Data Analysis", "Performance Metrics", "Business Intelligence"]
-    }
-  ]
+      expertise: [
+        "Data Analysis",
+        "Performance Metrics",
+        "Business Intelligence",
+      ],
+    },
+  ];
 
   const values = [
     {
@@ -79,7 +113,8 @@ export default function AboutUs() {
     },
     {
       title: "Innovation & Excellence",
-      description: "We stay ahead of industry trends and continuously innovate to provide cutting-edge solutions.",
+      description:
+        "We stay ahead of industry trends and continuously innovate to provide cutting-edge solutions.",
       icon: <Award className="h-8 w-8 sm:h-12 sm:w-12 text-blue-400" />,
     },
     {
@@ -88,36 +123,44 @@ export default function AboutUs() {
         "We believe in open communication and building long-term partnerships based on trust and proven results.",
       icon: <Users className="h-8 w-8 sm:h-12 sm:w-12 text-blue-400" />,
     },
-  ]
+  ];
 
   const milestones = [
     {
       year: "2019",
       event: "Company Founded",
-      description: "Started with a vision to revolutionize e-commerce optimization with advanced technology",
+      description:
+        "Started with a vision to revolutionize e-commerce optimization with advanced technology",
     },
     {
       year: "2020",
       event: "First 100 Clients",
-      description: "Reached our first major milestone with proven results and growth",
+      description:
+        "Reached our first major milestone with proven results and growth",
     },
     {
       year: "2021",
       event: "Advanced Integration",
       description: "Launched advanced optimization tools and automation",
     },
-    { year: "2022", event: "500+ Clients", description: "Expanded to serve over 500 successful businesses worldwide" },
+    {
+      year: "2022",
+      event: "500+ Clients",
+      description: "Expanded to serve over 500 successful businesses worldwide",
+    },
     {
       year: "2023",
       event: "Industry Recognition",
-      description: "Awarded 'Best E-commerce Service Provider' by industry leaders",
+      description:
+        "Awarded 'Best E-commerce Service Provider' by industry leaders",
     },
     {
       year: "2024",
       event: "Global Expansion",
-      description: "Extended services to international markets with advanced solutions",
+      description:
+        "Extended services to international markets with advanced solutions",
     },
-  ]
+  ];
 
   return (
     <div className="min-h-screen bg-gray-50">
@@ -132,8 +175,9 @@ export default function AboutUs() {
               </span>
             </h1>
             <p className="text-lg sm:text-xl text-gray-200 max-w-4xl mx-auto leading-relaxed px-4">
-              We're passionate about helping e-commerce businesses thrive through innovative strategies and cutting-edge
-              technology solutions
+              We're passionate about helping e-commerce businesses thrive
+              through innovative strategies and cutting-edge technology
+              solutions
             </p>
           </div>
         </div>
@@ -154,7 +198,9 @@ export default function AboutUs() {
                 <div className="text-2xl sm:text-3xl lg:text-5xl font-bold text-gray-800 mb-2 sm:mb-4 group-hover:text-blue-600 transition-colors">
                   {stat.number}
                 </div>
-                <div className="text-gray-600 font-semibold text-sm sm:text-base lg:text-lg">{stat.label}</div>
+                <div className="text-gray-600 font-semibold text-sm sm:text-base lg:text-lg">
+                  {stat.label}
+                </div>
               </div>
             ))}
           </div>
@@ -171,18 +217,22 @@ export default function AboutUs() {
               </h2>
               <div className="space-y-6 sm:space-y-8 text-base sm:text-lg text-gray-700 leading-relaxed">
                 <p>
-                  Founded in 2019, Urbantech Ecom emerged from a simple observation: e-commerce businesses were
-                  struggling to navigate the complex world of online marketplaces and digital optimization with
-                  traditional methods.
+                  Founded in 2019, Urbantech Ecom emerged from a simple
+                  observation: e-commerce businesses were struggling to navigate
+                  the complex world of online marketplaces and digital
+                  optimization with traditional methods.
                 </p>
                 <p>
-                  Our founders, with their combined experience at major tech companies and e-commerce platforms,
-                  recognized the need for specialized services that could bridge the gap between cutting-edge technology
-                  and sustainable business growth.
+                  Our founders, with their combined experience at major tech
+                  companies and e-commerce platforms, recognized the need for
+                  specialized services that could bridge the gap between
+                  cutting-edge technology and sustainable business growth.
                 </p>
                 <p>
-                  Today, we're proud to have helped over 500 businesses achieve their e-commerce goals, with an average
-                  sales increase of 150% within the first 90 days of partnership using our advanced solutions.
+                  Today, we're proud to have helped over 500 businesses achieve
+                  their e-commerce goals, with an average sales increase of 150%
+                  within the first 90 days of partnership using our advanced
+                  solutions.
                 </p>
               </div>
               <div className="mt-8 sm:mt-12">
@@ -205,7 +255,8 @@ export default function AboutUs() {
                   Our Journey
                 </h3>
                 <p className="text-center text-sm sm:text-base lg:text-lg">
-                  Company timeline, milestone achievements, and team collaboration photos
+                  Company timeline, milestone achievements, and team
+                  collaboration photos
                 </p>
               </div>
             </div>
@@ -221,7 +272,8 @@ export default function AboutUs() {
               Our Values
             </h2>
             <p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto px-4">
-              The principles that guide everything we do and shape our innovative approach
+              The principles that guide everything we do and shape our
+              innovative approach
             </p>
           </div>
 
@@ -237,7 +289,9 @@ export default function AboutUs() {
                 <h3 className="text-xl sm:text-2xl font-bold text-gray-800 mb-4 sm:mb-6 group-hover:text-blue-600 transition-colors">
                   {value.title}
                 </h3>
-                <p className="text-gray-600 leading-relaxed text-base sm:text-lg">{value.description}</p>
+                <p className="text-gray-600 leading-relaxed text-base sm:text-lg">
+                  {value.description}
+                </p>
               </div>
             ))}
           </div>
@@ -275,7 +329,9 @@ export default function AboutUs() {
                   </div>
                   <div className="absolute bottom-4 left-0 right-0 text-center">
                     <div className="inline-block bg-white/90 backdrop-blur-sm px-4 py-2 rounded-full shadow-lg">
-                      <span className="text-sm font-medium text-blue-700">{member.role}</span>
+                      <span className="text-sm font-medium text-blue-700">
+                        {member.role}
+                      </span>
                     </div>
                   </div>
                 </div>
@@ -285,13 +341,15 @@ export default function AboutUs() {
                   <h3 className="text-xl sm:text-2xl font-bold text-gray-800 mb-2 group-hover:text-blue-600 transition-colors">
                     {member.name}
                   </h3>
-                  <p className="text-gray-600 mb-4 text-sm sm:text-base">{member.bio}</p>
-                  
+                  <p className="text-gray-600 mb-4 text-sm sm:text-base">
+                    {member.bio}
+                  </p>
+
                   {/* Expertise Tags */}
                   <div className="mt-4 pt-4 border-t border-gray-100">
                     <div className="flex flex-wrap gap-2">
                       {member.expertise.map((skill, i) => (
-                        <span 
+                        <span
                           key={i}
                           className="inline-flex items-center px-3 py-1 rounded-full text-xs sm:text-sm font-medium bg-blue-50 text-blue-700 group-hover:bg-blue-100 transition-colors"
                         >
@@ -302,7 +360,7 @@ export default function AboutUs() {
                   </div>
                 </div>
 
-                {/* Hover Overlay */}
+                {/* Hover Overlay 
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
                   <div className="text-white">
                     <h4 className="text-lg font-semibold mb-2">Connect with {member.name.split(' ')[0]}</h4>
@@ -321,7 +379,7 @@ export default function AboutUs() {
                       </a>
                     </div>
                   </div>
-                </div>
+                </div>*/}
               </div>
             ))}
           </div>
@@ -346,17 +404,27 @@ export default function AboutUs() {
               {milestones.map((milestone, index) => (
                 <div
                   key={index}
-                  className={`flex flex-col lg:flex-row items-center ${index % 2 === 0 ? "lg:justify-start" : "lg:justify-end"}`}
+                  className={`flex flex-col lg:flex-row items-center ${
+                    index % 2 === 0 ? "lg:justify-start" : "lg:justify-end"
+                  }`}
                 >
                   <div
-                    className={`w-full lg:w-5/12 ${index % 2 === 0 ? "lg:text-right lg:pr-8 xl:pr-16" : "lg:text-left lg:pl-8 xl:pl-16"}`}
+                    className={`w-full lg:w-5/12 ${
+                      index % 2 === 0
+                        ? "lg:text-right lg:pr-8 xl:pr-16"
+                        : "lg:text-left lg:pl-8 xl:pl-16"
+                    }`}
                   >
                     <div className="bg-white rounded-2xl sm:rounded-3xl shadow-xl p-6 sm:p-8 hover:shadow-2xl transition-all duration-300 border border-gray-200 group">
-                      <div className="text-2xl sm:text-3xl font-bold text-blue-600 mb-3 sm:mb-4">{milestone.year}</div>
+                      <div className="text-2xl sm:text-3xl font-bold text-blue-600 mb-3 sm:mb-4">
+                        {milestone.year}
+                      </div>
                       <h3 className="text-xl sm:text-2xl font-bold text-gray-800 mb-3 sm:mb-4 group-hover:text-blue-600 transition-colors">
                         {milestone.event}
                       </h3>
-                      <p className="text-gray-600 leading-relaxed text-base sm:text-lg">{milestone.description}</p>
+                      <p className="text-gray-600 leading-relaxed text-base sm:text-lg">
+                        {milestone.description}
+                      </p>
                     </div>
                   </div>
                   <div className="absolute left-1/2 transform -translate-x-1/2 w-6 h-6 sm:w-8 sm:h-8 bg-blue-600 rounded-full border-4 border-white shadow-xl hidden lg:block"></div>
@@ -371,29 +439,38 @@ export default function AboutUs() {
       <section className="py-16 sm:py-24 lg:py-32 bg-gradient-to-br from-gray-800 to-blue-900 text-white relative overflow-hidden">
         <div className="absolute inset-0 bg-black/20"></div>
         <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-8 sm:mb-12">Our Mission</h2>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-8 sm:mb-12">
+            Our Mission
+          </h2>
           <p className="text-xl sm:text-2xl text-gray-200 mb-12 sm:mb-16 leading-relaxed px-4">
-            To empower e-commerce businesses with innovative technology and expert strategies that drive sustainable
-            growth and success in the digital marketplace.
+            To empower e-commerce businesses with innovative technology and
+            expert strategies that drive sustainable growth and success in the
+            digital marketplace.
           </p>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 sm:gap-12 mt-12 sm:mt-16 lg:mt-20">
             <div className="text-center">
               <CheckCircle className="h-12 w-12 sm:h-16 sm:w-16 text-green-400 mx-auto mb-4 sm:mb-6" />
-              <h3 className="text-xl sm:text-2xl font-bold mb-3 sm:mb-4">Innovation</h3>
+              <h3 className="text-xl sm:text-2xl font-bold mb-3 sm:mb-4">
+                Innovation
+              </h3>
               <p className="text-gray-200 text-base sm:text-lg">
                 Cutting-edge solutions for modern e-commerce challenges
               </p>
             </div>
             <div className="text-center">
               <CheckCircle className="h-12 w-12 sm:h-16 sm:w-16 text-green-400 mx-auto mb-4 sm:mb-6" />
-              <h3 className="text-xl sm:text-2xl font-bold mb-3 sm:mb-4">Results</h3>
+              <h3 className="text-xl sm:text-2xl font-bold mb-3 sm:mb-4">
+                Results
+              </h3>
               <p className="text-gray-200 text-base sm:text-lg">
                 Measurable outcomes that drive exponential business growth
               </p>
             </div>
             <div className="text-center">
               <CheckCircle className="h-12 w-12 sm:h-16 sm:w-16 text-green-400 mx-auto mb-4 sm:mb-6" />
-              <h3 className="text-xl sm:text-2xl font-bold mb-3 sm:mb-4">Partnership</h3>
+              <h3 className="text-xl sm:text-2xl font-bold mb-3 sm:mb-4">
+                Partnership
+              </h3>
               <p className="text-gray-200 text-base sm:text-lg">
                 Long-term relationships built on trust and proven success
               </p>
@@ -410,7 +487,8 @@ export default function AboutUs() {
             Ready to Work Together?
           </h2>
           <p className="text-lg sm:text-xl text-gray-300 mb-12 sm:mb-16 leading-relaxed px-4">
-            Join hundreds of successful businesses that trust Urbantech Ecom for their e-commerce growth and innovation
+            Join hundreds of successful businesses that trust Urbantech Ecom for
+            their e-commerce growth and innovation
           </p>
           <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 lg:gap-8 justify-center">
             <Link
@@ -432,5 +510,5 @@ export default function AboutUs() {
         </div>
       </section>
     </div>
-  )
+  );
 }

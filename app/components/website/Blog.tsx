@@ -1,7 +1,7 @@
-"use client"
+"use client";
 
-import Link from "next/link"
-import { useState } from "react"
+import Link from "next/link";
+import { useState } from "react";
 import {
   Calendar,
   User,
@@ -16,11 +16,11 @@ import {
   Zap,
   BookOpen,
   Star,
-} from "lucide-react"
+} from "lucide-react";
 
 export default function Blog() {
-  const [selectedCategory, setSelectedCategory] = useState("All Posts")
-  const [searchTerm, setSearchTerm] = useState("")
+  const [selectedCategory, setSelectedCategory] = useState("All Posts");
+  const [searchTerm, setSearchTerm] = useState("");
 
   const featuredPost = {
     title: "Amazon FBA Success: From $0 to $100K Monthly Revenue in 12 Months",
@@ -35,12 +35,13 @@ export default function Blog() {
     featured: true,
     views: "15.2K",
     likes: "892",
-  }
+  };
 
   const allBlogPosts = [
     // Only include blog posts that actually exist with real content
     {
-      title: "Amazon FBA Success: From $0 to $100K Monthly Revenue in 12 Months",
+      title:
+        "Amazon FBA Success: From $0 to $100K Monthly Revenue in 12 Months",
       excerpt:
         "Discover the exact step-by-step strategy our client used to build a six-figure Amazon business from scratch.",
       author: "David Chen",
@@ -53,8 +54,10 @@ export default function Blog() {
       likes: "892",
     },
     {
-      title: "Amazon PPC Mastery: 7 Advanced Strategies That Increased ROAS by 340%",
-      excerpt: "Learn the advanced PPC techniques that transformed our client's advertising performance.",
+      title:
+        "Amazon PPC Mastery: 7 Advanced Strategies That Increased ROAS by 340%",
+      excerpt:
+        "Learn the advanced PPC techniques that transformed our client's advertising performance.",
       author: "Sarah Johnson",
       date: "December 12, 2024",
       readTime: "8 min read",
@@ -92,7 +95,8 @@ export default function Blog() {
     },
     {
       title: "Private Label Success: $50K to $500K in Annual Revenue",
-      excerpt: "Complete case study of how we helped a client scale their private label business 10x in 18 months.",
+      excerpt:
+        "Complete case study of how we helped a client scale their private label business 10x in 18 months.",
       author: "Mike Rodriguez",
       date: "December 5, 2024",
       readTime: "14 min read",
@@ -117,7 +121,8 @@ export default function Blog() {
     },
     {
       title: "International Expansion: From US to Global Marketplace",
-      excerpt: "Step-by-step guide on how we helped a US seller expand to 5 international Amazon marketplaces.",
+      excerpt:
+        "Step-by-step guide on how we helped a US seller expand to 5 international Amazon marketplaces.",
       author: "Alex Thompson",
       date: "November 25, 2024",
       readTime: "11 min read",
@@ -129,7 +134,8 @@ export default function Blog() {
     },
     {
       title: "Sponsored Products vs Sponsored Brands: Which Converts Better?",
-      excerpt: "Comprehensive analysis of different Amazon ad types and when to use each for maximum ROI.",
+      excerpt:
+        "Comprehensive analysis of different Amazon ad types and when to use each for maximum ROI.",
       author: "Mike Rodriguez",
       date: "December 8, 2024",
       readTime: "7 min read",
@@ -154,7 +160,8 @@ export default function Blog() {
     },
     {
       title: "Amazon SEO: Ranking Higher in Search Results",
-      excerpt: "Advanced Amazon SEO techniques to improve your product visibility and organic rankings.",
+      excerpt:
+        "Advanced Amazon SEO techniques to improve your product visibility and organic rankings.",
       author: "Lisa Chen",
       date: "December 7, 2024",
       readTime: "9 min read",
@@ -166,7 +173,8 @@ export default function Blog() {
     },
     {
       title: "Bid Management Strategies for Maximum Profitability",
-      excerpt: "Advanced bidding techniques that help you win profitable clicks while maintaining healthy ACoS.",
+      excerpt:
+        "Advanced bidding techniques that help you win profitable clicks while maintaining healthy ACoS.",
       author: "Lisa Chen",
       date: "November 25, 2024",
       readTime: "9 min read",
@@ -217,7 +225,8 @@ export default function Blog() {
     },
     {
       title: "Product Research: Finding Profitable Opportunities",
-      excerpt: "Master the art of product research to identify profitable opportunities on Amazon.",
+      excerpt:
+        "Master the art of product research to identify profitable opportunities on Amazon.",
       author: "Emily Park",
       date: "November 19, 2024",
       readTime: "10 min read",
@@ -229,7 +238,8 @@ export default function Blog() {
     },
     {
       title: "Competitor Analysis Masterclass: Spy on Your Competition Legally",
-      excerpt: "Learn advanced competitor research techniques and tools to analyze pricing, keywords, and strategies.",
+      excerpt:
+        "Learn advanced competitor research techniques and tools to analyze pricing, keywords, and strategies.",
       author: "James Wilson",
       date: "November 30, 2024",
       readTime: "11 min read",
@@ -241,7 +251,8 @@ export default function Blog() {
     },
     {
       title: "Campaign Structure Optimization for Better Performance",
-      excerpt: "Build winning PPC campaigns with proper structure, organization, and optimization techniques.",
+      excerpt:
+        "Build winning PPC campaigns with proper structure, organization, and optimization techniques.",
       author: "David Chen",
       date: "November 10, 2024",
       readTime: "10 min read",
@@ -253,7 +264,8 @@ export default function Blog() {
     },
     {
       title: "Keyword Research for Amazon: Tools and Techniques",
-      excerpt: "Discover the best tools and methods for finding high-converting keywords for your Amazon listings.",
+      excerpt:
+        "Discover the best tools and methods for finding high-converting keywords for your Amazon listings.",
       author: "David Chen",
       date: "November 26, 2024",
       readTime: "7 min read",
@@ -265,7 +277,8 @@ export default function Blog() {
     },
     {
       title: "Market Trends Analysis: Staying Ahead of the Curve",
-      excerpt: "Identify and capitalize on emerging market trends before your competitors do.",
+      excerpt:
+        "Identify and capitalize on emerging market trends before your competitors do.",
       author: "Alex Thompson",
       date: "November 13, 2024",
       readTime: "8 min read",
@@ -277,7 +290,8 @@ export default function Blog() {
     },
     {
       title: "Niche Research: Finding Untapped Markets",
-      excerpt: "Discover profitable niches with low competition and high demand on Amazon.",
+      excerpt:
+        "Discover profitable niches with low competition and high demand on Amazon.",
       author: "Rachel Green",
       date: "November 7, 2024",
       readTime: "9 min read",
@@ -287,66 +301,78 @@ export default function Blog() {
       views: "6.3K",
       likes: "245",
     },
-  ]
+  ];
 
   const categories = [
     { name: "All Posts", icon: BookOpen, count: allBlogPosts.length },
     {
       name: "Success Stories",
       icon: Award,
-      count: allBlogPosts.filter((post) => post.category === "Success Stories").length,
+      count: allBlogPosts.filter((post) => post.category === "Success Stories")
+        .length,
     },
     {
       name: "PPC Strategy",
       icon: Target,
-      count: allBlogPosts.filter((post) => post.category === "PPC Strategy").length,
+      count: allBlogPosts.filter((post) => post.category === "PPC Strategy")
+        .length,
     },
     {
       name: "Listing Optimization",
       icon: TrendingUp,
-      count: allBlogPosts.filter((post) => post.category === "Listing Optimization").length,
+      count: allBlogPosts.filter(
+        (post) => post.category === "Listing Optimization"
+      ).length,
     },
     {
       name: "Inventory Management",
       icon: Zap,
-      count: allBlogPosts.filter((post) => post.category === "Inventory Management").length,
+      count: allBlogPosts.filter(
+        (post) => post.category === "Inventory Management"
+      ).length,
     },
     {
       name: "Brand Building",
       icon: Star,
-      count: allBlogPosts.filter((post) => post.category === "Brand Building").length,
+      count: allBlogPosts.filter((post) => post.category === "Brand Building")
+        .length,
     },
     {
       name: "SEO & Ranking",
       icon: Search,
-      count: allBlogPosts.filter((post) => post.category === "SEO & Ranking").length,
+      count: allBlogPosts.filter((post) => post.category === "SEO & Ranking")
+        .length,
     },
     {
       name: "Market Research",
       icon: Tag,
-      count: allBlogPosts.filter((post) => post.category === "Market Research").length,
+      count: allBlogPosts.filter((post) => post.category === "Market Research")
+        .length,
     },
-  ]
+  ];
 
   const stats = [
     { label: "Total Articles", value: `${allBlogPosts.length}+` },
     { label: "Monthly Readers", value: "25K+" },
     {
       label: "Success Stories",
-      value: allBlogPosts.filter((post) => post.category === "Success Stories").length.toString(),
+      value: allBlogPosts
+        .filter((post) => post.category === "Success Stories")
+        .length.toString(),
     },
     { label: "Expert Authors", value: "6" },
-  ]
+  ];
 
   // Filter posts based on selected category and search term
   const filteredPosts = allBlogPosts.filter((post) => {
-    const matchesCategory = selectedCategory === "All Posts" || post.category === selectedCategory
+    const matchesCategory =
+      selectedCategory === "All Posts" || post.category === selectedCategory;
     const matchesSearch =
       post.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
       post.excerpt.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      post.author.toLowerCase().includes(searchTerm.toLowerCase())
-    return matchesCategory && matchesSearch
-  })
+      post.author.toLowerCase().includes(searchTerm.toLowerCase());
+    return matchesCategory && matchesSearch;
+  });
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-50 via-blue-50 to-indigo-50">
@@ -363,7 +389,9 @@ export default function Blog() {
           <div className="text-center">
             <div className="inline-flex items-center bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-6 py-3 mb-8">
               <BookOpen className="h-5 w-5 mr-2 text-blue-300" />
-              <span className="text-sm font-semibold text-blue-200">Expert Amazon & E-commerce Insights</span>
+              <span className="text-sm font-semibold text-blue-200">
+                Expert Amazon & E-commerce Insights
+              </span>
             </div>
 
             <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold mb-8 sm:mb-10">
@@ -375,16 +403,20 @@ export default function Blog() {
             </h1>
 
             <p className="text-xl sm:text-2xl text-gray-200 max-w-4xl mx-auto leading-relaxed mb-12">
-              Learn from real success stories, advanced strategies, and expert insights that have helped thousands of
-              sellers dominate Amazon
+              Learn from real success stories, advanced strategies, and expert
+              insights that have helped thousands of sellers dominate Amazon
             </p>
 
             {/* Stats */}
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8 max-w-4xl mx-auto">
               {stats.map((stat, index) => (
                 <div key={index} className="text-center">
-                  <div className="text-3xl sm:text-4xl font-bold text-white mb-2">{stat.value}</div>
-                  <div className="text-sm sm:text-base text-gray-300">{stat.label}</div>
+                  <div className="text-3xl sm:text-4xl font-bold text-white mb-2">
+                    {stat.value}
+                  </div>
+                  <div className="text-sm sm:text-base text-gray-300">
+                    {stat.label}
+                  </div>
                 </div>
               ))}
             </div>
@@ -404,7 +436,7 @@ export default function Blog() {
                 placeholder="Search success stories, strategies, guides..."
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
-                className="w-full pl-14 pr-6 py-5 border-2 border-gray-200 rounded-2xl focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300 text-lg bg-white shadow-lg"
+                className="w-full pl-14 pr-6 py-5 border-2 border-gray-200 rounded-2xl focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300 text-lg bg-white shadow-lg text-gray-900"
               />
             </div>
           </div>
@@ -412,8 +444,8 @@ export default function Blog() {
           {/* Categories Grid */}
           <div className="mt-12 grid grid-cols-2 md:grid-cols-4 lg:grid-cols-8 gap-4">
             {categories.map((category, index) => {
-              const IconComponent = category.icon
-              const isActive = selectedCategory === category.name
+              const IconComponent = category.icon;
+              const isActive = selectedCategory === category.name;
               return (
                 <button
                   key={index}
@@ -421,14 +453,20 @@ export default function Blog() {
                   className={`group relative p-4 rounded-2xl transition-all duration-300 ${
                     isActive
                       ? "bg-gradient-to-r from-blue-600 to-blue-700 text-white shadow-xl"
-                      : "bg-white text-gray-700 hover:bg-blue-50 hover:text-blue-600 border border-gray-200 hover:border-blue-200 shadow-lg hover:shadow-xl"
+                      : "bg-white text-gray-700 hover:bg-blue-50 hover:text-blue-600  shadow-lg hover:shadow-xl"
                   }`}
                 >
                   <div className="flex flex-col items-center text-center">
                     <IconComponent
-                      className={`h-6 w-6 mb-2 ${isActive ? "text-white" : "text-gray-600 group-hover:text-blue-600"}`}
+                      className={`h-6 w-6 mb-2 ${
+                        isActive
+                          ? "text-white"
+                          : "text-gray-600 group-hover:text-blue-600"
+                      }`}
                     />
-                    <span className="text-sm font-semibold mb-1">{category.name}</span>
+                    <span className="text-sm font-semibold mb-1">
+                      {category.name}
+                    </span>
                     <span
                       className={`text-xs px-2 py-1 rounded-full ${
                         isActive
@@ -440,7 +478,7 @@ export default function Blog() {
                     </span>
                   </div>
                 </button>
-              )
+              );
             })}
           </div>
         </div>
@@ -454,9 +492,12 @@ export default function Blog() {
               <Star className="h-4 w-4 mr-2" />
               Featured Success Story
             </div>
-            <h2 className="text-4xl sm:text-5xl font-bold text-gray-800 mb-4">Latest Success Story</h2>
+            <h2 className="text-4xl sm:text-5xl font-bold text-gray-800 mb-4">
+              Latest Success Story
+            </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Real results from real clients - see how our strategies transform Amazon businesses
+              Real results from real clients - see how our strategies transform
+              Amazon businesses
             </p>
           </div>
 
@@ -472,11 +513,15 @@ export default function Blog() {
                   </div>
                   <div className="flex items-center space-x-4 text-sm text-gray-500">
                     <div className="flex items-center">
-                      <span className="font-semibold">{featuredPost.views}</span>
+                      <span className="font-semibold">
+                        {featuredPost.views}
+                      </span>
                       <span className="ml-1">views</span>
                     </div>
                     <div className="flex items-center">
-                      <span className="font-semibold">{featuredPost.likes}</span>
+                      <span className="font-semibold">
+                        {featuredPost.likes}
+                      </span>
                       <span className="ml-1">likes</span>
                     </div>
                   </div>
@@ -486,7 +531,9 @@ export default function Blog() {
                   {featuredPost.title}
                 </h3>
 
-                <p className="text-gray-600 text-lg mb-8 leading-relaxed">{featuredPost.excerpt}</p>
+                <p className="text-gray-600 text-lg mb-8 leading-relaxed">
+                  {featuredPost.excerpt}
+                </p>
 
                 <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-8 gap-4">
                   <div className="flex items-center">
@@ -494,8 +541,12 @@ export default function Blog() {
                       <User className="h-6 w-6 text-white" />
                     </div>
                     <div>
-                      <span className="text-gray-800 font-bold text-lg">{featuredPost.author}</span>
-                      <p className="text-gray-500 text-sm">Amazon Success Expert</p>
+                      <span className="text-gray-800 font-bold text-lg">
+                        {featuredPost.author}
+                      </span>
+                      <p className="text-gray-500 text-sm">
+                        Amazon Success Expert
+                      </p>
                     </div>
                   </div>
                   <div className="flex items-center text-gray-500">
@@ -521,8 +572,12 @@ export default function Blog() {
                   <div className="w-20 h-20 bg-white/20 rounded-2xl flex items-center justify-center mb-6">
                     <TrendingUp className="h-10 w-10" />
                   </div>
-                  <h4 className="text-2xl font-bold mb-4 text-center">$100K Monthly Revenue</h4>
-                  <p className="text-center text-lg opacity-90 mb-6">{featuredPost.imageAlt}</p>
+                  <h4 className="text-2xl font-bold mb-4 text-center">
+                    $100K Monthly Revenue
+                  </h4>
+                  <p className="text-center text-lg opacity-90 mb-6">
+                    {featuredPost.imageAlt}
+                  </p>
                   <div className="grid grid-cols-3 gap-4 w-full max-w-sm">
                     <div className="text-center">
                       <div className="text-2xl font-bold">340%</div>
@@ -548,14 +603,18 @@ export default function Blog() {
       <section className="py-20 sm:py-28 bg-gradient-to-br from-gray-50 to-blue-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-4xl sm:text-5xl font-bold text-gray-800 mb-6">Expert Guides & Strategies</h2>
+            <h2 className="text-4xl sm:text-5xl font-bold text-gray-800 mb-6">
+              Expert Guides & Strategies
+            </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Proven strategies and actionable insights from Amazon experts who've generated millions in revenue
+              Proven strategies and actionable insights from Amazon experts
+              who've generated millions in revenue
             </p>
             {selectedCategory !== "All Posts" && (
               <div className="mt-6">
                 <span className="text-lg text-blue-600 font-semibold">
-                  Showing {filteredPosts.length} articles in "{selectedCategory}"
+                  Showing {filteredPosts.length} articles in "{selectedCategory}
+                  "
                 </span>
               </div>
             )}
@@ -569,19 +628,21 @@ export default function Blog() {
               >
                 {/* Article Image Placeholder */}
                 <div className="bg-gradient-to-br from-blue-100 to-purple-100 p-6 relative overflow-hidden flex-shrink-0">
-                  <div className="absolute top-4 right-4 flex items-center space-x-2 text-xs text-gray-600">
-                    <div className="flex items-center bg-white/80 backdrop-blur-sm px-3 py-1 rounded-full">
-                      <span className="font-semibold">{post.views}</span>
-                    </div>
-                    <div className="flex items-center bg-white/80 backdrop-blur-sm px-3 py-1 rounded-full">
-                      <span className="font-semibold">{post.likes}</span>
-                    </div>
-                  </div>
                   <div className="aspect-video bg-white/60 backdrop-blur-sm rounded-2xl shadow-inner flex flex-col items-center justify-center text-gray-500 group-hover:text-gray-700 transition-colors p-4 border border-white/50">
                     <div className="w-12 h-12 bg-gradient-to-r from-blue-600 to-purple-600 rounded-2xl flex items-center justify-center mb-3">
                       <ImageIcon className="h-6 w-6 text-white" />
+                      <div className="absolute top-4 right-4 flex items-center space-x-2 text-xs text-gray-600">
+                        <div className="flex items-center bg-white/80 backdrop-blur-sm px-3 py-1 rounded-full">
+                          <span className="font-semibold">{post.views}</span>
+                        </div>
+                        <div className="flex items-center bg-white/80 backdrop-blur-sm px-3 py-1 rounded-full">
+                          <span className="font-semibold">{post.likes}</span>
+                        </div>
+                      </div>
                     </div>
-                    <p className="text-xs text-center font-medium px-2 leading-tight">{post.imageAlt}</p>
+                    <p className="text-xs text-center font-medium px-2 leading-tight">
+                      {post.imageAlt}
+                    </p>
                   </div>
                 </div>
 
@@ -599,7 +660,9 @@ export default function Blog() {
                     <Link href={`/blog/${post.slug}`}>{post.title}</Link>
                   </h3>
 
-                  <p className="text-gray-600 mb-6 leading-relaxed text-sm flex-grow line-clamp-3">{post.excerpt}</p>
+                  <p className="text-gray-600 mb-6 leading-relaxed text-sm flex-grow line-clamp-3">
+                    {post.excerpt}
+                  </p>
 
                   <div className="flex flex-col gap-4 mt-auto">
                     <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between text-xs text-gray-500 gap-2">
@@ -607,7 +670,9 @@ export default function Blog() {
                         <div className="w-6 h-6 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full flex items-center justify-center mr-2">
                           <User className="h-3 w-3 text-white" />
                         </div>
-                        <span className="font-semibold text-gray-700">{post.author}</span>
+                        <span className="font-semibold text-gray-700">
+                          {post.author}
+                        </span>
                       </div>
                       <div className="flex items-center">
                         <Calendar className="h-3 w-3 mr-1" />
@@ -635,8 +700,12 @@ export default function Blog() {
               <div className="text-gray-400 mb-4">
                 <Search className="h-16 w-16 mx-auto mb-4" />
               </div>
-              <h3 className="text-2xl font-bold text-gray-600 mb-2">No articles found</h3>
-              <p className="text-gray-500">Try adjusting your search or filter criteria</p>
+              <h3 className="text-2xl font-bold text-gray-600 mb-2">
+                No articles found
+              </h3>
+              <p className="text-gray-500">
+                Try adjusting your search or filter criteria
+              </p>
             </div>
           )}
 
@@ -660,13 +729,17 @@ export default function Blog() {
         <div className="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div className="inline-flex items-center bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-6 py-3 mb-8">
             <Star className="h-5 w-5 mr-2 text-yellow-300" />
-            <span className="text-sm font-semibold text-yellow-200">Join 25,000+ Successful Sellers</span>
+            <span className="text-sm font-semibold text-yellow-200">
+              Join 25,000+ Successful Sellers
+            </span>
           </div>
 
-          <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-8">Get Weekly Success Stories</h2>
+          <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-8">
+            Get Weekly Success Stories
+          </h2>
           <p className="text-xl text-gray-200 mb-12 leading-relaxed max-w-3xl mx-auto">
-            Receive exclusive case studies, advanced strategies, and insider tips that have generated millions in Amazon
-            revenue
+            Receive exclusive case studies, advanced strategies, and insider
+            tips that have generated millions in Amazon revenue
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 max-w-2xl mx-auto mb-8">
@@ -676,17 +749,18 @@ export default function Blog() {
               className="flex-1 px-8 py-5 rounded-2xl text-gray-900 focus:ring-2 focus:ring-blue-300 focus:outline-none text-lg bg-white/95 backdrop-blur-sm"
             />
             <button className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-10 py-5 rounded-2xl font-bold hover:from-blue-500 hover:to-purple-500 transition-all duration-300 shadow-xl hover:shadow-2xl text-lg">
-              Get Free Insights
+              Get Insights
             </button>
           </div>
 
           <p className="text-sm text-gray-300">
-            ✓ Weekly success stories ✓ Advanced strategies ✓ Exclusive case studies ✓ No spam, unsubscribe anytime
+            ✓ Weekly success stories ✓ Advanced strategies ✓ Exclusive case
+            studies ✓ No spam, unsubscribe anytime
           </p>
         </div>
       </section>
 
       {/*<Footer />*/}
     </div>
-  )
+  );
 }

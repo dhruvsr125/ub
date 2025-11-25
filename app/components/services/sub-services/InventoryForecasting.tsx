@@ -1,10 +1,24 @@
-"use client"
+"use client";
 
-import { Button } from "@/components/ui/button"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { Badge } from "@/components/ui/badge"
-import { ArrowRight, BarChart3, TrendingUp, Target, CheckCircle, Star, Award } from "lucide-react"
-import Link from "next/link"
+import { Button } from "@/components/ui/button";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+import {
+  ArrowRight,
+  BarChart3,
+  TrendingUp,
+  Target,
+  CheckCircle,
+  Star,
+  Award,
+} from "lucide-react";
+import Link from "next/link";
 
 export default function InventoryForecasting() {
   const stats = [
@@ -12,12 +26,13 @@ export default function InventoryForecasting() {
     { label: "Inventory Cost Reduction", value: "40%", icon: Target },
     { label: "Stockout Prevention", value: "99.2%", icon: CheckCircle },
     { label: "Products Managed", value: "1000+", icon: Award },
-  ]
+  ];
 
   const forecastingMethods = [
     {
       title: "AI-Powered Forecasting",
-      description: "Advanced machine learning algorithms for accurate predictions",
+      description:
+        "Advanced machine learning algorithms for accurate predictions",
       features: [
         "Historical data analysis",
         "Real-time updates",
@@ -41,7 +56,8 @@ export default function InventoryForecasting() {
     },
     {
       title: "Expert Analysis",
-      description: "Expert insights and recommendations from experienced inventory analysts",
+      description:
+        "Expert insights and recommendations from experienced inventory analysts",
       features: [
         "Market trend analysis",
         "Competitor analysis",
@@ -51,7 +67,7 @@ export default function InventoryForecasting() {
         "Continuous improvement",
       ],
     },
-  ]
+  ];
 
   const benefits = [
     "Reduced inventory costs",
@@ -60,7 +76,7 @@ export default function InventoryForecasting() {
     "Enhanced customer satisfaction",
     "Better supply chain efficiency",
     "Increased profitability",
-  ]
+  ];
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-100">
@@ -68,7 +84,9 @@ export default function InventoryForecasting() {
       <section className="relative py-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <Badge className="mb-4 bg-blue-100 text-blue-800 hover:bg-blue-200">Inventory Management</Badge>
+            <Badge className="mb-4 bg-blue-100 text-blue-800 hover:bg-blue-200">
+              Inventory Management
+            </Badge>
             <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
               Inventory{" "}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">
@@ -76,8 +94,9 @@ export default function InventoryForecasting() {
               </span>
             </h1>
             <p className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
-              Optimize your inventory levels with AI-powered forecasting that prevents stockouts, reduces storage costs,
-              and maximizes profitability.
+              Optimize your inventory levels with AI-powered forecasting that
+              prevents stockouts, reduces storage costs, and maximizes
+              profitability.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link href="/contact">
@@ -89,9 +108,15 @@ export default function InventoryForecasting() {
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </Button>
               </Link>
-              <Button size="lg" variant="outline" className="border-blue-200 text-blue-800 hover:bg-blue-50">
-                View Demo
-              </Button>
+              <Link href="/portfolio">
+                <Button
+                  size="lg"
+                  variant="outline"
+                  className="border-blue-200 text-blue-800 hover:bg-blue-500"
+                >
+                  View Demo
+                </Button>
+              </Link>
             </div>
           </div>
         </div>
@@ -108,7 +133,9 @@ export default function InventoryForecasting() {
               >
                 <CardContent className="pt-6">
                   <stat.icon className="h-12 w-12 text-blue-600 mx-auto mb-4" />
-                  <div className="text-3xl font-bold text-gray-900 mb-2">{stat.value}</div>
+                  <div className="text-3xl font-bold text-gray-900 mb-2">
+                    {stat.value}
+                  </div>
                   <div className="text-gray-600">{stat.label}</div>
                 </CardContent>
               </Card>
@@ -121,9 +148,12 @@ export default function InventoryForecasting() {
       <section className="py-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Our Forecasting Methods</h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+              Our Forecasting Methods
+            </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Advanced techniques for accurate and reliable inventory predictions
+              Advanced techniques for accurate and reliable inventory
+              predictions
             </p>
           </div>
 
@@ -134,8 +164,12 @@ export default function InventoryForecasting() {
                 className="backdrop-blur-sm bg-white/70 border-blue-100 shadow-lg hover:shadow-xl transition-all duration-300"
               >
                 <CardHeader>
-                  <CardTitle className="text-xl text-gray-900">{method.title}</CardTitle>
-                  <CardDescription className="text-gray-600">{method.description}</CardDescription>
+                  <CardTitle className="text-xl text-gray-900">
+                    {method.title}
+                  </CardTitle>
+                  <CardDescription className="text-gray-600">
+                    {method.description}
+                  </CardDescription>
                 </CardHeader>
                 <CardContent>
                   <ul className="space-y-3">
@@ -158,10 +192,12 @@ export default function InventoryForecasting() {
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">Why Accurate Forecasting Matters</h2>
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+                Why Accurate Forecasting Matters
+              </h2>
               <p className="text-lg text-gray-600 mb-8">
-                Accurate inventory forecasting is essential for optimizing stock levels, reducing costs, and maximizing
-                profitability.
+                Accurate inventory forecasting is essential for optimizing stock
+                levels, reducing costs, and maximizing profitability.
               </p>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 {benefits.map((benefit, index) => (
@@ -177,9 +213,12 @@ export default function InventoryForecasting() {
                 <CardContent className="p-8">
                   <div className="text-center">
                     <BarChart3 className="h-16 w-16 text-blue-600 mx-auto mb-4" />
-                    <h3 className="text-2xl font-bold text-gray-900 mb-4">Ready to Optimize Your Inventory?</h3>
+                    <h3 className="text-2xl font-bold text-gray-900 mb-4">
+                      Ready to Optimize Your Inventory?
+                    </h3>
                     <p className="text-gray-600 mb-6">
-                      Get a free consultation and discover how we can improve your inventory forecasting accuracy.
+                      Get a free consultation and discover how we can improve
+                      your inventory forecasting accuracy.
                     </p>
                     <Button className="w-full bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700">
                       Get Free Consultation
@@ -202,7 +241,8 @@ export default function InventoryForecasting() {
                 Take Control of Your Inventory with Accurate Forecasting
               </h2>
               <p className="text-xl text-gray-600 mb-8">
-                Let our experts help you optimize your inventory levels and maximize your profitability.
+                Let our experts help you optimize your inventory levels and
+                maximize your profitability.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Link href="/contact">
@@ -215,7 +255,11 @@ export default function InventoryForecasting() {
                   </Button>
                 </Link>
                 <Link href="/services/inventory-management">
-                  <Button size="lg" variant="outline" className="border-blue-200 text-blue-700 hover:bg-blue-50">
+                  <Button
+                    size="lg"
+                    variant="outline"
+                    className="border-blue-200 text-blue-700 hover:bg-blue-500"
+                  >
                     Back to Inventory Services
                   </Button>
                 </Link>
@@ -225,5 +269,5 @@ export default function InventoryForecasting() {
         </div>
       </section>
     </div>
-  )
+  );
 }

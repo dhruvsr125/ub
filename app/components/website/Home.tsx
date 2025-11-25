@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import {
   ArrowRight,
   TrendingUp,
@@ -11,14 +11,14 @@ import {
   Shield,
   Clock,
   ImageIcon,
-} from "lucide-react"
-import { useRouter } from "next/navigation"
-import { motion, useInView, useAnimation } from "framer-motion"
-import { useEffect, useRef } from "react"
+} from "lucide-react";
+import { useRouter } from "next/navigation";
+import { motion, useInView, useAnimation } from "framer-motion";
+import { useEffect, useRef } from "react";
 
 export default function Home() {
   const router = useRouter();
-  
+
   // Refs for scroll animations
   const heroRef = useRef(null);
   const servicesRef = useRef(null);
@@ -26,7 +26,7 @@ export default function Home() {
   const statsRef = useRef(null);
   const processRef = useRef(null);
   const testimonialsRef = useRef(null);
-  
+
   // Check if elements are in view (continuous animations - both directions)
   const isHeroInView = useInView(heroRef, { amount: 0.2 });
   const isServicesInView = useInView(servicesRef, { amount: 0.15 });
@@ -34,7 +34,7 @@ export default function Home() {
   const isStatsInView = useInView(statsRef, { amount: 0.15 });
   const isProcessInView = useInView(processRef, { amount: 0.15 });
   const isTestimonialsInView = useInView(testimonialsRef, { amount: 0.15 });
-  
+
   // Enhanced Animation variants for smooth scroll up/down
   const container = {
     hidden: { opacity: 0 },
@@ -42,132 +42,151 @@ export default function Home() {
       opacity: 1,
       transition: {
         staggerChildren: 0.15,
-        delayChildren: 0.1
-      }
-    }
+        delayChildren: 0.1,
+      },
+    },
   };
-  
+
   const item = {
     hidden: { opacity: 0, y: 40 },
-    show: { 
-      opacity: 1, 
-      y: 0, 
-      transition: { 
+    show: {
+      opacity: 1,
+      y: 0,
+      transition: {
         duration: 0.7,
         type: "spring" as const,
         stiffness: 100,
-        damping: 15
-      } 
-    }
+        damping: 15,
+      },
+    },
   };
-  
+
   const fadeIn = {
-    hidden: { opacity: 0, y: 50 },
-    show: { 
-      opacity: 1, 
-      y: 0, 
-      transition: { 
+    hidden: { opacity: 0, y: 0 },
+    show: {
+      opacity: 1,
+      y: 0,
+      transition: {
         duration: 0.8,
         type: "spring" as const,
         stiffness: 80,
-        damping: 12
-      } 
-    }
+        damping: 12,
+      },
+    },
   };
-  
+
   const slideInFromLeft = {
     hidden: { opacity: 0, x: -80 },
-    show: { 
-      opacity: 1, 
-      x: 0, 
-      transition: { 
+    show: {
+      opacity: 1,
+      x: 0,
+      transition: {
         duration: 0.9,
         type: "spring" as const,
         stiffness: 70,
-        damping: 15
-      } 
-    }
+        damping: 15,
+      },
+    },
   };
-  
+
   const slideInFromRight = {
     hidden: { opacity: 0, x: 80 },
-    show: { 
-      opacity: 1, 
-      x: 0, 
-      transition: { 
+    show: {
+      opacity: 1,
+      x: 0,
+      transition: {
         duration: 0.9,
         type: "spring" as const,
         stiffness: 70,
-        damping: 15
-      } 
-    }
+        damping: 15,
+      },
+    },
   };
-  
+
   const scaleUp = {
     hidden: { opacity: 0, scale: 0.8, y: 30 },
-    show: { 
-      opacity: 1, 
-      scale: 1, 
+    show: {
+      opacity: 1,
+      scale: 1,
       y: 0,
-      transition: { 
+      transition: {
         duration: 0.7,
         type: "spring" as const,
         stiffness: 100,
-        damping: 12
-      } 
-    }
+        damping: 12,
+      },
+    },
   };
-  
+
   const slideUp = {
     hidden: { opacity: 0, y: 60 },
-    show: { 
-      opacity: 1, 
-      y: 0, 
-      transition: { 
+    show: {
+      opacity: 1,
+      y: 0,
+      transition: {
         duration: 0.8,
         type: "spring" as const,
         stiffness: 90,
-        damping: 14
-      } 
-    }
+        damping: 14,
+      },
+    },
   };
-  
+
   // Animation controls
   const controls = useAnimation();
-  
+
   // Animate when in view
   useEffect(() => {
-    if (isHeroInView || isServicesInView || isFeaturesInView || isStatsInView || isProcessInView || isTestimonialsInView) {
+    if (
+      isHeroInView ||
+      isServicesInView ||
+      isFeaturesInView ||
+      isStatsInView ||
+      isProcessInView ||
+      isTestimonialsInView
+    ) {
       controls.start("show");
     }
-  }, [isHeroInView, isServicesInView, isFeaturesInView, isStatsInView, isProcessInView, isTestimonialsInView, controls]);
+  }, [
+    isHeroInView,
+    isServicesInView,
+    isFeaturesInView,
+    isStatsInView,
+    isProcessInView,
+    isTestimonialsInView,
+    controls,
+  ]);
 
   const services = [
     {
       icon: <Zap className="h-8 w-8 text-blue-400" />,
       title: "AI-Powered Listing Optimization",
-      description: "Transform your product listings with cutting-edge AI technology for maximum visibility.",
+      description:
+        "Transform your product listings with cutting-edge AI technology for maximum visibility.",
       stats: "500+ Products Optimized",
     },
     {
       icon: <TrendingUp className="h-8 w-8 text-blue-400" />,
       title: "Advanced PPC Management",
-      description: "Maximize ROI with expertly managed advertising campaigns across all platforms.",
+      description:
+        "Maximize ROI with expertly managed advertising campaigns across all platforms.",
       stats: "150% Average ROI Increase",
     },
     {
       icon: <BarChart3 className="h-8 w-8 text-blue-400" />,
       title: "Real-Time Analytics",
-      description: "Get actionable insights with comprehensive analytics and performance tracking.",
+      description:
+        "Get actionable insights with comprehensive analytics and performance tracking.",
       stats: "24/7 Monitoring",
     },
     {
       icon: <Users className="h-8 w-8 text-blue-400" />,
       title: "Process Automation",
-      description: "Streamline operations with intelligent automation solutions.",
+      description:
+        "Streamline operations with intelligent automation solutions.",
       stats: "40+ Hours Saved Weekly",
     },
-  ]
+  ];
 
   const features = [
     {
@@ -185,7 +204,7 @@ export default function Home() {
       title: "Proven Results",
       description: "Track record of success with 500+ satisfied clients",
     },
-  ]
+  ];
 
   const testimonials = [
     {
@@ -209,55 +228,74 @@ export default function Home() {
       text: "Working with Urbantech has been a game-changer. The automation saved us 20+ hours per week.",
       rating: 5,
     },
-  ]
+  ];
 
   const stats = [
-    { number: "500+", label: "Products Optimized", description: "Successfully optimized across all platforms" },
-    { number: "150%", label: "Average ROI Increase", description: "Proven results within 90 days" },
-    { number: "50+", label: "Happy Clients", description: "Growing businesses we've helped scale" },
-    { number: "24/7", label: "Expert Support", description: "Always available when you need us" },
-  ]
+    {
+      number: "500+",
+      label: "Products Optimized",
+      description: "Successfully optimized across all platforms",
+    },
+    {
+      number: "150%",
+      label: "Average ROI Increase",
+      description: "Proven results within 90 days",
+    },
+    {
+      number: "50+",
+      label: "Happy Clients",
+      description: "Growing businesses we've helped scale",
+    },
+    {
+      number: "24/7",
+      label: "Expert Support",
+      description: "Always available when you need us",
+    },
+  ];
 
   const processSteps = [
     {
       step: "01",
       title: "Discovery & Analysis",
-      description: "We analyze your current setup and identify optimization opportunities",
+      description:
+        "We analyze your current setup and identify optimization opportunities",
     },
     {
       step: "02",
       title: "Strategy Development",
-      description: "Custom strategy tailored to your business goals and market position",
+      description:
+        "Custom strategy tailored to your business goals and market position",
     },
     {
       step: "03",
       title: "Implementation",
-      description: "Expert execution of optimization strategies with minimal disruption",
+      description:
+        "Expert execution of optimization strategies with minimal disruption",
     },
     {
       step: "04",
       title: "Monitor & Optimize",
-      description: "Continuous monitoring and optimization for sustained growth",
+      description:
+        "Continuous monitoring and optimization for sustained growth",
     },
-  ]
+  ];
 
   const navigateToPage = (href: string) => {
-    router.push(href)
+    router.push(href);
     setTimeout(() => {
-      window.scrollTo({ top: 0, behavior: "smooth" })
-    }, 200)
-  }
-
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }, 200);
+  };
 
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Enhanced Hero Section */}
-      <motion.section 
+      <motion.section
         ref={heroRef}
         initial="hidden"
         animate={isHeroInView ? "show" : "hidden"}
         variants={fadeIn}
-        className="relative bg-gradient-to-br from-gray-900 via-slate-800 to-blue-900 text-white py-16 sm:py-24 lg:py-32 overflow-hidden"
+        className="relative bg-gradient-to-br from-gray-900 via-slate-800 to-blue-900 text-white py-16 sm:py-24  lg:py-32 overflow-hidden"
       >
         <div className="absolute inset-0 bg-black/30"></div>
         <div className="absolute top-0 left-0 w-full h-full">
@@ -271,8 +309,12 @@ export default function Home() {
             <div className="text-center lg:text-left">
               {/* Trust Badge */}
               <div className="inline-flex items-center bg-white/10 backdrop-blur-sm rounded-full px-4 sm:px-6 py-2 sm:py-3 mb-6 sm:mb-8 border border-white/20">
-                <span className="text-yellow-400 mr-2 sm:mr-3 text-sm sm:text-base">⭐⭐⭐⭐⭐</span>
-                <span className="text-xs sm:text-sm font-medium">Trusted by 500+ Growing Brands</span>
+                <span className="text-yellow-400 mr-2 sm:mr-3 text-sm sm:text-base">
+                  ⭐⭐⭐⭐⭐
+                </span>
+                <span className="text-xs sm:text-sm font-medium">
+                  Trusted by 500+ Growing Brands
+                </span>
               </div>
 
               {/* Main Headline */}
@@ -288,23 +330,32 @@ export default function Home() {
 
               {/* Subheadline */}
               <p className="text-base sm:text-lg md:text-xl lg:text-2xl mb-8 sm:mb-10 text-gray-200 max-w-2xl mx-auto lg:mx-0 leading-relaxed px-4 sm:px-0">
-                Transform your online business with cutting-edge automation, optimization, and analytics that deliver{" "}
-                <span className="text-blue-400 font-semibold">150% average ROI increase</span>
+                Transform your online business with cutting-edge automation,
+                optimization, and analytics that deliver{" "}
+                <span className="text-blue-400 font-semibold">
+                  150% average ROI increase
+                </span>
               </p>
 
               {/* Key Benefits */}
               <div className="flex flex-wrap justify-center lg:justify-start gap-2 sm:gap-4 mb-8 sm:mb-10 px-4 sm:px-0">
                 <div className="flex items-center bg-white/10 backdrop-blur-sm rounded-full px-3 sm:px-5 py-2 sm:py-3 border border-white/20">
                   <CheckCircle className="h-4 w-4 sm:h-5 sm:w-5 text-green-400 mr-2" />
-                  <span className="text-xs sm:text-sm font-medium">500+ Products Optimized</span>
+                  <span className="text-xs sm:text-sm font-medium">
+                    500+ Products Optimized
+                  </span>
                 </div>
                 <div className="flex items-center bg-white/10 backdrop-blur-sm rounded-full px-3 sm:px-5 py-2 sm:py-3 border border-white/20">
                   <CheckCircle className="h-4 w-4 sm:h-5 sm:w-5 text-green-400 mr-2" />
-                  <span className="text-xs sm:text-sm font-medium">24/7 Expert Support</span>
+                  <span className="text-xs sm:text-sm font-medium">
+                    24/7 Expert Support
+                  </span>
                 </div>
                 <div className="flex items-center bg-white/10 backdrop-blur-sm rounded-full px-3 sm:px-5 py-2 sm:py-3 border border-white/20">
                   <CheckCircle className="h-4 w-4 sm:h-5 sm:w-5 text-green-400 mr-2" />
-                  <span className="text-xs sm:text-sm font-medium">No Setup Fees</span>
+                  <span className="text-xs sm:text-sm font-medium">
+                    No Setup Fees
+                  </span>
                 </div>
               </div>
 
@@ -314,7 +365,7 @@ export default function Home() {
                   onClick={() => navigateToPage("/contact")}
                   className="group bg-gradient-to-r from-blue-600 to-blue-700 text-white px-6 sm:px-10 py-4 sm:py-5 rounded-xl text-base sm:text-lg font-bold hover:from-blue-500 hover:to-blue-600 transition-all duration-300 inline-flex items-center justify-center shadow-2xl hover:shadow-blue-500/25 hover:scale-105 transform"
                 >
-                  <span className="mr-2 sm:mr-3">🚀</span>
+                  <span className="mr-2 sm:mr-3"></span>
                   Get Free Strategy Call
                   <ArrowRight className="ml-2 sm:ml-3 h-5 w-5 sm:h-6 sm:w-6 group-hover:translate-x-1 transition-transform" />
                 </button>
@@ -325,30 +376,50 @@ export default function Home() {
             <div className="relative mt-8 lg:mt-0">
               <div className="bg-white/10 backdrop-blur-lg rounded-2xl p-6 sm:p-8 shadow-2xl border border-white/20 mx-4 sm:mx-0">
                 <div className="flex items-center justify-between mb-6">
-                  <h3 className="text-xl sm:text-2xl font-bold text-white">Live Performance</h3>
+                  <h3 className="text-xl sm:text-2xl font-bold text-white">
+                    Live Performance
+                  </h3>
                   <div className="flex items-center text-green-400">
                     <div className="w-2 h-2 bg-green-400 rounded-full mr-2 animate-pulse"></div>
-                    <span className="text-xs sm:text-sm font-medium">Live Data</span>
+                    <span className="text-xs sm:text-sm font-medium">
+                      Live Data
+                    </span>
                   </div>
                 </div>
 
                 {/* Metrics Grid */}
                 <div className="grid grid-cols-2 gap-3 sm:gap-4 mb-6">
                   <div className="bg-white/10 rounded-xl p-3 sm:p-4 text-center">
-                    <div className="text-2xl sm:text-3xl font-bold text-yellow-400 mb-1">+340%</div>
-                    <div className="text-xs sm:text-sm text-slate-200">Sales Growth</div>
+                    <div className="text-2xl sm:text-3xl font-bold text-yellow-400 mb-1">
+                      +340%
+                    </div>
+                    <div className="text-xs sm:text-sm text-slate-200">
+                      Sales Growth
+                    </div>
                   </div>
                   <div className="bg-white/10 rounded-xl p-3 sm:p-4 text-center">
-                    <div className="text-2xl sm:text-3xl font-bold text-green-400 mb-1">$2.4M</div>
-                    <div className="text-xs sm:text-sm text-slate-200">Revenue Generated</div>
+                    <div className="text-2xl sm:text-3xl font-bold text-green-400 mb-1">
+                      $2.4M
+                    </div>
+                    <div className="text-xs sm:text-sm text-slate-200">
+                      Revenue Generated
+                    </div>
                   </div>
                   <div className="bg-white/10 rounded-xl p-3 sm:p-4 text-center">
-                    <div className="text-2xl sm:text-3xl font-bold text-purple-400 mb-1">98%</div>
-                    <div className="text-xs sm:text-sm text-slate-200">Client Satisfaction</div>
+                    <div className="text-2xl sm:text-3xl font-bold text-purple-400 mb-1">
+                      98%
+                    </div>
+                    <div className="text-xs sm:text-sm text-slate-200">
+                      Client Satisfaction
+                    </div>
                   </div>
                   <div className="bg-white/10 rounded-xl p-3 sm:p-4 text-center">
-                    <div className="text-2xl sm:text-3xl font-bold text-orange-400 mb-1">24hrs</div>
-                    <div className="text-xs sm:text-sm text-slate-200">Avg Response</div>
+                    <div className="text-2xl sm:text-3xl font-bold text-orange-400 mb-1">
+                      24hrs
+                    </div>
+                    <div className="text-xs sm:text-sm text-slate-200">
+                      Avg Response
+                    </div>
                   </div>
                 </div>
 
@@ -356,7 +427,9 @@ export default function Home() {
                 <div className="space-y-4">
                   <div>
                     <div className="flex justify-between text-xs sm:text-sm mb-2">
-                      <span className="text-slate-200">Amazon Optimization</span>
+                      <span className="text-slate-200">
+                        Amazon Optimization
+                      </span>
                       <span className="text-white font-semibold">95%</span>
                     </div>
                     <div className="w-full bg-white/20 rounded-full h-2">
@@ -393,21 +466,13 @@ export default function Home() {
                   </button>
                 </div>
               </div>
-
-              {/* Floating Elements */}
-              <div className="absolute -top-4 -right-2 sm:-right-6 bg-blue-600 text-white px-3 sm:px-6 py-2 sm:py-3 rounded-full text-xs sm:text-sm font-bold animate-bounce shadow-lg">
-                🔥 Live Demo
-              </div>
-              <div className="absolute -bottom-4 -left-2 sm:-left-6 bg-gray-700 text-white px-3 sm:px-6 py-2 sm:py-3 rounded-full text-xs sm:text-sm font-bold animate-pulse shadow-lg">
-                ✨ AI-Powered
-              </div>
             </div>
           </div>
         </div>
       </motion.section>
 
       {/* Stats Section */}
-      <motion.section 
+      <motion.section
         ref={statsRef}
         initial="hidden"
         animate={isStatsInView ? "show" : "hidden"}
@@ -417,13 +482,21 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
             {stats.map((stat, index) => (
-              <motion.div key={index} variants={item} className="text-center group">
-                <div className="bg-gradient-to-br from-gray-50 to-blue-50 rounded-2xl p-6 sm:p-8 hover:shadow-xl transition-all duration-300 border border-gray-200 group-hover:border-blue-300 mx-4 sm:mx-0">
+              <motion.div
+                key={index}
+                variants={item}
+                className="text-center group"
+              >
+                <div className="bg-gradient-to-br from-gray-50 to-blue-50 rounded-2xl p-6 sm:p-8 hover:shadow-xl transition-all duration-300  border-gray-200 group-hover:border-blue-300 mx-4 sm:mx-0">
                   <div className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-800 mb-3 group-hover:text-blue-600 transition-colors">
                     {stat.number}
                   </div>
-                  <div className="text-lg sm:text-xl font-semibold text-gray-700 mb-2">{stat.label}</div>
-                  <div className="text-sm sm:text-base text-gray-600">{stat.description}</div>
+                  <div className="text-lg sm:text-xl font-semibold text-gray-700 mb-2">
+                    {stat.label}
+                  </div>
+                  <div className="text-sm sm:text-base text-gray-600">
+                    {stat.description}
+                  </div>
                 </div>
               </motion.div>
             ))}
@@ -432,7 +505,7 @@ export default function Home() {
       </motion.section>
 
       {/* Services Section */}
-      <motion.section 
+      <motion.section
         ref={servicesRef}
         initial="hidden"
         animate={isServicesInView ? "show" : "hidden"}
@@ -445,12 +518,12 @@ export default function Home() {
               Our Core Services
             </h2>
             <p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed px-4 sm:px-0">
-              Comprehensive e-commerce solutions designed to accelerate your business growth with cutting-edge
-              technology
+              Comprehensive e-commerce solutions designed to accelerate your
+              business growth with cutting-edge technology
             </p>
           </div>
 
-          <motion.div 
+          <motion.div
             variants={container}
             initial="hidden"
             animate={isServicesInView ? "show" : "hidden"}
@@ -460,7 +533,7 @@ export default function Home() {
               <motion.div
                 key={index}
                 variants={item}
-                className="bg-white rounded-2xl sm:rounded-3xl shadow-xl p-6 sm:p-8 lg:p-10 hover:shadow-2xl transition-all duration-300 group cursor-pointer border border-gray-200 hover:border-blue-300 mx-4 sm:mx-0"
+                className="bg-white rounded-2xl sm:rounded-3xl shadow-xl p-6 sm:p-8 lg:p-10 hover:shadow-2xl transition-all duration-300 group cursor-pointer  border-gray-200 hover:border-blue-300 mx-4 sm:mx-0"
                 onClick={() => navigateToPage("/services")}
               >
                 <div className="flex flex-col sm:flex-row items-start mb-6 sm:mb-8">
@@ -474,7 +547,9 @@ export default function Home() {
                     <p className="text-gray-600 leading-relaxed mb-3 sm:mb-4 text-sm sm:text-base">
                       {service.description}
                     </p>
-                    <div className="text-blue-600 font-semibold text-sm sm:text-base">{service.stats}</div>
+                    <div className="text-blue-600 font-semibold text-sm sm:text-base">
+                      {service.stats}
+                    </div>
                   </div>
                 </div>
 
@@ -482,7 +557,9 @@ export default function Home() {
                 <div className="bg-gradient-to-br from-gray-50 to-blue-50 rounded-xl sm:rounded-2xl p-4 sm:p-6 border border-gray-200">
                   <div className="aspect-video bg-white rounded-lg sm:rounded-xl shadow-inner flex flex-col items-center justify-center text-gray-400">
                     <ImageIcon className="h-8 w-8 sm:h-12 sm:w-12 mb-2 sm:mb-3" />
-                    <p className="text-xs sm:text-sm text-center font-medium">{service.title} Dashboard</p>
+                    <p className="text-xs sm:text-sm text-center font-medium">
+                      {service.title} Dashboard
+                    </p>
                   </div>
                 </div>
               </motion.div>
@@ -502,7 +579,7 @@ export default function Home() {
       </motion.section>
 
       {/* How It Works Section */}
-      <motion.section 
+      <motion.section
         ref={processRef}
         initial="hidden"
         animate={isProcessInView ? "show" : "hidden"}
@@ -511,20 +588,26 @@ export default function Home() {
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16 sm:mb-20">
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold text-gray-800 mb-6">How It Works</h2>
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold text-gray-800 mb-6">
+              How It Works
+            </h2>
             <p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto px-4 sm:px-0">
               Our proven 4-step process to transform your e-commerce business
             </p>
           </div>
 
-          <motion.div 
+          <motion.div
             variants={container}
             initial="hidden"
             animate={isProcessInView ? "show" : "hidden"}
             className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8"
           >
             {processSteps.map((step, index) => (
-              <motion.div key={index} variants={item} className="text-center group">
+              <motion.div
+                key={index}
+                variants={item}
+                className="text-center group"
+              >
                 <div className="relative mb-6 sm:mb-8 mx-4 sm:mx-0">
                   {/* Step Image Placeholder */}
                   <div className="bg-gradient-to-br from-gray-100 to-blue-100 rounded-xl sm:rounded-2xl p-6 sm:p-8 border-2 border-dashed border-gray-300 group-hover:border-blue-400 transition-all duration-300">
@@ -540,8 +623,12 @@ export default function Home() {
                   </div>
                 </div>
 
-                <h3 className="text-lg sm:text-xl font-bold text-gray-800 mb-3 sm:mb-4 px-4 sm:px-0">{step.title}</h3>
-                <p className="text-gray-600 leading-relaxed text-sm sm:text-base px-4 sm:px-0">{step.description}</p>
+                <h3 className="text-lg sm:text-xl font-bold text-gray-800 mb-3 sm:mb-4 px-4 sm:px-0">
+                  {step.title}
+                </h3>
+                <p className="text-gray-600 leading-relaxed text-sm sm:text-base px-4 sm:px-0">
+                  {step.description}
+                </p>
               </motion.div>
             ))}
           </motion.div>
@@ -558,7 +645,7 @@ export default function Home() {
       </motion.section>
 
       {/* Features Section */}
-      <motion.section 
+      <motion.section
         ref={featuresRef}
         initial="hidden"
         animate={isFeaturesInView ? "show" : "hidden"}
@@ -576,8 +663,8 @@ export default function Home() {
                 Why Choose Urbantech?
               </h2>
               <p className="text-lg sm:text-xl text-gray-300 mb-8 sm:mb-12 leading-relaxed">
-                We combine cutting-edge technology with proven strategies to deliver exceptional results for your
-                e-commerce business.
+                We combine cutting-edge technology with proven strategies to
+                deliver exceptional results for your e-commerce business.
               </p>
 
               <div className="space-y-6 sm:space-y-8">
@@ -587,8 +674,12 @@ export default function Home() {
                       {feature.icon}
                     </div>
                     <div>
-                      <h3 className="text-lg sm:text-xl font-semibold mb-2">{feature.title}</h3>
-                      <p className="text-gray-300 text-sm sm:text-base">{feature.description}</p>
+                      <h3 className="text-lg sm:text-xl font-semibold mb-2">
+                        {feature.title}
+                      </h3>
+                      <p className="text-gray-300 text-sm sm:text-base">
+                        {feature.description}
+                      </p>
                     </div>
                   </div>
                 ))}
@@ -596,7 +687,7 @@ export default function Home() {
             </motion.div>
 
             {/* Features Image Placeholder */}
-            <motion.div 
+            <motion.div
               variants={slideInFromRight}
               initial="hidden"
               animate={isFeaturesInView ? "show" : "hidden"}
@@ -604,9 +695,12 @@ export default function Home() {
             >
               <div className="aspect-square bg-white/5 rounded-xl sm:rounded-2xl flex flex-col items-center justify-center text-white/60">
                 <ImageIcon className="h-16 w-16 sm:h-20 sm:w-20 mb-4 sm:mb-6" />
-                <h3 className="text-xl sm:text-2xl font-bold mb-3 sm:mb-4">Platform Features</h3>
+                <h3 className="text-xl sm:text-2xl font-bold mb-3 sm:mb-4">
+                  Platform Features
+                </h3>
                 <p className="text-center text-base sm:text-lg px-4">
-                  Interactive showcase of our platform's key features and capabilities
+                  Interactive showcase of our platform's key features and
+                  capabilities
                 </p>
               </div>
             </motion.div>
@@ -615,7 +709,7 @@ export default function Home() {
       </motion.section>
 
       {/* Testimonials Section */}
-      <motion.section 
+      <motion.section
         ref={testimonialsRef}
         initial="hidden"
         animate={isTestimonialsInView ? "show" : "hidden"}
@@ -627,10 +721,12 @@ export default function Home() {
             <h2 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold text-gray-800 mb-6">
               What Our Clients Say
             </h2>
-            <p className="text-lg sm:text-xl text-gray-600">Real stories from businesses we've helped transform</p>
+            <p className="text-lg sm:text-xl text-gray-600">
+              Real stories from businesses we've helped transform
+            </p>
           </div>
 
-          <motion.div 
+          <motion.div
             variants={container}
             initial="hidden"
             animate={isTestimonialsInView ? "show" : "hidden"}
@@ -644,7 +740,10 @@ export default function Home() {
               >
                 <div className="flex items-center mb-4 sm:mb-6">
                   {[...Array(testimonial.rating)].map((_, i) => (
-                    <Star key={i} className="h-4 w-4 sm:h-5 sm:w-5 text-yellow-400 fill-current" />
+                    <Star
+                      key={i}
+                      className="h-4 w-4 sm:h-5 sm:w-5 text-yellow-400 fill-current"
+                    />
                   ))}
                 </div>
 
@@ -661,9 +760,15 @@ export default function Home() {
                   </div>
 
                   <div>
-                    <div className="font-bold text-gray-800 text-base sm:text-lg">{testimonial.name}</div>
-                    <div className="text-gray-600 text-sm sm:text-base">{testimonial.role}</div>
-                    <div className="text-blue-600 font-semibold text-sm sm:text-base">{testimonial.company}</div>
+                    <div className="font-bold text-gray-800 text-base sm:text-lg">
+                      {testimonial.name}
+                    </div>
+                    <div className="text-gray-600 text-sm sm:text-base">
+                      {testimonial.role}
+                    </div>
+                    <div className="text-blue-600 font-semibold text-sm sm:text-base">
+                      {testimonial.company}
+                    </div>
                   </div>
                 </div>
               </motion.div>
@@ -673,7 +778,7 @@ export default function Home() {
       </motion.section>
 
       {/* CTA Section */}
-      <motion.section 
+      <motion.section
         initial="hidden"
         whileInView="show"
         viewport={{ amount: 0.3 }}
@@ -685,7 +790,8 @@ export default function Home() {
             Ready to Transform Your Business?
           </h2>
           <p className="text-lg sm:text-xl text-gray-300 mb-8 sm:mb-12 leading-relaxed px-4 sm:px-0">
-            Join hundreds of successful brands that trust Urbantech for their e-commerce growth
+            Join hundreds of successful brands that trust Urbantech for their
+            e-commerce growth
           </p>
           <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center px-4 sm:px-0">
             <button
@@ -705,5 +811,5 @@ export default function Home() {
         </div>
       </motion.section>
     </div>
-  )
+  );
 }

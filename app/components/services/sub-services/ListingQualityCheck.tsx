@@ -1,9 +1,15 @@
-"use client"
+"use client";
 
-import { Button } from "@/components/ui/button"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { Badge } from "@/components/ui/badge"
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
+import { Button } from "@/components/ui/button";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import {
   ArrowRight,
   Shield,
@@ -17,8 +23,8 @@ import {
   TrendingUp,
   Eye,
   Zap,
-} from "lucide-react"
-import Link from "next/link"
+} from "lucide-react";
+import Link from "next/link";
 
 export default function ListingQualityCheck() {
   return (
@@ -27,14 +33,19 @@ export default function ListingQualityCheck() {
       <section className="relative py-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <Badge className="mb-4 bg-blue-100 text-blue-800 hover:bg-blue-200">Listing Optimization</Badge>
+            <Badge className="mb-4 bg-blue-100 text-blue-800 hover:bg-blue-200">
+              Listing Optimization
+            </Badge>
             <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
               Listing Quality{" "}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">Check</span>
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">
+                Check
+              </span>
             </h1>
             <p className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
-              Comprehensive listing audits to ensure maximum performance, compliance, and conversion optimization.
-              Identify and fix issues before they impact sales.
+              Comprehensive listing audits to ensure maximum performance,
+              compliance, and conversion optimization. Identify and fix issues
+              before they impact sales.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link href="/contact">
@@ -46,9 +57,15 @@ export default function ListingQualityCheck() {
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </Button>
               </Link>
-              <Button size="lg" variant="outline" className="border-blue-200 text-blue-800 hover:bg-blue-50">
-                View Audit Sample
-              </Button>
+              <Link href="/portfolio">
+                <Button
+                  size="lg"
+                  variant="outline"
+                  className="border-blue-200 text-blue-800 hover:bg-blue-500"
+                >
+                  View Audit Sample
+                </Button>
+              </Link>
             </div>
           </div>
         </div>
@@ -60,7 +77,11 @@ export default function ListingQualityCheck() {
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
             {[
               { icon: Shield, value: "99.8%", label: "Compliance Rate" },
-              { icon: TrendingUp, value: "145%", label: "Performance Improvement" },
+              {
+                icon: TrendingUp,
+                value: "145%",
+                label: "Performance Improvement",
+              },
               { icon: CheckCircle, value: "50+", label: "Quality Checkpoints" },
               { icon: Award, value: "5000+", label: "Listings Audited" },
             ].map((stat, index) => (
@@ -70,7 +91,9 @@ export default function ListingQualityCheck() {
               >
                 <CardContent className="pt-6">
                   <stat.icon className="h-8 w-8 text-blue-600 mx-auto mb-4" />
-                  <div className="text-3xl font-bold text-gray-900 mb-2">{stat.value}</div>
+                  <div className="text-3xl font-bold text-gray-900 mb-2">
+                    {stat.value}
+                  </div>
                   <div className="text-gray-600">{stat.label}</div>
                 </CardContent>
               </Card>
@@ -83,9 +106,12 @@ export default function ListingQualityCheck() {
       <section className="py-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Comprehensive Quality Assessment</h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+              Comprehensive Quality Assessment
+            </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Multi-point inspection covering every aspect of your Amazon listing performance
+              Multi-point inspection covering every aspect of your Amazon
+              listing performance
             </p>
           </div>
 
@@ -93,19 +119,19 @@ export default function ListingQualityCheck() {
             <TabsList className="grid w-full grid-cols-1 md:grid-cols-3 mb-8 bg-white/50 backdrop-blur-sm">
               <TabsTrigger
                 value="compliance"
-                className="data-[state=active]:bg-blue-600 data-[state=active]:text-white"
+                className="data-[state=active]:bg-blue-600 data-[state=active]:text-white data-[state=inactive]:text-gray-700"
               >
                 Compliance Check
               </TabsTrigger>
               <TabsTrigger
                 value="optimization"
-                className="data-[state=active]:bg-blue-600 data-[state=active]:text-white"
+                className="data-[state=active]:bg-blue-600 data-[state=active]:text-white data-[state=inactive]:text-gray-700"
               >
                 Optimization Review
               </TabsTrigger>
               <TabsTrigger
                 value="performance"
-                className="data-[state=active]:bg-blue-600 data-[state=active]:text-white"
+                className="data-[state=active]:bg-blue-600 data-[state=active]:text-white data-[state=inactive]:text-gray-700"
               >
                 Performance Analysis
               </TabsTrigger>
@@ -129,7 +155,8 @@ export default function ListingQualityCheck() {
                   {
                     icon: CheckCircle,
                     title: "Content Guidelines",
-                    description: "Ensure all content meets Amazon's quality standards and prohibited content policies.",
+                    description:
+                      "Ensure all content meets Amazon's quality standards and prohibited content policies.",
                   },
                   {
                     icon: Award,
@@ -144,10 +171,14 @@ export default function ListingQualityCheck() {
                   >
                     <CardHeader>
                       <feature.icon className="h-8 w-8 text-blue-600 mb-2" />
-                      <CardTitle className="text-gray-900">{feature.title}</CardTitle>
+                      <CardTitle className="text-gray-900">
+                        {feature.title}
+                      </CardTitle>
                     </CardHeader>
                     <CardContent>
-                      <CardDescription className="text-gray-600">{feature.description}</CardDescription>
+                      <CardDescription className="text-gray-600">
+                        {feature.description}
+                      </CardDescription>
                     </CardContent>
                   </Card>
                 ))}
@@ -160,7 +191,8 @@ export default function ListingQualityCheck() {
                   {
                     icon: Search,
                     title: "SEO Optimization",
-                    description: "Analyze keyword placement, density, and search optimization opportunities.",
+                    description:
+                      "Analyze keyword placement, density, and search optimization opportunities.",
                   },
                   {
                     icon: FileText,
@@ -177,7 +209,8 @@ export default function ListingQualityCheck() {
                   {
                     icon: Star,
                     title: "Competitive Analysis",
-                    description: "Compare your listing against top competitors to identify improvement opportunities.",
+                    description:
+                      "Compare your listing against top competitors to identify improvement opportunities.",
                   },
                 ].map((feature, index) => (
                   <Card
@@ -186,10 +219,14 @@ export default function ListingQualityCheck() {
                   >
                     <CardHeader>
                       <feature.icon className="h-8 w-8 text-blue-600 mb-2" />
-                      <CardTitle className="text-gray-900">{feature.title}</CardTitle>
+                      <CardTitle className="text-gray-900">
+                        {feature.title}
+                      </CardTitle>
                     </CardHeader>
                     <CardContent>
-                      <CardDescription className="text-gray-600">{feature.description}</CardDescription>
+                      <CardDescription className="text-gray-600">
+                        {feature.description}
+                      </CardDescription>
                     </CardContent>
                   </Card>
                 ))}
@@ -202,12 +239,14 @@ export default function ListingQualityCheck() {
                   {
                     icon: TrendingUp,
                     title: "Conversion Analysis",
-                    description: "Evaluate conversion rates and identify factors affecting purchase decisions.",
+                    description:
+                      "Evaluate conversion rates and identify factors affecting purchase decisions.",
                   },
                   {
                     icon: Eye,
                     title: "Visibility Assessment",
-                    description: "Analyze search ranking performance and discoverability factors.",
+                    description:
+                      "Analyze search ranking performance and discoverability factors.",
                   },
                   {
                     icon: Zap,
@@ -218,7 +257,8 @@ export default function ListingQualityCheck() {
                   {
                     icon: Award,
                     title: "Improvement Roadmap",
-                    description: "Provide actionable recommendations with prioritized improvement strategies.",
+                    description:
+                      "Provide actionable recommendations with prioritized improvement strategies.",
                   },
                 ].map((feature, index) => (
                   <Card
@@ -227,10 +267,14 @@ export default function ListingQualityCheck() {
                   >
                     <CardHeader>
                       <feature.icon className="h-8 w-8 text-blue-600 mb-2" />
-                      <CardTitle className="text-gray-900">{feature.title}</CardTitle>
+                      <CardTitle className="text-gray-900">
+                        {feature.title}
+                      </CardTitle>
                     </CardHeader>
                     <CardContent>
-                      <CardDescription className="text-gray-600">{feature.description}</CardDescription>
+                      <CardDescription className="text-gray-600">
+                        {feature.description}
+                      </CardDescription>
                     </CardContent>
                   </Card>
                 ))}
@@ -245,18 +289,30 @@ export default function ListingQualityCheck() {
         <div className="max-w-4xl mx-auto text-center">
           <Card className="bg-gradient-to-r from-blue-600 to-indigo-600 border-0 text-white">
             <CardContent className="pt-8 pb-8">
-              <h2 className="text-3xl md:text-4xl font-bold mb-4">Ready to Optimize Your Listings?</h2>
+              <h2 className="text-3xl md:text-4xl font-bold mb-4">
+                Ready to Optimize Your Listings?
+              </h2>
               <p className="text-xl mb-8 text-blue-100">
-                Get a comprehensive quality audit and actionable recommendations to boost your listing performance
+                Get a comprehensive quality audit and actionable recommendations
+                to boost your listing performance
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button size="lg" className="bg-white text-blue-600 hover:bg-gray-100">
+                <Button
+                  size="lg"
+                  className="bg-white text-blue-600 hover:bg-gray-100"
+                >
                   <Link href="/contact" className="flex items-center">
-                    Get Free Audit <ArrowRight className="ml-2 h-4 w-4" />
+                    Get Audit <ArrowRight className="ml-2 h-4 w-4" />
                   </Link>
                 </Button>
-                <Button size="lg" variant="outline" className="border-white text-white hover:bg-white/10">
-                  <Link href="/services/listing-optimization">Back to Listing Services</Link>
+                <Button
+                  size="lg"
+                  variant="outline"
+                  className="border-white text-white hover:bg-white/10"
+                >
+                  <Link href="/services/listing-optimization">
+                    Back to Listing Services
+                  </Link>
                 </Button>
               </div>
             </CardContent>
@@ -264,5 +320,5 @@ export default function ListingQualityCheck() {
         </div>
       </section>
     </div>
-  )
+  );
 }

@@ -1,8 +1,16 @@
-"use client"
+"use client";
 
-import type React from "react"
-import { useState } from "react"
-import { Mail, Phone, MapPin, Clock, Send, CheckCircle, MessageCircle } from "lucide-react"
+import type React from "react";
+import { useState } from "react";
+import {
+  Mail,
+  Phone,
+  MapPin,
+  Clock,
+  Send,
+  CheckCircle,
+  MessageCircle,
+} from "lucide-react";
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -12,22 +20,26 @@ export default function Contact() {
     phone: "",
     service: "",
     message: "",
-  })
+  });
 
-  const [isSubmitted, setIsSubmitted] = useState(false)
+  const [isSubmitted, setIsSubmitted] = useState(false);
 
   const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault()
-    setIsSubmitted(true)
-    setTimeout(() => setIsSubmitted(false), 3000)
-  }
+    e.preventDefault();
+    setIsSubmitted(true);
+    setTimeout(() => setIsSubmitted(false), 3000);
+  };
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+  const handleChange = (
+    e: React.ChangeEvent<
+      HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
+    >
+  ) => {
     setFormData({
       ...formData,
       [e.target.name]: e.target.value,
-    })
-  }
+    });
+  };
 
   const contactInfo = [
     {
@@ -54,7 +66,7 @@ export default function Contact() {
       details: "Monday - Friday: 8am - 6pm EST",
       description: "Weekend support available",
     },
-  ]
+  ];
 
   const services = [
     "AI-Powered Listing Optimization",
@@ -64,7 +76,7 @@ export default function Contact() {
     "Professional Content Creation",
     "Intelligent Process Automation",
     "Custom Solution",
-  ]
+  ];
 
   return (
     <div className="min-h-screen bg-gray-50">
@@ -79,7 +91,8 @@ export default function Contact() {
               </span>
             </h1>
             <p className="text-xl text-gray-200 max-w-4xl mx-auto leading-relaxed">
-              Ready to transform your e-commerce business? Let's discuss how we can help you achieve your goals
+              Ready to transform your e-commerce business? Let's discuss how we
+              can help you achieve your goals
             </p>
           </div>
         </div>
@@ -91,19 +104,28 @@ export default function Contact() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-20">
             {/* Contact Form */}
             <div className="bg-white rounded-3xl shadow-2xl p-12 border border-gray-200">
-              <h2 className="text-4xl font-bold text-gray-800 mb-10">Send us a message</h2>
+              <h2 className="text-4xl font-bold text-gray-800 mb-10">
+                Send us a message
+              </h2>
 
               {isSubmitted ? (
                 <div className="text-center py-16">
                   <CheckCircle className="h-20 w-20 text-green-500 mx-auto mb-6" />
-                  <h3 className="text-3xl font-bold text-gray-800 mb-4">Message Sent!</h3>
-                  <p className="text-gray-600 text-lg">We'll get back to you within 24 hours.</p>
+                  <h3 className="text-3xl font-bold text-gray-800 mb-4">
+                    Message Sent!
+                  </h3>
+                  <p className="text-gray-600 text-lg">
+                    We'll get back to you within 24 hours.
+                  </p>
                 </div>
               ) : (
                 <form onSubmit={handleSubmit} className="space-y-8">
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                     <div>
-                      <label htmlFor="name" className="block text-sm font-semibold text-gray-700 mb-3">
+                      <label
+                        htmlFor="name"
+                        className="block text-sm font-semibold text-gray-700 mb-3"
+                      >
                         Full Name *
                       </label>
                       <input
@@ -113,12 +135,15 @@ export default function Contact() {
                         required
                         value={formData.name}
                         onChange={handleChange}
-                        className="w-full px-6 py-4 border-2 border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300"
+                        className="w-full px-6 py-4 border-2 border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300 text-gray-700"
                         placeholder="Your full name"
                       />
                     </div>
                     <div>
-                      <label htmlFor="email" className="block text-sm font-semibold text-gray-700 mb-3">
+                      <label
+                        htmlFor="email"
+                        className="block text-sm font-semibold text-gray-700 mb-3"
+                      >
                         Email Address *
                       </label>
                       <input
@@ -128,7 +153,7 @@ export default function Contact() {
                         required
                         value={formData.email}
                         onChange={handleChange}
-                        className="w-full px-6 py-4 border-2 border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300"
+                        className="w-full px-6 py-4 border-2 border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300 text-gray-700"
                         placeholder="your@email.com"
                       />
                     </div>
@@ -136,7 +161,10 @@ export default function Contact() {
 
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                     <div>
-                      <label htmlFor="company" className="block text-sm font-semibold text-gray-700 mb-3">
+                      <label
+                        htmlFor="company"
+                        className="block text-sm font-semibold text-gray-700 mb-3"
+                      >
                         Company Name
                       </label>
                       <input
@@ -145,12 +173,15 @@ export default function Contact() {
                         name="company"
                         value={formData.company}
                         onChange={handleChange}
-                        className="w-full px-6 py-4 border-2 border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300"
+                        className="w-full px-6 py-4 border-2 border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300 text-gray-700"
                         placeholder="Your company"
                       />
                     </div>
                     <div>
-                      <label htmlFor="phone" className="block text-sm font-semibold text-gray-700 mb-3">
+                      <label
+                        htmlFor="phone"
+                        className="block text-sm font-semibold text-gray-700 mb-3"
+                      >
                         Phone Number
                       </label>
                       <input
@@ -159,14 +190,17 @@ export default function Contact() {
                         name="phone"
                         value={formData.phone}
                         onChange={handleChange}
-                        className="w-full px-6 py-4 border-2 border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300"
+                        className="w-full px-6 py-4 border-2 border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300 text-gray-700"
                         placeholder="+1 (234) 567-8900"
                       />
                     </div>
                   </div>
 
                   <div>
-                    <label htmlFor="service" className="block text-sm font-semibold text-gray-700 mb-3">
+                    <label
+                      htmlFor="service"
+                      className="block text-sm font-semibold text-gray-700 mb-3"
+                    >
                       Service Interest
                     </label>
                     <select
@@ -174,7 +208,7 @@ export default function Contact() {
                       name="service"
                       value={formData.service}
                       onChange={handleChange}
-                      className="w-full px-6 py-4 border-2 border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300"
+                      className="w-full px-6 py-4 border-2 border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300 text-gray-700"
                     >
                       <option value="">Select a service</option>
                       {services.map((service, index) => (
@@ -186,7 +220,10 @@ export default function Contact() {
                   </div>
 
                   <div>
-                    <label htmlFor="message" className="block text-sm font-semibold text-gray-700 mb-3">
+                    <label
+                      htmlFor="message"
+                      className="block text-sm font-semibold text-gray-700 mb-3"
+                    >
                       Message *
                     </label>
                     <textarea
@@ -196,7 +233,7 @@ export default function Contact() {
                       rows={6}
                       value={formData.message}
                       onChange={handleChange}
-                      className="w-full px-6 py-4 border-2 border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300 resize-none"
+                      className="w-full px-6 py-4 border-2 border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300 resize-none text-gray-700"
                       placeholder="Tell us about your project and goals..."
                     />
                   </div>
@@ -215,7 +252,9 @@ export default function Contact() {
             {/* Contact Information */}
             <div className="space-y-10">
               <div>
-                <h2 className="text-4xl font-bold text-gray-800 mb-10">Contact Information</h2>
+                <h2 className="text-4xl font-bold text-gray-800 mb-10">
+                  Contact Information
+                </h2>
                 <div className="space-y-8">
                   {contactInfo.map((info, index) => (
                     <div
@@ -227,8 +266,12 @@ export default function Contact() {
                           {info.icon}
                         </div>
                         <div>
-                          <h3 className="text-xl font-bold text-gray-800 mb-2">{info.title}</h3>
-                          <p className="text-gray-700 font-semibold mb-2">{info.details}</p>
+                          <h3 className="text-xl font-bold text-gray-800 mb-2">
+                            {info.title}
+                          </h3>
+                          <p className="text-gray-700 font-semibold mb-2">
+                            {info.details}
+                          </p>
                           <p className="text-gray-600">{info.description}</p>
                         </div>
                       </div>
@@ -248,7 +291,9 @@ export default function Contact() {
                     className="flex items-center bg-white/10 backdrop-blur-sm rounded-xl p-4 hover:bg-white/20 transition-colors border border-white/20"
                   >
                     <Phone className="h-6 w-6 mr-4" />
-                    <span className="font-semibold">Call Now: +1 (234) 567-8900</span>
+                    <span className="font-semibold">
+                      Call Now: +1 (234) 567-8900
+                    </span>
                   </a>
                   <a
                     href="https://wa.me/1234567890"
@@ -257,7 +302,9 @@ export default function Contact() {
                     className="flex items-center bg-green-600 rounded-xl p-4 hover:bg-green-700 transition-colors"
                   >
                     <MessageCircle className="h-6 w-6 mr-4" />
-                    <span className="font-semibold">WhatsApp for Quick Response</span>
+                    <span className="font-semibold">
+                      WhatsApp for Quick Response
+                    </span>
                   </a>
                 </div>
               </div>
@@ -268,8 +315,12 @@ export default function Contact() {
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Visit Our Office</h2>
-            <p className="text-xl text-gray-600">Located in the heart of New York's business district</p>
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+              Visit Our Office
+            </h2>
+            <p className="text-xl text-gray-600">
+              Located in the heart of New York's business district
+            </p>
           </div>
 
           <div className="bg-gray-200 h-96 rounded-xl flex items-center justify-center">
@@ -287,5 +338,5 @@ export default function Contact() {
         </div>
       </section>
     </div>
-  )
+  );
 }

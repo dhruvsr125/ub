@@ -1,11 +1,26 @@
-"use client"
+"use client";
 
-import { Button } from "@/components/ui/button"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { Badge } from "@/components/ui/badge"
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
-import { CheckCircle, Search, FileText, Award, TrendingUp, ArrowRight, Star, Target } from "lucide-react"
-import Link from "next/link"
+import { Button } from "@/components/ui/button";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import {
+  CheckCircle,
+  Search,
+  FileText,
+  Award,
+  TrendingUp,
+  ArrowRight,
+  Star,
+  Target,
+} from "lucide-react";
+import Link from "next/link";
 
 export default function ListingOptimization() {
   return (
@@ -14,7 +29,9 @@ export default function ListingOptimization() {
       <section className="relative py-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
           <div className="text-center">
-            <Badge className="mb-4 bg-blue-100 text-blue-800 hover:bg-blue-200">Amazon Listing Experts</Badge>
+            <Badge className="mb-4 bg-blue-100 text-blue-800 hover:bg-blue-200">
+              Amazon Listing Experts
+            </Badge>
             <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
               Listing
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">
@@ -23,8 +40,9 @@ export default function ListingOptimization() {
               </span>
             </h1>
             <p className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
-              Transform your Amazon listings into conversion machines with our comprehensive optimization services. From
-              creation to quality checks, we ensure maximum visibility and sales.
+              Transform your Amazon listings into conversion machines with our
+              comprehensive optimization services. From creation to quality
+              checks, we ensure maximum visibility and sales.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link href="/contact">
@@ -36,9 +54,15 @@ export default function ListingOptimization() {
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </Button>
               </Link>
-              <Button size="lg" variant="outline" className="border-blue-200 text-blue-800 hover:bg-blue-50">
-                View Success Cases
-              </Button>
+              <Link href="/portfolio">
+                <Button
+                  size="lg"
+                  variant="outline"
+                  className="border-blue-200 text-blue-800 hover:bg-blue-500"
+                >
+                  View Success Cases
+                </Button>
+              </Link>
             </div>
           </div>
         </div>
@@ -48,7 +72,9 @@ export default function ListingOptimization() {
       <section className="py-12 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-8">
-            <h2 className="text-2xl font-bold text-gray-900 mb-4">Our Listing Optimization Services</h2>
+            <h2 className="text-2xl font-bold text-gray-900 mb-4">
+              Our Listing Optimization Services
+            </h2>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
@@ -92,7 +118,9 @@ export default function ListingOptimization() {
                     <CardTitle className="text-blue-900 group-hover:text-blue-700 transition-colors text-sm">
                       {service.title}
                     </CardTitle>
-                    <CardDescription className="text-xs">{service.description}</CardDescription>
+                    <CardDescription className="text-xs">
+                      {service.description}
+                    </CardDescription>
                   </CardHeader>
                   <CardContent>
                     <div className="flex items-center text-blue-600 font-medium group-hover:text-blue-700 transition-colors text-sm">
@@ -116,10 +144,15 @@ export default function ListingOptimization() {
               { icon: Star, label: "Listings Created", value: "5000+" },
               { icon: Award, label: "Success Rate", value: "98%" },
             ].map((stat, index) => (
-              <Card key={index} className="text-center border-0 shadow-lg bg-white/80 backdrop-blur-sm">
+              <Card
+                key={index}
+                className="text-center border-0 shadow-lg bg-white/80 backdrop-blur-sm"
+              >
                 <CardContent className="pt-6">
                   <stat.icon className="h-12 w-12 text-blue-600 mx-auto mb-4" />
-                  <div className="text-3xl font-bold text-gray-900 mb-2">{stat.value}</div>
+                  <div className="text-3xl font-bold text-gray-900 mb-2">
+                    {stat.value}
+                  </div>
                   <div className="text-gray-600">{stat.label}</div>
                 </CardContent>
               </Card>
@@ -136,7 +169,8 @@ export default function ListingOptimization() {
               Complete Listing Optimization Solutions
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              From keyword research to final optimization, we handle every aspect of your Amazon listings
+              From keyword research to final optimization, we handle every
+              aspect of your Amazon listings
             </p>
           </div>
 
@@ -153,7 +187,8 @@ export default function ListingOptimization() {
                 {[
                   {
                     title: "Product Title Optimization",
-                    description: "Craft compelling titles that rank and convert",
+                    description:
+                      "Craft compelling titles that rank and convert",
                     features: [
                       "Keyword Integration",
                       "Character Optimization",
@@ -163,13 +198,25 @@ export default function ListingOptimization() {
                   },
                   {
                     title: "Bullet Points & Features",
-                    description: "Highlight key benefits and features effectively",
-                    features: ["Benefit-Focused", "Keyword Rich", "Scannable Format", "Conversion Optimized"],
+                    description:
+                      "Highlight key benefits and features effectively",
+                    features: [
+                      "Benefit-Focused",
+                      "Keyword Rich",
+                      "Scannable Format",
+                      "Conversion Optimized",
+                    ],
                   },
                   {
                     title: "Product Description",
-                    description: "Detailed descriptions that inform and persuade",
-                    features: ["HTML Formatting", "Keyword Density", "Story Telling", "Call-to-Action"],
+                    description:
+                      "Detailed descriptions that inform and persuade",
+                    features: [
+                      "HTML Formatting",
+                      "Keyword Density",
+                      "Story Telling",
+                      "Call-to-Action",
+                    ],
                   },
                 ].map((service, index) => (
                   <Card
@@ -177,13 +224,18 @@ export default function ListingOptimization() {
                     className="border-0 shadow-lg bg-white/80 backdrop-blur-sm hover:shadow-xl transition-all duration-300"
                   >
                     <CardHeader>
-                      <CardTitle className="text-blue-900">{service.title}</CardTitle>
+                      <CardTitle className="text-blue-900">
+                        {service.title}
+                      </CardTitle>
                       <CardDescription>{service.description}</CardDescription>
                     </CardHeader>
                     <CardContent>
                       <ul className="space-y-2">
                         {service.features.map((feature, idx) => (
-                          <li key={idx} className="flex items-center text-gray-600">
+                          <li
+                            key={idx}
+                            className="flex items-center text-gray-600"
+                          >
                             <CheckCircle className="h-4 w-4 text-green-500 mr-2 flex-shrink-0" />
                             {feature}
                           </li>
@@ -202,25 +254,43 @@ export default function ListingOptimization() {
                     icon: Target,
                     title: "SEO Optimization",
                     description: "Optimize for Amazon's search algorithm",
-                    features: ["A9 Algorithm", "Keyword Placement", "Search Ranking", "Visibility Boost"],
+                    features: [
+                      "A9 Algorithm",
+                      "Keyword Placement",
+                      "Search Ranking",
+                      "Visibility Boost",
+                    ],
                   },
                   {
                     icon: TrendingUp,
                     title: "Conversion Optimization",
                     description: "Maximize conversion rates and sales",
-                    features: ["A/B Testing", "Copy Optimization", "Image Enhancement", "Trust Building"],
+                    features: [
+                      "A/B Testing",
+                      "Copy Optimization",
+                      "Image Enhancement",
+                      "Trust Building",
+                    ],
                   },
                 ].map((item, index) => (
-                  <Card key={index} className="border-0 shadow-lg bg-white/80 backdrop-blur-sm">
+                  <Card
+                    key={index}
+                    className="border-0 shadow-lg bg-white/80 backdrop-blur-sm"
+                  >
                     <CardHeader>
                       <item.icon className="h-12 w-12 text-blue-600 mb-4" />
-                      <CardTitle className="text-blue-900">{item.title}</CardTitle>
+                      <CardTitle className="text-blue-900">
+                        {item.title}
+                      </CardTitle>
                       <CardDescription>{item.description}</CardDescription>
                     </CardHeader>
                     <CardContent>
                       <ul className="space-y-2">
                         {item.features.map((feature, idx) => (
-                          <li key={idx} className="flex items-center text-gray-600">
+                          <li
+                            key={idx}
+                            className="flex items-center text-gray-600"
+                          >
                             <CheckCircle className="h-4 w-4 text-green-500 mr-2 flex-shrink-0" />
                             {feature}
                           </li>
@@ -239,34 +309,52 @@ export default function ListingOptimization() {
                     <Search className="h-6 w-6 mr-2" />
                     Advanced Keyword Research & Analysis
                   </CardTitle>
-                  <CardDescription>Comprehensive keyword research to dominate your niche</CardDescription>
+                  <CardDescription>
+                    Comprehensive keyword research to dominate your niche
+                  </CardDescription>
                 </CardHeader>
                 <CardContent>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div>
-                      <h4 className="font-semibold text-gray-900 mb-3">Keyword Discovery</h4>
+                      <h4 className="font-semibold text-gray-900 mb-3">
+                        Keyword Discovery
+                      </h4>
                       <ul className="space-y-2">
-                        {["High-Volume Keywords", "Long-Tail Keywords", "Competitor Keywords", "Trending Terms"].map(
-                          (item, idx) => (
-                            <li key={idx} className="flex items-center text-gray-600">
-                              <CheckCircle className="h-4 w-4 text-green-500 mr-2 flex-shrink-0" />
-                              {item}
-                            </li>
-                          ),
-                        )}
+                        {[
+                          "High-Volume Keywords",
+                          "Long-Tail Keywords",
+                          "Competitor Keywords",
+                          "Trending Terms",
+                        ].map((item, idx) => (
+                          <li
+                            key={idx}
+                            className="flex items-center text-gray-600"
+                          >
+                            <CheckCircle className="h-4 w-4 text-green-500 mr-2 flex-shrink-0" />
+                            {item}
+                          </li>
+                        ))}
                       </ul>
                     </div>
                     <div>
-                      <h4 className="font-semibold text-gray-900 mb-3">Competitive Analysis</h4>
+                      <h4 className="font-semibold text-gray-900 mb-3">
+                        Competitive Analysis
+                      </h4>
                       <ul className="space-y-2">
-                        {["Competitor Listings", "Market Gaps", "Pricing Analysis", "Feature Comparison"].map(
-                          (item, idx) => (
-                            <li key={idx} className="flex items-center text-gray-600">
-                              <CheckCircle className="h-4 w-4 text-green-500 mr-2 flex-shrink-0" />
-                              {item}
-                            </li>
-                          ),
-                        )}
+                        {[
+                          "Competitor Listings",
+                          "Market Gaps",
+                          "Pricing Analysis",
+                          "Feature Comparison",
+                        ].map((item, idx) => (
+                          <li
+                            key={idx}
+                            className="flex items-center text-gray-600"
+                          >
+                            <CheckCircle className="h-4 w-4 text-green-500 mr-2 flex-shrink-0" />
+                            {item}
+                          </li>
+                        ))}
                       </ul>
                     </div>
                   </div>
@@ -281,29 +369,51 @@ export default function ListingOptimization() {
                     <Award className="h-6 w-6 mr-2" />
                     Brand & Category Compliance
                   </CardTitle>
-                  <CardDescription>Navigate Amazon's approval processes successfully</CardDescription>
+                  <CardDescription>
+                    Navigate Amazon's approval processes successfully
+                  </CardDescription>
                 </CardHeader>
                 <CardContent>
                   <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                     {[
                       {
                         title: "Brand Registry",
-                        items: ["Trademark Support", "Brand Protection", "Enhanced Content", "A+ Content Access"],
+                        items: [
+                          "Trademark Support",
+                          "Brand Protection",
+                          "Enhanced Content",
+                          "A+ Content Access",
+                        ],
                       },
                       {
                         title: "Category Approval",
-                        items: ["Gated Categories", "Documentation", "Compliance Check", "Application Support"],
+                        items: [
+                          "Gated Categories",
+                          "Documentation",
+                          "Compliance Check",
+                          "Application Support",
+                        ],
                       },
                       {
                         title: "Policy Compliance",
-                        items: ["Amazon Guidelines", "Content Policies", "Image Requirements", "Listing Standards"],
+                        items: [
+                          "Amazon Guidelines",
+                          "Content Policies",
+                          "Image Requirements",
+                          "Listing Standards",
+                        ],
                       },
                     ].map((category, index) => (
                       <div key={index}>
-                        <h4 className="font-semibold text-gray-900 mb-3">{category.title}</h4>
+                        <h4 className="font-semibold text-gray-900 mb-3">
+                          {category.title}
+                        </h4>
                         <ul className="space-y-2">
                           {category.items.map((item, idx) => (
-                            <li key={idx} className="flex items-center text-gray-600">
+                            <li
+                              key={idx}
+                              className="flex items-center text-gray-600"
+                            >
                               <CheckCircle className="h-4 w-4 text-green-500 mr-2 flex-shrink-0" />
                               {item}
                             </li>
@@ -322,20 +432,34 @@ export default function ListingOptimization() {
       {/* CTA Section */}
       <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-blue-600 to-indigo-600">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">Ready to Optimize Your Listings?</h2>
+          <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
+            Ready to Optimize Your Listings?
+          </h2>
           <p className="text-xl text-blue-100 mb-8">
-            Let our experts transform your listings into high-converting sales machines
+            Let our experts transform your listings into high-converting sales
+            machines
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" className="bg-white text-blue-600 hover:bg-gray-100">
-              Get Free Listing Audit
-            </Button>
-            <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-blue-600">
-              View Before & After
-            </Button>
+            <Link href="/contact">
+              <Button
+                size="lg"
+                className="bg-white text-blue-600 hover:bg-gray-100"
+              >
+                Get Listing Audit
+              </Button>
+            </Link>
+            <Link href="/contact">
+              <Button
+                size="lg"
+                variant="outline"
+                className="border-white text-white hover:bg-white hover:text-blue-600"
+              >
+                View Before & After
+              </Button>
+            </Link>
           </div>
         </div>
       </section>
     </div>
-  )
+  );
 }

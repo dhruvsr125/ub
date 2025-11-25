@@ -1,9 +1,15 @@
-"use client"
+"use client";
 
-import { Button } from "@/components/ui/button"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { Badge } from "@/components/ui/badge"
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
+import { Button } from "@/components/ui/button";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import {
   ArrowRight,
   Shield,
@@ -17,8 +23,8 @@ import {
   TrendingUp,
   Eye,
   Users,
-} from "lucide-react"
-import Link from "next/link"
+} from "lucide-react";
+import Link from "next/link";
 
 export default function BrandCategoryApproval() {
   return (
@@ -27,7 +33,9 @@ export default function BrandCategoryApproval() {
       <section className="relative py-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <Badge className="mb-4 bg-blue-100 text-blue-800 hover:bg-blue-200">Listing Optimization</Badge>
+            <Badge className="mb-4 bg-blue-100 text-blue-800 hover:bg-blue-200">
+              Listing Optimization
+            </Badge>
             <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
               Brand & Category{" "}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">
@@ -35,8 +43,9 @@ export default function BrandCategoryApproval() {
               </span>
             </h1>
             <p className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
-              Navigate Amazon's complex approval processes with expert guidance. Get your brand registered and access
-              restricted categories quickly and efficiently.
+              Navigate Amazon's complex approval processes with expert guidance.
+              Get your brand registered and access restricted categories quickly
+              and efficiently.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link href="/contact">
@@ -48,9 +57,15 @@ export default function BrandCategoryApproval() {
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </Button>
               </Link>
-              <Button size="lg" variant="outline" className="border-blue-200 text-blue-800 hover:bg-blue-50">
-                View Success Cases
-              </Button>
+              <Link href="/portfolio">
+                <Button
+                  size="lg"
+                  variant="outline"
+                  className="border-blue-200 text-blue-800 hover:bg-blue-500"
+                >
+                  View Success Cases
+                </Button>
+              </Link>
             </div>
           </div>
         </div>
@@ -72,7 +87,9 @@ export default function BrandCategoryApproval() {
               >
                 <CardContent className="pt-6">
                   <stat.icon className="h-8 w-8 text-blue-600 mx-auto mb-4" />
-                  <div className="text-3xl font-bold text-gray-900 mb-2">{stat.value}</div>
+                  <div className="text-3xl font-bold text-gray-900 mb-2">
+                    {stat.value}
+                  </div>
                   <div className="text-gray-600">{stat.label}</div>
                 </CardContent>
               </Card>
@@ -85,21 +102,33 @@ export default function BrandCategoryApproval() {
       <section className="py-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Complete Approval Services</h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+              Complete Approval Services
+            </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              End-to-end support for brand registration and category approval processes
+              End-to-end support for brand registration and category approval
+              processes
             </p>
           </div>
 
           <Tabs defaultValue="brand" className="w-full">
             <TabsList className="grid w-full grid-cols-1 md:grid-cols-3 mb-8 bg-white/50 backdrop-blur-sm">
-              <TabsTrigger value="brand" className="data-[state=active]:bg-blue-600 data-[state=active]:text-white">
+              <TabsTrigger
+                value="brand"
+                className="data-[state=active]:bg-blue-600 data-[state=active]:text-white data-[state=inactive]:text-gray-700"
+              >
                 Brand Registration
               </TabsTrigger>
-              <TabsTrigger value="category" className="data-[state=active]:bg-blue-600 data-[state=active]:text-white">
+              <TabsTrigger
+                value="category"
+                className="data-[state=active]:bg-blue-600 data-[state=active]:text-white data-[state=inactive]:text-gray-700"
+              >
                 Category Approval
               </TabsTrigger>
-              <TabsTrigger value="support" className="data-[state=active]:bg-blue-600 data-[state=active]:text-white">
+              <TabsTrigger
+                value="support"
+                className="data-[state=active]:bg-blue-600 data-[state=active]:text-white data-[state=inactive]:text-gray-700"
+              >
                 Ongoing Support
               </TabsTrigger>
             </TabsList>
@@ -128,7 +157,8 @@ export default function BrandCategoryApproval() {
                   {
                     icon: Zap,
                     title: "Fast-Track Processing",
-                    description: "Expedited processing with direct Amazon contacts to reduce approval timeframes.",
+                    description:
+                      "Expedited processing with direct Amazon contacts to reduce approval timeframes.",
                   },
                 ].map((feature, index) => (
                   <Card
@@ -137,10 +167,14 @@ export default function BrandCategoryApproval() {
                   >
                     <CardHeader>
                       <feature.icon className="h-8 w-8 text-blue-600 mb-2" />
-                      <CardTitle className="text-gray-900">{feature.title}</CardTitle>
+                      <CardTitle className="text-gray-900">
+                        {feature.title}
+                      </CardTitle>
                     </CardHeader>
                     <CardContent>
-                      <CardDescription className="text-gray-600">{feature.description}</CardDescription>
+                      <CardDescription className="text-gray-600">
+                        {feature.description}
+                      </CardDescription>
                     </CardContent>
                   </Card>
                 ))}
@@ -153,7 +187,8 @@ export default function BrandCategoryApproval() {
                   {
                     icon: Target,
                     title: "Category Assessment",
-                    description: "Evaluate your products against category requirements and identify approval pathways.",
+                    description:
+                      "Evaluate your products against category requirements and identify approval pathways.",
                   },
                   {
                     icon: Users,
@@ -164,7 +199,8 @@ export default function BrandCategoryApproval() {
                   {
                     icon: Award,
                     title: "Compliance Verification",
-                    description: "Ensure all products meet category-specific requirements and safety standards.",
+                    description:
+                      "Ensure all products meet category-specific requirements and safety standards.",
                   },
                   {
                     icon: TrendingUp,
@@ -179,10 +215,14 @@ export default function BrandCategoryApproval() {
                   >
                     <CardHeader>
                       <feature.icon className="h-8 w-8 text-blue-600 mb-2" />
-                      <CardTitle className="text-gray-900">{feature.title}</CardTitle>
+                      <CardTitle className="text-gray-900">
+                        {feature.title}
+                      </CardTitle>
                     </CardHeader>
                     <CardContent>
-                      <CardDescription className="text-gray-600">{feature.description}</CardDescription>
+                      <CardDescription className="text-gray-600">
+                        {feature.description}
+                      </CardDescription>
                     </CardContent>
                   </Card>
                 ))}
@@ -213,7 +253,8 @@ export default function BrandCategoryApproval() {
                   {
                     icon: CheckCircle,
                     title: "Expansion Support",
-                    description: "Support for expanding into additional categories and international marketplaces.",
+                    description:
+                      "Support for expanding into additional categories and international marketplaces.",
                   },
                 ].map((feature, index) => (
                   <Card
@@ -222,10 +263,14 @@ export default function BrandCategoryApproval() {
                   >
                     <CardHeader>
                       <feature.icon className="h-8 w-8 text-blue-600 mb-2" />
-                      <CardTitle className="text-gray-900">{feature.title}</CardTitle>
+                      <CardTitle className="text-gray-900">
+                        {feature.title}
+                      </CardTitle>
                     </CardHeader>
                     <CardContent>
-                      <CardDescription className="text-gray-600">{feature.description}</CardDescription>
+                      <CardDescription className="text-gray-600">
+                        {feature.description}
+                      </CardDescription>
                     </CardContent>
                   </Card>
                 ))}
@@ -240,18 +285,31 @@ export default function BrandCategoryApproval() {
         <div className="max-w-4xl mx-auto text-center">
           <Card className="bg-gradient-to-r from-blue-600 to-indigo-600 border-0 text-white">
             <CardContent className="pt-8 pb-8">
-              <h2 className="text-3xl md:text-4xl font-bold mb-4">Ready to Get Approved?</h2>
+              <h2 className="text-3xl md:text-4xl font-bold mb-4">
+                Ready to Get Approved?
+              </h2>
               <p className="text-xl mb-8 text-blue-100">
-                Let our experts handle your brand registration and category approval process
+                Let our experts handle your brand registration and category
+                approval process
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button size="lg" className="bg-white text-blue-600 hover:bg-gray-100">
+                <Button
+                  size="lg"
+                  className="bg-white text-blue-600 hover:bg-gray-100"
+                >
                   <Link href="/contact" className="flex items-center">
-                    Start Approval Process <ArrowRight className="ml-2 h-4 w-4" />
+                    Start Approval Process{" "}
+                    <ArrowRight className="ml-2 h-4 w-4" />
                   </Link>
                 </Button>
-                <Button size="lg" variant="outline" className="border-white text-white hover:bg-white/10">
-                  <Link href="/services/listing-optimization">Back to Listing Services</Link>
+                <Button
+                  size="lg"
+                  variant="outline"
+                  className="border-white text-white hover:bg-white/10"
+                >
+                  <Link href="/services/listing-optimization">
+                    Back to Listing Services
+                  </Link>
                 </Button>
               </div>
             </CardContent>
@@ -259,5 +317,5 @@ export default function BrandCategoryApproval() {
         </div>
       </section>
     </div>
-  )
+  );
 }

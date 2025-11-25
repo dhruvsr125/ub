@@ -1,10 +1,23 @@
-"use client"
+"use client";
 
-import { Button } from "@/components/ui/button"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { Badge } from "@/components/ui/badge"
-import { ArrowRight, ImageIcon, Star, Eye, TrendingUp, CheckCircle } from "lucide-react"
-import Link from "next/link"
+import { Button } from "@/components/ui/button";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+import {
+  ArrowRight,
+  ImageIcon,
+  Star,
+  Eye,
+  TrendingUp,
+  CheckCircle,
+} from "lucide-react";
+import Link from "next/link";
 
 export default function InfographicsLifestyle() {
   const stats = [
@@ -12,12 +25,13 @@ export default function InfographicsLifestyle() {
     { label: "Conversion Rate Boost", value: "185%", icon: TrendingUp },
     { label: "Visual Engagement Increase", value: "94%", icon: Eye },
     { label: "Client Satisfaction", value: "4.8/5", icon: Star },
-  ]
+  ];
 
   const services = [
     {
       title: "Custom Infographics",
-      description: "Visually engaging graphics that explain complex product features",
+      description:
+        "Visually engaging graphics that explain complex product features",
       features: [
         "Feature highlights",
         "Comparison charts",
@@ -29,7 +43,8 @@ export default function InfographicsLifestyle() {
     },
     {
       title: "Lifestyle Photography",
-      description: "Professional photography that showcases products in real-world settings",
+      description:
+        "Professional photography that showcases products in real-world settings",
       features: [
         "In-use scenarios",
         "Contextual scenes",
@@ -51,7 +66,7 @@ export default function InfographicsLifestyle() {
         "High-resolution quality",
       ],
     },
-  ]
+  ];
 
   const benefits = [
     "Improved product understanding",
@@ -60,7 +75,7 @@ export default function InfographicsLifestyle() {
     "Better brand perception",
     "Enhanced customer engagement",
     "Competitive advantage",
-  ]
+  ];
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-100">
@@ -68,7 +83,9 @@ export default function InfographicsLifestyle() {
       <section className="relative py-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <Badge className="mb-4 bg-blue-100 text-blue-800 hover:bg-blue-200">Graphics & Design</Badge>
+            <Badge className="mb-4 bg-blue-100 text-blue-800 hover:bg-blue-200">
+              Graphics & Design
+            </Badge>
             <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
               Infographics &{" "}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">
@@ -76,8 +93,9 @@ export default function InfographicsLifestyle() {
               </span>
             </h1>
             <p className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
-              Create compelling visual content that tells your product story through stunning infographics and lifestyle
-              photography that converts browsers into buyers.
+              Create compelling visual content that tells your product story
+              through stunning infographics and lifestyle photography that
+              converts browsers into buyers.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link href="/contact">
@@ -89,9 +107,15 @@ export default function InfographicsLifestyle() {
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </Button>
               </Link>
-              <Button size="lg" variant="outline" className="border-blue-200 text-blue-800 hover:bg-blue-50">
-                View Gallery
-              </Button>
+              <Link href="/portfolio">
+                <Button
+                  size="lg"
+                  variant="outline"
+                  className="border-blue-200 text-blue-800 hover:bg-blue-500"
+                >
+                  View Gallery
+                </Button>
+              </Link>
             </div>
           </div>
         </div>
@@ -108,7 +132,9 @@ export default function InfographicsLifestyle() {
               >
                 <CardContent className="pt-6">
                   <stat.icon className="h-12 w-12 text-blue-600 mx-auto mb-4" />
-                  <div className="text-3xl font-bold text-gray-900 mb-2">{stat.value}</div>
+                  <div className="text-3xl font-bold text-gray-900 mb-2">
+                    {stat.value}
+                  </div>
                   <div className="text-gray-600">{stat.label}</div>
                 </CardContent>
               </Card>
@@ -121,9 +147,12 @@ export default function InfographicsLifestyle() {
       <section className="py-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Our Visual Content Services</h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+              Our Visual Content Services
+            </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Comprehensive visual content solutions that elevate your brand and drive sales
+              Comprehensive visual content solutions that elevate your brand and
+              drive sales
             </p>
           </div>
 
@@ -134,8 +163,12 @@ export default function InfographicsLifestyle() {
                 className="backdrop-blur-sm bg-white/70 border-blue-100 shadow-lg hover:shadow-xl transition-all duration-300"
               >
                 <CardHeader>
-                  <CardTitle className="text-xl text-gray-900">{service.title}</CardTitle>
-                  <CardDescription className="text-gray-600">{service.description}</CardDescription>
+                  <CardTitle className="text-xl text-gray-900">
+                    {service.title}
+                  </CardTitle>
+                  <CardDescription className="text-gray-600">
+                    {service.description}
+                  </CardDescription>
                 </CardHeader>
                 <CardContent>
                   <ul className="space-y-3">
@@ -158,9 +191,12 @@ export default function InfographicsLifestyle() {
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">Why Visual Content Matters</h2>
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+                Why Visual Content Matters
+              </h2>
               <p className="text-lg text-gray-600 mb-8">
-                Compelling visuals capture attention, communicate value, and drive conversions on Amazon
+                Compelling visuals capture attention, communicate value, and
+                drive conversions on Amazon
               </p>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 {benefits.map((benefit, index) => (
@@ -176,14 +212,19 @@ export default function InfographicsLifestyle() {
                 <CardContent className="p-8">
                   <div className="text-center">
                     <ImageIcon className="h-16 w-16 text-blue-600 mx-auto mb-4" />
-                    <h3 className="text-2xl font-bold text-gray-900 mb-4">Ready to Elevate Your Brand?</h3>
+                    <h3 className="text-2xl font-bold text-gray-900 mb-4">
+                      Ready to Elevate Your Brand?
+                    </h3>
                     <p className="text-gray-600 mb-6">
-                      Let our design experts create stunning visuals that captivate customers and drive sales
+                      Let our design experts create stunning visuals that
+                      captivate customers and drive sales
                     </p>
-                    <Button className="w-full bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700">
-                      Get Visual Content
-                      <ArrowRight className="ml-2 h-4 w-4" />
-                    </Button>
+                    <Link href="/contact">
+                      <Button className="w-full bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700">
+                        Get Visual Content
+                        <ArrowRight className="ml-2 h-4 w-4" />
+                      </Button>
+                    </Link>
                   </div>
                 </CardContent>
               </Card>
@@ -201,7 +242,8 @@ export default function InfographicsLifestyle() {
                 Ready to Transform Your Visual Presence?
               </h2>
               <p className="text-xl text-gray-600 mb-8">
-                Let our design experts create stunning visuals that captivate customers and drive sales
+                Let our design experts create stunning visuals that captivate
+                customers and drive sales
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Link href="/contact">
@@ -214,7 +256,11 @@ export default function InfographicsLifestyle() {
                   </Button>
                 </Link>
                 <Link href="/services/graphics-design">
-                  <Button size="lg" variant="outline" className="border-blue-200 text-blue-700 hover:bg-blue-50">
+                  <Button
+                    size="lg"
+                    variant="outline"
+                    className="border-blue-200 text-blue-700 hover:bg-blue-500"
+                  >
                     Back to Design Services
                   </Button>
                 </Link>
@@ -224,5 +270,5 @@ export default function InfographicsLifestyle() {
         </div>
       </section>
     </div>
-  )
+  );
 }

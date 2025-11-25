@@ -1,7 +1,7 @@
-"use client"
+"use client";
 
-import Link from "next/link"
-import { useRouter } from "next/navigation"
+import Link from "next/link";
+import { useRouter } from "next/navigation";
 import {
   ArrowRight,
   CheckCircle,
@@ -16,7 +16,7 @@ import {
   FileText,
   DollarSign,
   ChevronRight,
-} from "lucide-react"
+} from "lucide-react";
 
 const marketplaces = [
   {
@@ -41,7 +41,7 @@ const marketplaces = [
   },
   {
     logo: "📦",
-    name: "Overstock",
+    name: "TikTok Shop",
     description: "Home & garden marketplace",
   },
   {
@@ -56,26 +56,27 @@ const marketplaces = [
   },
   {
     logo: "✨",
-    name: "Ajio",
+    name: "ManoMano",
     description: "Fashion & lifestyle brand",
   },
-]
+];
 
 export default function Services() {
-  const router = useRouter()
+  const router = useRouter();
 
   const navigateToPage = (href: string) => {
-    router.push(href)
+    router.push(href);
     setTimeout(() => {
-      window.scrollTo({ top: 0, behavior: "smooth" })
-    }, 200)
-  }
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }, 200);
+  };
 
   const services = [
     {
       icon: <ShoppingCart className="h-12 w-12 text-blue-400" />,
       title: "Amazon Account Management",
-      description: "Complete Amazon account management with expert oversight and optimization for maximum performance.",
+      description:
+        "Complete Amazon account management with expert oversight and optimization for maximum performance.",
       features: [
         "Account health monitoring",
         "Policy compliance management",
@@ -121,7 +122,8 @@ export default function Services() {
     {
       icon: <Zap className="h-12 w-12 text-blue-400" />,
       title: "Listing Optimization",
-      description: "Comprehensive listing optimization services to maximize visibility and conversion rates.",
+      description:
+        "Comprehensive listing optimization services to maximize visibility and conversion rates.",
       features: [
         "Listing creation",
         "Listing quality check",
@@ -159,7 +161,8 @@ export default function Services() {
     {
       icon: <BarChart3 className="h-12 w-12 text-blue-400" />,
       title: "Catalog Management",
-      description: "Professional catalog management services to organize and optimize your product portfolio.",
+      description:
+        "Professional catalog management services to organize and optimize your product portfolio.",
       features: [
         "Product catalog organization",
         "Inventory synchronization",
@@ -176,7 +179,8 @@ export default function Services() {
     {
       icon: <FileText className="h-12 w-12 text-blue-400" />,
       title: "Reconciliation & Reports",
-      description: "Detailed reconciliation services and comprehensive reporting for business insights.",
+      description:
+        "Detailed reconciliation services and comprehensive reporting for business insights.",
       features: [
         "Financial reconciliation",
         "Performance reports",
@@ -193,7 +197,8 @@ export default function Services() {
     {
       icon: <Palette className="h-12 w-12 text-blue-400" />,
       title: "Graphics & Design",
-      description: "Professional design services including EBC content, brand stores, and lifestyle imagery.",
+      description:
+        "Professional design services including EBC content, brand stores, and lifestyle imagery.",
       features: [
         "Amazon EBC A+ content creation",
         "Amazon Brand Store design",
@@ -226,7 +231,8 @@ export default function Services() {
     {
       icon: <DollarSign className="h-12 w-12 text-blue-400" />,
       title: "Revenue Re-Claims",
-      description: "Recover lost revenue through systematic claims management and fee reconciliation.",
+      description:
+        "Recover lost revenue through systematic claims management and fee reconciliation.",
       features: [
         "Fee discrepancy identification",
         "Claims filing and management",
@@ -243,7 +249,8 @@ export default function Services() {
     {
       icon: <Cog className="h-12 w-12 text-blue-400" />,
       title: "Inventory Management",
-      description: "Smart inventory management with forecasting and FBA shipment optimization.",
+      description:
+        "Smart inventory management with forecasting and FBA shipment optimization.",
       features: [
         "Inventory forecasting",
         "FBA shipment management",
@@ -268,7 +275,7 @@ export default function Services() {
         },
       ],
     },
-  ]
+  ];
 
   const benefits = [
     "Proven track record with 500+ successful transformations",
@@ -277,7 +284,7 @@ export default function Services() {
     "24/7 monitoring and premium support",
     "Risk-free 30-day money-back guarantee",
     "Cutting-edge technology and advanced algorithms",
-  ]
+  ];
 
   return (
     <div className="min-h-screen bg-gray-50">
@@ -292,8 +299,8 @@ export default function Services() {
               </span>
             </h1>
             <p className="text-lg sm:text-xl text-gray-200 max-w-4xl mx-auto leading-relaxed mb-8 sm:mb-12 px-4">
-              Comprehensive e-commerce solutions powered by advanced technology and designed to scale your business to
-              new heights
+              Comprehensive e-commerce solutions powered by advanced technology
+              and designed to scale your business to new heights
             </p>
             <Link
               href="/contact"
@@ -311,7 +318,9 @@ export default function Services() {
       <section className="py-16 sm:py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12 sm:mb-16">
-            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">Marketplace Reach</h2>
+            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
+              Marketplace Reach
+            </h2>
             <p className="text-lg sm:text-xl text-gray-600 max-w-2xl mx-auto px-4">
               We manage your presence across all major e-commerce platforms
             </p>
@@ -323,9 +332,15 @@ export default function Services() {
                 key={index}
                 className="bg-gray-50 p-4 sm:p-6 rounded-xl text-center hover:bg-blue-50 transition-colors cursor-pointer hover-lift"
               >
-                <div className="text-3xl sm:text-4xl mb-2 sm:mb-3">{marketplace.logo}</div>
-                <h3 className="font-semibold text-gray-900 mb-1 sm:mb-2 text-sm sm:text-base">{marketplace.name}</h3>
-                <p className="text-xs sm:text-sm text-gray-600">{marketplace.description}</p>
+                <div className="text-3xl sm:text-4xl mb-2 sm:mb-3">
+                  {marketplace.logo}
+                </div>
+                <h3 className="font-semibold text-gray-900 mb-1 sm:mb-2 text-sm sm:text-base">
+                  {marketplace.name}
+                </h3>
+                <p className="text-xs sm:text-sm text-gray-600">
+                  {marketplace.description}
+                </p>
               </div>
             ))}
           </div>
@@ -340,7 +355,8 @@ export default function Services() {
               Choose Your Success Path
             </h2>
             <p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed px-4">
-              Select from our comprehensive range of services tailored to your business needs
+              Select from our comprehensive range of services tailored to your
+              business needs
             </p>
           </div>
 
@@ -349,7 +365,9 @@ export default function Services() {
               <div
                 key={index}
                 className={`relative bg-white rounded-2xl sm:rounded-3xl shadow-xl p-6 sm:p-8 lg:p-10 hover:shadow-2xl transition-all duration-300 border-2 group ${
-                  service.popular ? "border-blue-500 ring-4 ring-blue-200" : "border-gray-200 hover:border-blue-300"
+                  service.popular
+                    ? "border-blue-500 ring-4 ring-blue-200"
+                    : "border-gray-200 hover:border-blue-300"
                 }`}
               >
                 {service.popular && (
@@ -369,13 +387,17 @@ export default function Services() {
                 <h3 className="text-xl sm:text-2xl font-bold text-gray-800 mb-4 sm:mb-6 group-hover:text-blue-600 transition-colors">
                   {service.title}
                 </h3>
-                <p className="text-gray-600 mb-6 sm:mb-8 leading-relaxed text-sm sm:text-base">{service.description}</p>
+                <p className="text-gray-600 mb-6 sm:mb-8 leading-relaxed text-sm sm:text-base">
+                  {service.description}
+                </p>
 
                 {/* Service Image Placeholder */}
                 <div className="mb-6 sm:mb-8 bg-gradient-to-br from-gray-50 to-blue-50 rounded-xl sm:rounded-2xl p-4 sm:p-6 border-2 border-dashed border-gray-300 group-hover:border-blue-400 transition-all duration-300">
                   <div className="aspect-video bg-white rounded-lg sm:rounded-xl shadow-inner flex flex-col items-center justify-center text-gray-400">
                     <ImageIcon className="h-8 w-8 sm:h-10 sm:w-10 mb-2 sm:mb-3" />
-                    <p className="text-xs text-center font-medium px-2">{service.imageAlt}</p>
+                    <p className="text-xs text-center font-medium px-2">
+                      {service.imageAlt}
+                    </p>
                   </div>
                 </div>
 
@@ -383,7 +405,9 @@ export default function Services() {
                   {service.features.map((feature, idx) => (
                     <li key={idx} className="flex items-start">
                       <CheckCircle className="h-4 w-4 sm:h-5 sm:w-5 text-green-500 mr-2 sm:mr-3 mt-0.5 flex-shrink-0" />
-                      <span className="text-gray-700 text-sm sm:text-base">{feature}</span>
+                      <span className="text-gray-700 text-sm sm:text-base">
+                        {feature}
+                      </span>
                     </li>
                   ))}
                 </ul>
@@ -391,7 +415,9 @@ export default function Services() {
                 {/* Sub-services */}
                 {service.subServices && service.subServices.length > 0 && (
                   <div className="mb-6 sm:mb-8 border-t border-gray-200 pt-6">
-                    <h4 className="text-sm font-semibold text-gray-800 mb-4">Specialized Services:</h4>
+                    <h4 className="text-sm font-semibold text-gray-800 mb-4">
+                      Specialized Services:
+                    </h4>
                     <div className="space-y-2">
                       {service.subServices.map((subService, subIdx) => (
                         <Link
@@ -404,7 +430,9 @@ export default function Services() {
                             <div className="text-sm font-medium text-gray-800 group-hover/sub:text-blue-600">
                               {subService.name}
                             </div>
-                            <div className="text-xs text-gray-600">{subService.description}</div>
+                            <div className="text-xs text-gray-600">
+                              {subService.description}
+                            </div>
                           </div>
                           <ChevronRight className="h-4 w-4 text-gray-400 group-hover/sub:text-blue-600" />
                         </Link>
@@ -439,12 +467,16 @@ export default function Services() {
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 sm:gap-16 lg:gap-20 items-center">
             <div>
-              <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-8 sm:mb-10">Why Choose Urbantech Ecom?</h2>
+              <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-8 sm:mb-10">
+                Why Choose Urbantech Ecom?
+              </h2>
               <ul className="space-y-6 sm:space-y-8">
                 {benefits.map((benefit, index) => (
                   <li key={index} className="flex items-start">
                     <CheckCircle className="h-5 w-5 sm:h-6 sm:w-6 text-green-400 mr-3 sm:mr-4 mt-1 flex-shrink-0" />
-                    <span className="text-base sm:text-lg text-gray-200">{benefit}</span>
+                    <span className="text-base sm:text-lg text-gray-200">
+                      {benefit}
+                    </span>
                   </li>
                 ))}
               </ul>
@@ -454,9 +486,12 @@ export default function Services() {
             <div className="bg-white/10 backdrop-blur-sm rounded-2xl sm:rounded-3xl p-6 sm:p-8 lg:p-10 border border-white/20">
               <div className="aspect-square bg-white/5 rounded-xl sm:rounded-2xl flex flex-col items-center justify-center text-white/60 p-4">
                 <ImageIcon className="h-16 w-16 sm:h-20 sm:w-20 mb-4 sm:mb-6" />
-                <h3 className="text-xl sm:text-2xl font-bold mb-3 sm:mb-4 text-center">Success Metrics</h3>
+                <h3 className="text-xl sm:text-2xl font-bold mb-3 sm:mb-4 text-center">
+                  Success Metrics
+                </h3>
                 <p className="text-center text-sm sm:text-lg">
-                  Visual representation of client success stories and growth metrics
+                  Visual representation of client success stories and growth
+                  metrics
                 </p>
               </div>
             </div>
@@ -468,9 +503,12 @@ export default function Services() {
       <section className="py-20 sm:py-32 bg-gradient-to-br from-gray-900 via-slate-800 to-blue-900 text-white relative overflow-hidden">
         <div className="absolute inset-0 bg-black/30"></div>
         <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-8 sm:mb-10">Ready to Scale Your Business?</h2>
+          <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-8 sm:mb-10">
+            Ready to Scale Your Business?
+          </h2>
           <p className="text-lg sm:text-xl text-gray-300 mb-12 sm:mb-16 leading-relaxed px-4">
-            Join hundreds of successful e-commerce businesses that trust Urbantech Ecom for their growth
+            Join hundreds of successful e-commerce businesses that trust
+            Urbantech Ecom for their growth
           </p>
           <div className="flex flex-col sm:flex-row gap-6 sm:gap-8 justify-center">
             <Link
@@ -492,5 +530,5 @@ export default function Services() {
         </div>
       </section>
     </div>
-  )
+  );
 }

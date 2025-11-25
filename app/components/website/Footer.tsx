@@ -1,28 +1,52 @@
-"use client"
+"use client";
 
-import Link from "next/link"
-import { Mail, Phone, MapPin, Facebook, Twitter, Linkedin, Instagram, ArrowRight } from "lucide-react"
-import { useRouter } from "next/navigation"
+import Link from "next/link";
+import {
+  Mail,
+  Phone,
+  MapPin,
+  Facebook,
+  Twitter,
+  Linkedin,
+  Instagram,
+  ArrowRight,
+} from "lucide-react";
+import { useRouter } from "next/navigation";
 
 export default function Footer() {
-  const currentYear = new Date().getFullYear()
-  const router = useRouter()
+  const currentYear = new Date().getFullYear();
+  const router = useRouter();
 
   const navigateToPage = (href: string) => {
-    router.push(href)
+    router.push(href);
     setTimeout(() => {
-      window.scrollTo({ top: 0, behavior: "smooth" })
-    }, 200)
-  }
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }, 200);
+  };
 
   const footerLinks = {
     services: [
-      { name: "AI-Powered Listing Optimization", href: "/services/listing-optimization" },
+      {
+        name: "AI-Powered Listing Optimization",
+        href: "/services/listing-optimization",
+      },
       { name: "Advanced PPC Management", href: "/services/marketplace-ads" },
-      { name: "Complete Account Management", href: "/services/amazon-account-management" },
-      { name: "Advanced Analytics & Insights", href: "/services/analytics-reports" },
-      { name: "Professional Content Creation", href: "/services/content-creation" },
-      { name: "Intelligent Process Automation", href: "/services/process-automation" },
+      {
+        name: "Complete Account Management",
+        href: "/services/amazon-account-management",
+      },
+      {
+        name: "Advanced Analytics & Insights",
+        href: "/services/analytics-reports",
+      },
+      {
+        name: "Professional Content Creation",
+        href: "/services/content-creation",
+      },
+      {
+        name: "Intelligent Process Automation",
+        href: "/services/process-automation",
+      },
     ],
     company: [
       { name: "About Us", href: "/about-us" },
@@ -38,14 +62,14 @@ export default function Footer() {
       { name: "Case Studies", href: "/portfolio" },
       { name: "Free Consultation", href: "/contact" },
     ],
-  }
+  };
 
   const socialLinks = [
     { name: "Facebook", icon: Facebook, href: "#" },
     { name: "Twitter", icon: Twitter, href: "#" },
     { name: "LinkedIn", icon: Linkedin, href: "#" },
     { name: "Instagram", icon: Instagram, href: "#" },
-  ]
+  ];
 
   return (
     <footer className="bg-gradient-to-br from-gray-900 via-slate-800 to-blue-900 text-white">
@@ -54,9 +78,12 @@ export default function Footer() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
-              <h3 className="text-3xl md:text-4xl font-bold mb-4">Stay Ahead of the Competition</h3>
+              <h3 className="text-3xl md:text-4xl font-bold mb-4">
+                Stay Ahead of the Competition
+              </h3>
               <p className="text-gray-300 text-lg leading-relaxed">
-                Get exclusive e-commerce insights, AI-powered strategies, and industry updates delivered to your inbox.
+                Get exclusive e-commerce insights, AI-powered strategies, and
+                industry updates delivered to your inbox.
               </p>
             </div>
             <div className="flex flex-col sm:flex-row gap-4">
@@ -85,8 +112,9 @@ export default function Footer() {
               </h2>
             </Link>
             <p className="text-gray-300 mb-8 leading-relaxed text-lg">
-              Transforming e-commerce businesses with AI-powered solutions and expert strategies. Join 500+ successful
-              brands that trust us for their growth.
+              Transforming e-commerce businesses with AI-powered solutions and
+              expert strategies. Join 500+ successful brands that trust us for
+              their growth.
             </p>
 
             {/* Contact Info */}
@@ -115,8 +143,8 @@ export default function Footer() {
                   <Link
                     href={link.href}
                     onClick={(e) => {
-                      e.preventDefault()
-                      navigateToPage(link.href)
+                      e.preventDefault();
+                      navigateToPage(link.href);
                     }}
                     className="text-gray-300 hover:text-blue-400 transition-colors duration-200 text-sm"
                   >
@@ -136,8 +164,8 @@ export default function Footer() {
                   <Link
                     href={link.href}
                     onClick={(e) => {
-                      e.preventDefault()
-                      navigateToPage(link.href)
+                      e.preventDefault();
+                      navigateToPage(link.href);
                     }}
                     className="text-gray-300 hover:text-blue-400 transition-colors duration-200 text-sm"
                   >
@@ -157,8 +185,8 @@ export default function Footer() {
                   <Link
                     href={link.href}
                     onClick={(e) => {
-                      e.preventDefault()
-                      navigateToPage(link.href)
+                      e.preventDefault();
+                      navigateToPage(link.href);
                     }}
                     className="text-gray-300 hover:text-blue-400 transition-colors duration-200 text-sm"
                   >
@@ -175,7 +203,7 @@ export default function Footer() {
           <div className="flex flex-col md:flex-row justify-between items-center">
             <div className="flex space-x-6 mb-6 md:mb-0">
               {socialLinks.map((social, index) => {
-                const IconComponent = social.icon
+                const IconComponent = social.icon;
                 return (
                   <a
                     key={index}
@@ -185,7 +213,7 @@ export default function Footer() {
                   >
                     <IconComponent className="h-5 w-5" />
                   </a>
-                )
+                );
               })}
             </div>
 
@@ -215,8 +243,8 @@ export default function Footer() {
               <Link
                 href="/privacy"
                 onClick={(e) => {
-                  e.preventDefault()
-                  navigateToPage("/privacy")
+                  e.preventDefault();
+                  navigateToPage("/privacy");
                 }}
                 className="hover:text-blue-400 transition-colors"
               >
@@ -225,8 +253,8 @@ export default function Footer() {
               <Link
                 href="/terms"
                 onClick={(e) => {
-                  e.preventDefault()
-                  navigateToPage("/terms")
+                  e.preventDefault();
+                  navigateToPage("/terms");
                 }}
                 className="hover:text-blue-400 transition-colors"
               >
@@ -235,8 +263,8 @@ export default function Footer() {
               <Link
                 href="/cookies"
                 onClick={(e) => {
-                  e.preventDefault()
-                  navigateToPage("/cookies")
+                  e.preventDefault();
+                  navigateToPage("/cookies");
                 }}
                 className="hover:text-blue-400 transition-colors"
               >
@@ -247,5 +275,5 @@ export default function Footer() {
         </div>
       </div>
     </footer>
-  )
+  );
 }
