@@ -339,6 +339,269 @@ export default function Portfolio() {
         </div>
       </section>
 
+      {/* <section className="py-8 sm:py-12 lg:py-16 bg-white">
+        <div className="px-0">
+          <div className="text-center mb-8 sm:mb-12 lg:mb-16">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-800 mb-4 sm:mb-6">
+              Portfolio Gallery
+            </h2>
+            <p className="text-lg sm:text-xl text-gray-600 max-w-4xl mx-auto px-4">
+              A modern collage showcasing our work in an organic, professional
+              layout
+            </p>
+          </div>
+          <div id="collage" className="collage">
+            <div className="collage-item pos size-sm col-1 row-2">
+              <img
+                className="collage-img"
+                src="/images/portfolio/collage1.jpg"
+                alt="Brand Store Redesign"
+                loading="lazy"
+              />
+              <div className="collage-overlay">
+                <div className="collage-overlay-content">
+                  <h3 className="collage-title">Brand Store Redesign</h3>
+                </div>
+              </div>
+            </div>
+            <div className="collage-item pos size-sm col-3 row-1 off-b">
+              <img
+                className="collage-img"
+                src="/images/portfolio/collage2.jpg"
+                alt="Listing Optimization"
+                loading="lazy"
+              />
+              <div className="collage-overlay">
+                <div className="collage-overlay-content">
+                  <h3 className="collage-title">Listing Optimization</h3>
+                </div>
+              </div>
+            </div>
+            <div className="collage-item pos size-sm col-5 row-1 off-c">
+              <img
+                className="collage-img"
+                src="/images/portfolio/collage3.jpg"
+                alt="PPC Growth Strategy"
+                loading="lazy"
+              />
+              <div className="collage-overlay">
+                <div className="collage-overlay-content">
+                  <h3 className="collage-title">PPC Growth Strategy</h3>
+                </div>
+              </div>
+            </div>
+            <div className="collage-item pos size-sm col-8 row-1 off-d">
+              <img
+                className="collage-img"
+                src="/images/portfolio/collage4.jpg"
+                alt="Automation Systems"
+                loading="lazy"
+              />
+              <div className="collage-overlay">
+                <div className="collage-overlay-content">
+                  <h3 className="collage-title">Automation Systems</h3>
+                </div>
+              </div>
+            </div>
+            <div className="collage-item pos size-sm col-10 row-2 off-e">
+              <img
+                className="collage-img"
+                src="/images/portfolio/collage5.jpg"
+                alt="Seasonal Campaigns"
+                loading="lazy"
+              />
+              <div className="collage-overlay">
+                <div className="collage-overlay-content">
+                  <h3 className="collage-title">Seasonal Campaigns</h3>
+                </div>
+              </div>
+            </div>
+            <div className="collage-item pos size-sm col-12 row-1 off-f">
+              <img
+                className="collage-img"
+                src="/images/portfolio/collage6.jpg"
+                alt="Conversion Optimization"
+                loading="lazy"
+              />
+              <div className="collage-overlay">
+                <div className="collage-overlay-content">
+                  <h3 className="collage-title">Conversion Optimization</h3>
+                </div>
+              </div>
+            </div>
+            <div className="collage-item pos size-md col-3 row-4 off-g">
+              <img
+                className="collage-img"
+                src="/images/portfolio/collage7.jpg"
+                alt="International Expansion"
+                loading="lazy"
+              />
+              <div className="collage-overlay">
+                <div className="collage-overlay-content">
+                  <h3 className="collage-title">International Expansion</h3>
+                </div>
+              </div>
+            </div>
+            <div className="collage-item pos size-xl col-6 row-3 off-h">
+              <img
+                className="collage-img"
+                src="/images/portfolio/collage8.jpg"
+                alt="Marketplace Analytics"
+                loading="lazy"
+              />
+              <div className="collage-overlay">
+                <div className="collage-overlay-content">
+                  <h3 className="collage-title">Marketplace Analytics</h3>
+                </div>
+              </div>
+            </div>
+            <div className="collage-item pos size-md col-9 row-3 off-i">
+              <img
+                className="collage-img"
+                src="/images/portfolio/collage9.jpg"
+                alt="A/B Testing"
+                loading="lazy"
+              />
+              <div className="collage-overlay">
+                <div className="collage-overlay-content">
+                  <h3 className="collage-title">A/B Testing</h3>
+                </div>
+              </div>
+            </div>
+            <div className="collage-item pos size-md col-10 row-3 off-j">
+              <img
+                className="collage-img"
+                src="/images/portfolio/collage10.jpg"
+                alt="Creative Graphics"
+                loading="lazy"
+              />
+              <div className="collage-overlay">
+                <div className="collage-overlay-content">
+                  <h3 className="collage-title">Creative Graphics</h3>
+                </div>
+              </div>
+            </div>
+            <div className="collage-item pos size-sm col-9 row-6 off-k">
+              <img
+                className="collage-img"
+                src="/images/portfolio/collage11.jpg"
+                alt="Customer Lifecycle"
+                loading="lazy"
+              />
+              <div className="collage-overlay">
+                <div className="collage-overlay-content">
+                  <h3 className="collage-title">Customer Lifecycle</h3>
+                </div>
+              </div>
+            </div>
+            <div className="collage-item pos size-sm col-12 row-6 off-l">
+              <img
+                className="collage-img"
+                src="/images/portfolio/collage12.jpg"
+                alt="Smart Pricing"
+                loading="lazy"
+              />
+              <div className="collage-overlay">
+                <div className="collage-overlay-content">
+                  <h3 className="collage-title">Smart Pricing</h3>
+                </div>
+              </div>
+            </div>
+            <div className="collage-item pos size-md col-1 row-6 off-m">
+              <img
+                className="collage-img"
+                src="/images/portfolio/collage13.jpg"
+                alt="Brand Recognition"
+                loading="lazy"
+              />
+              <div className="collage-overlay">
+                <div className="collage-overlay-content">
+                  <h3 className="collage-title">Brand Recognition</h3>
+                </div>
+              </div>
+            </div>
+            <div className="collage-item pos size-sm col-4 row-7 off-n">
+              <img
+                className="collage-img"
+                src="/images/portfolio/collage14.jpg"
+                alt="Inventory Forecasting"
+                loading="lazy"
+              />
+              <div className="collage-overlay">
+                <div className="collage-overlay-content">
+                  <h3 className="collage-title">Inventory Forecasting</h3>
+                </div>
+              </div>
+            </div>
+            <div className="collage-item pos size-md col-6 row-8 off-o">
+              <img
+                className="collage-img"
+                src="/images/portfolio/collage15.jpg"
+                alt="Revenue Growth"
+                loading="lazy"
+              />
+              <div className="collage-overlay">
+                <div className="collage-overlay-content">
+                  <h3 className="collage-title">Revenue Growth</h3>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <style>{`
+          .collage{display:grid;width:100%;grid-template-columns:repeat(12,minmax(0,1fr));grid-auto-rows:minmax(110px,1vw);gap:clamp(12px,1.6vw,24px);padding-inline:0;max-width:100vw}
+          .collage-item{position:relative;border-radius:16px;overflow:hidden;box-shadow:0 18px 30px rgba(0,0,0,.12),0 6px 12px rgba(0,0,0,.08);transition:transform 220ms ease,box-shadow 220ms ease}
+          .collage-item .collage-img{width:100%;height:100%;object-fit:cover;display:block;transition:transform 260ms cubic-bezier(.22,.61,.36,1)}
+          .collage-item .collage-overlay{position:absolute;inset:0;background:rgba(0,0,0,.45);opacity:0;transition:opacity 180ms ease;display:flex;align-items:center;justify-content:center}
+          .collage-overlay-content{color:#fff;text-align:center;padding:18px}
+          .collage-title{font-weight:700;font-size:clamp(14px,1.8vw,22px)}
+          .collage-item:hover{transform:translateY(-4px);box-shadow:0 24px 40px rgba(0,0,0,.16),0 10px 20px rgba(0,0,0,.10)}
+          .collage-item:hover .collage-img{transform:scale(1.05)}
+          .collage-item:hover .collage-overlay{opacity:1}
+          .size-sm{grid-column:span 2;grid-row:span 2}
+          .size-md{grid-column:span 3;grid-row:span 3}
+          .size-lg{grid-column:span 4;grid-row:span 4}
+          .size-xl{grid-column:span 5;grid-row:span 5}
+          .off-a{margin-top:-6px;margin-left:6px}
+          .off-b{margin-top:-8px;margin-left:-2px}
+          .off-c{margin-top:-4px;margin-left:8px}
+          .off-d{margin-top:-10px;margin-left:10px}
+          .off-e{margin-top:-2px;margin-left:4px}
+          .off-f{margin-top:-6px;margin-left:-6px}
+          .off-g{margin-top:4px;margin-left:-8px}
+          .off-h{margin-top:-8px;margin-left:-4px}
+          .off-i{margin-top:2px;margin-left:6px}
+          .off-j{margin-top:6px;margin-left:-6px}
+          .off-k{margin-top:-2px;margin-left:-2px}
+          .off-l{margin-top:4px;margin-left:4px}
+          .off-m{margin-top:6px;margin-left:2px}
+          .off-n{margin-top:-6px;margin-left:8px}
+          .off-o{margin-top:2px;margin-left:-4px}
+          .pos.col-1{grid-column-start:1}
+          .pos.col-2{grid-column-start:2}
+          .pos.col-3{grid-column-start:3}
+          .pos.col-4{grid-column-start:4}
+          .pos.col-5{grid-column-start:5}
+          .pos.col-6{grid-column-start:6}
+          .pos.col-7{grid-column-start:7}
+          .pos.col-8{grid-column-start:8}
+          .pos.col-9{grid-column-start:9}
+          .pos.col-10{grid-column-start:10}
+          .pos.col-11{grid-column-start:11}
+          .pos.col-12{grid-column-start:12}
+          .pos.row-1{grid-row-start:1}
+          .pos.row-2{grid-row-start:2}
+          .pos.row-3{grid-row-start:3}
+          .pos.row-4{grid-row-start:4}
+          .pos.row-5{grid-row-start:5}
+          .pos.row-6{grid-row-start:6}
+          .pos.row-7{grid-row-start:7}
+          .pos.row-8{grid-row-start:8}
+          @media (max-width:1024px){.collage{grid-template-columns:repeat(8,minmax(0,1fr));grid-auto-rows:minmax(90px,10vw)}.size-lg{grid-column:span 4;grid-row:span 3}}
+          @media (max-width:640px){.collage{grid-template-columns:repeat(4,minmax(0,1fr));grid-auto-rows:minmax(70px,24vw)}.size-sm{grid-column:span 2;grid-row:span 2}.size-md{grid-column:span 2;grid-row:span 3}.size-lg{grid-column:span 4;grid-row:span 3}.pos{grid-column-start:auto!important;grid-row-start:auto!important}}
+        `}</style>
+      </section> */}
+
       {/* Testimonials */}
       <section className="py-16 sm:py-24 lg:py-32 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

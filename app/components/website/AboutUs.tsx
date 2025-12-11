@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { useEffect } from "react";
 import {
   ArrowRight,
   Users,
@@ -161,6 +162,129 @@ export default function AboutUs() {
         "Extended services to international markets with advanced solutions",
     },
   ];
+
+  useEffect(() => {
+    const slider = document.getElementById("cf-coverflow");
+    if (!slider) return;
+    const cards = Array.from(slider.querySelectorAll<HTMLElement>(".cf-card"));
+    if (!cards.length) return;
+
+    let current = 0;
+    let paused = false;
+    let intervalId: number | null = null;
+
+    const normalize = (d: number, n: number) => {
+      const half = Math.floor(n / 2);
+      const m = ((d % n) + n) % n;
+      return m > half ? m - n : m;
+    };
+
+    const apply = () => {
+      const n = cards.length;
+      const rect = slider.getBoundingClientRect();
+      const w = rect.width;
+      const isMobile = window.matchMedia("(max-width: 640px)").matches;
+      const centerZ = isMobile ? 120 : 70;
+      const centerScale = isMobile ? 1.06 : 1.0;
+      const offset1 = Math.max(150, Math.min(w * 0.28, 280));
+      const offset2 = Math.max(300, Math.min(w * 0.48, 440));
+
+      for (let i = 0; i < n; i++) {
+        const card = cards[i];
+        const dist = normalize(i - current, n);
+        let x = 0;
+        let z = -200;
+        let s = 0.6;
+        let rY = 0;
+        let op = 0;
+        let zi = 1;
+        if (dist === -2) {
+          x = -offset2;
+          z = -80;
+          s = 0.72;
+          rY = 22;
+          op = 0.6;
+          zi = 3;
+        } else if (dist === -1) {
+          x = -offset1;
+          z = 0;
+          s = 0.86;
+          rY = 18;
+          op = 0.9;
+          zi = 4;
+        } else if (dist === 0) {
+          x = 0;
+          z = centerZ;
+          s = centerScale;
+          rY = 0;
+          op = 1;
+          zi = 5;
+        } else if (dist === 1) {
+          x = offset1;
+          z = 0;
+          s = 0.86;
+          rY = -18;
+          op = 0.9;
+          zi = 4;
+        } else if (dist === 2) {
+          x = offset2;
+          z = -80;
+          s = 0.72;
+          rY = -22;
+          op = 0.6;
+          zi = 3;
+        }
+        card.style.transform = `translate(-50%, -50%) translateX(${x}px) translateZ(${z}px) rotateY(${rY}deg) scale(${s})`;
+        card.style.opacity = String(op);
+        card.style.zIndex = String(zi);
+        card.style.pointerEvents = op > 0 ? "auto" : "none";
+      }
+    };
+
+    const start = () => {
+      if (intervalId != null) return;
+      intervalId = window.setInterval(() => {
+        if (!paused) {
+          current = (current + 1) % cards.length;
+          apply();
+        }
+      }, 2400);
+    };
+
+    const stop = () => {
+      if (intervalId != null) {
+        clearInterval(intervalId);
+        intervalId = null;
+      }
+    };
+
+    const onEnter = () => {
+      paused = true;
+    };
+    const onLeave = () => {
+      paused = false;
+    };
+
+    cards.forEach((c) => {
+      c.addEventListener("mouseenter", onEnter);
+      c.addEventListener("mouseleave", onLeave);
+    });
+
+    const onResize = () => apply();
+    window.addEventListener("resize", onResize);
+
+    apply();
+    start();
+
+    return () => {
+      stop();
+      window.removeEventListener("resize", onResize);
+      cards.forEach((c) => {
+        c.removeEventListener("mouseenter", onEnter);
+        c.removeEventListener("mouseleave", onLeave);
+      });
+    };
+  }, []);
 
   return (
     <div className="min-h-screen bg-gray-50">
@@ -433,6 +557,134 @@ export default function AboutUs() {
             </div>
           </div>
         </div>
+      </section>
+      <section className="py-16 sm:py-24 lg:py-32 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12 sm:mb-16 lg:mb-20">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-800 mb-6 sm:mb-8">
+              Highlights
+            </h2>
+            <p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto px-4">
+              Explore our story through a smooth, layered coverflow carousel
+            </p>
+          </div>
+          <div className="cf-wrapper">
+            <div id="cf-coverflow" className="cf-slider">
+              <ul className="cf-track">
+                <li
+                  className="cf-card"
+                  data-title="Customer Success"
+                  data-description="Delivering measurable outcomes for every partner"
+                >
+                  <img
+                    className="cf-img"
+                    src="/images/about/cover1.jpg"
+                    alt="Customer Success"
+                    loading="lazy"
+                  />
+                  <div className="cf-overlay">
+                    <div className="cf-overlay-content">
+                      <h3 className="cf-title">Customer Success</h3>
+                      <p className="cf-desc">
+                        Delivering measurable outcomes for every partner
+                      </p>
+                    </div>
+                  </div>
+                </li>
+                <li
+                  className="cf-card"
+                  data-title="Innovation"
+                  data-description="Building future-ready solutions"
+                >
+                  <img
+                    className="cf-img"
+                    src="/images/about/cover2.jpg"
+                    alt="Innovation"
+                    loading="lazy"
+                  />
+                  <div className="cf-overlay">
+                    <div className="cf-overlay-content">
+                      <h3 className="cf-title">Innovation</h3>
+                      <p className="cf-desc">Building future-ready solutions</p>
+                    </div>
+                  </div>
+                </li>
+                <li
+                  className="cf-card"
+                  data-title="Growth"
+                  data-description="Scaling brands with confidence"
+                >
+                  <img
+                    className="cf-img"
+                    src="/images/about/cover3.jpg"
+                    alt="Growth"
+                    loading="lazy"
+                  />
+                  <div className="cf-overlay">
+                    <div className="cf-overlay-content">
+                      <h3 className="cf-title">Growth</h3>
+                      <p className="cf-desc">Scaling brands with confidence</p>
+                    </div>
+                  </div>
+                </li>
+                <li
+                  className="cf-card"
+                  data-title="Partnership"
+                  data-description="Long-term relationships built on trust"
+                >
+                  <img
+                    className="cf-img"
+                    src="/images/about/cover4.jpg"
+                    alt="Partnership"
+                    loading="lazy"
+                  />
+                  <div className="cf-overlay">
+                    <div className="cf-overlay-content">
+                      <h3 className="cf-title">Partnership</h3>
+                      <p className="cf-desc">
+                        Long-term relationships built on trust
+                      </p>
+                    </div>
+                  </div>
+                </li>
+                <li
+                  className="cf-card"
+                  data-title="Automation"
+                  data-description="Smart systems that reduce friction"
+                >
+                  <img
+                    className="cf-img"
+                    src="/images/about/cover5.jpg"
+                    alt="Automation"
+                    loading="lazy"
+                  />
+                  <div className="cf-overlay">
+                    <div className="cf-overlay-content">
+                      <h3 className="cf-title">Automation</h3>
+                      <p className="cf-desc">
+                        Smart systems that reduce friction
+                      </p>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <style>{`
+          .cf-wrapper{perspective:1200px}
+          .cf-slider{position:relative;height:clamp(280px,55vw,180px);transform-style:preserve-3d}
+          .cf-track{list-style:none;margin:0;padding:0}
+          .cf-card{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:clamp(320px,26vw,400px);height:clamp(140px,32vw,400px);border-radius:18px;overflow:hidden;box-shadow:0 12px 30px rgba(0,0,0,.25);transition:transform 800ms cubic-bezier(.22,.61,.36,1),opacity 800ms ease,z-index 0s;will-change:transform,opacity;backface-visibility:hidden}
+          .cf-img{width:100%;height:100%;object-fit:cover;display:block}
+          .cf-overlay{position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.35),rgba(0,0,0,.65));opacity:0;transition:opacity 240ms ease;display:flex;align-items:center;justify-content:center}
+          .cf-overlay-content{text-align:center;color:#fff;padding:24px}
+          .cf-title{font-size:clamp(18px,2.2vw,26px);font-weight:700;letter-spacing:.2px}
+          .cf-desc{margin-top:8px;font-size:clamp(13px,1.6vw,16px);opacity:.9}
+          .cf-card:hover .cf-overlay{opacity:1}
+          .cf-card{cursor:pointer}
+          @media (max-width:640px){.cf-slider{height:clamp(300px,75vw,520px)}.cf-card{width:clamp(220px,70vw,360px);height:clamp(160px,50vw,260px)}}
+        `}</style>
       </section>
 
       {/* Mission Statement */}
