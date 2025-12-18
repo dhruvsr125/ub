@@ -578,7 +578,7 @@ export default function AboutUs() {
                 >
                   <img
                     className="cf-img"
-                    src="/images/about/cover1.jpg"
+                    src="/images/image6.jpg"
                     alt="Customer Success"
                     loading="lazy"
                   />
@@ -598,7 +598,7 @@ export default function AboutUs() {
                 >
                   <img
                     className="cf-img"
-                    src="/images/about/cover2.jpg"
+                    src="/images/image81.jpg"
                     alt="Innovation"
                     loading="lazy"
                   />
@@ -616,7 +616,7 @@ export default function AboutUs() {
                 >
                   <img
                     className="cf-img"
-                    src="/images/about/cover3.jpg"
+                    src="/images/image6.jpg"
                     alt="Growth"
                     loading="lazy"
                   />
@@ -634,7 +634,7 @@ export default function AboutUs() {
                 >
                   <img
                     className="cf-img"
-                    src="/images/about/cover4.jpg"
+                    src="/images/image81.jpg"
                     alt="Partnership"
                     loading="lazy"
                   />
@@ -654,7 +654,7 @@ export default function AboutUs() {
                 >
                   <img
                     className="cf-img"
-                    src="/images/about/cover5.jpg"
+                    src="/images/image6.jpg"
                     alt="Automation"
                     loading="lazy"
                   />
