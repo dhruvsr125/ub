@@ -121,7 +121,7 @@ export default function Footer() {
             <div className="space-y-4">
               <div className="flex items-center">
                 <Phone className="h-5 w-5 text-blue-400 mr-3" />
-                <span className="text-gray-300">+1 (234) 567-8900</span>
+                <span className="text-gray-300">+91 91578 15577</span>
               </div>
               <div className="flex items-center">
                 <Mail className="h-5 w-5 text-blue-400 mr-3" />
@@ -129,7 +129,7 @@ export default function Footer() {
               </div>
               <div className="flex items-center">
                 <MapPin className="h-5 w-5 text-blue-400 mr-3" />
-                <span className="text-gray-300">New York, NY 10001</span>
+                <span className="text-gray-300">221, Vihav Trade Center, Near Waves Club, Bhayli, Vadodara - Gujarat, India - 391410</span>
               </div>
             </div>
           </div>

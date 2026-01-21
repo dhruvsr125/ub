@@ -45,8 +45,8 @@ export default function Contact() {
     {
       icon: <Phone className="h-6 w-6 text-blue-400" />,
       title: "Phone",
-      details: "+1 (234) 567-8900",
-      description: "Mon-Fri from 8am to 6pm EST",
+      details: "+91 91578 15577",
+      description: "Mon-Fri from 9am to 6pm EST",
     },
     {
       icon: <Mail className="h-6 w-6 text-blue-400" />,
@@ -57,13 +57,13 @@ export default function Contact() {
     {
       icon: <MapPin className="h-6 w-6 text-blue-400" />,
       title: "Office",
-      details: "123 Business District, Suite 456",
-      description: "New York, NY 10001",
+      details: "221, Vihav Trade Center",
+      description: " Near Waves Club, Bhayli, Vadodara - Gujarat, India - 391410",
     },
     {
       icon: <Clock className="h-6 w-6 text-blue-400" />,
       title: "Business Hours",
-      details: "Monday - Friday: 8am - 6pm EST",
+      details: "Monday - Friday: 9am - 6pm EST",
       description: "Weekend support available",
     },
   ];
@@ -287,16 +287,16 @@ export default function Contact() {
                 <h3 className="text-2xl font-bold mb-6">Quick Contact</h3>
                 <div className="space-y-6">
                   <a
-                    href="tel:+1234567890"
+                    href="tel:+91 9157815577"
                     className="flex items-center bg-white/10 backdrop-blur-sm rounded-xl p-4 hover:bg-white/20 transition-colors border border-white/20"
                   >
                     <Phone className="h-6 w-6 mr-4" />
                     <span className="font-semibold">
-                      Call Now: +1 (234) 567-8900
+                      Call Now: +91 91578 15577
                     </span>
                   </a>
                   <a
-                    href="https://wa.me/1234567890"
+                    href="https://wa.me/+919157815577"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex items-center bg-green-600 rounded-xl p-4 hover:bg-green-700 transition-colors"

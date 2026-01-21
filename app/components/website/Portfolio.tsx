@@ -1,6 +1,7 @@
 "use client";
 
 import { useRouter } from "next/navigation";
+import { useEffect, useState } from "react";
 import {
   ArrowRight,
   TrendingUp,
@@ -10,6 +11,113 @@ import {
   ImageIcon,
   ExternalLink,
 } from "lucide-react";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+  type CarouselApi,
+} from "@/components/ui/carousel";
+
+// Portfolio Carousel Component with Auto-slide
+function PortfolioCarousel({ brands }: { brands: string[] }) {
+  const [api, setApi] = useState<CarouselApi>();
+  const [current, setCurrent] = useState(0);
+  const [count, setCount] = useState(0);
+  const [isPaused, setIsPaused] = useState(false);
+
+  useEffect(() => {
+    if (!api) {
+      return;
+    }
+
+    setCount(api.scrollSnapList().length);
+    setCurrent(api.selectedScrollSnap() + 1);
+
+    api.on("select", () => {
+      setCurrent(api.selectedScrollSnap() + 1);
+    });
+  }, [api]);
+
+  // Auto-slide functionality with pause on hover
+  useEffect(() => {
+    if (!api || isPaused) {
+      return;
+    }
+
+    const interval = setInterval(() => {
+      if (api.canScrollNext()) {
+        api.scrollNext();
+      } else {
+        // Reset to beginning for infinite loop
+        api.scrollTo(0);
+      }
+    }, 3000); // Auto-slide every 3 seconds
+
+    return () => clearInterval(interval);
+  }, [api, isPaused]);
+
+  return (
+    <div 
+      className="relative"
+      onMouseEnter={() => setIsPaused(true)}
+      onMouseLeave={() => setIsPaused(false)}
+    >
+      <Carousel
+        setApi={setApi}
+        opts={{
+          align: "start",
+          loop: true,
+          skipSnaps: false,
+          dragFree: true,
+        }}
+        className="w-full pb-8 sm:pb-12 lg:pb-16"
+      >
+        <CarouselContent className="-ml-2 md:-ml-4">
+          {brands.map((src, index) => (
+            <CarouselItem
+              key={index}
+              className="pl-2 md:pl-4 basis-1/2 sm:basis-1/3 md:basis-1/4 lg:basis-1/5 xl:basis-1/6"
+            >
+              <div className="relative group mb-4 sm:mb-6">
+                <div className="bg-white rounded-xl sm:rounded-2xl shadow-lg p-4 sm:p-6 lg:p-8 transform transition-all duration-300 hover:scale-110 hover:shadow-2xl border border-gray-200 hover:border-blue-300 aspect-square flex items-center justify-center overflow-hidden">
+                  <img
+                    src={src}
+                    alt={`Brand Logo ${index + 1}`}
+                    className="w-full h-full object-contain grayscale group-hover:grayscale-0 transition-all duration-300"
+                  />
+                </div>
+                {/* Hover overlay effect */}
+                <div className="absolute inset-0 bg-gradient-to-t from-blue-600/0 to-blue-600/0 group-hover:from-blue-600/5 group-hover:to-transparent rounded-xl sm:rounded-2xl transition-all duration-300 pointer-events-none" />
+              </div>
+            </CarouselItem>
+          ))}
+        </CarouselContent>
+        <CarouselPrevious className="left-2 sm:left-4 md:-left-12 h-10 w-10 sm:h-12 sm:w-12 bg-white/90 hover:bg-white shadow-lg border-2 border-gray-200 hover:border-blue-500 transition-all duration-300 z-10" />
+        <CarouselNext className="right-2 sm:right-4 md:-right-12 h-10 w-10 sm:h-12 sm:w-12 bg-white/90 hover:bg-white shadow-lg border-2 border-gray-200 hover:border-blue-500 transition-all duration-300 z-10" />
+      </Carousel>
+      
+      {/* Slide indicators */}
+      <div className="flex justify-center items-center gap-2 mt-8 sm:mt-10 lg:mt-12">
+        {Array.from({ length: Math.min(count, 10) }).map((_, index) => (
+          <button
+            key={index}
+            onClick={() => api?.scrollTo(index)}
+            className={`h-2 rounded-full transition-all duration-300 ${
+              current === index + 1
+                ? "w-8 bg-blue-600"
+                : "w-2 bg-gray-300 hover:bg-gray-400"
+            }`}
+            aria-label={`Go to slide ${index + 1}`}
+          />
+        ))}
+      </div>
+      
+      
+    </div>
+  );
+}
 
 export default function Portfolio() {
   const router = useRouter();
@@ -340,9 +448,9 @@ export default function Portfolio() {
       </section>
 
       {/* Logo Grid / Portfolio Gallery */}
-      <section className="py-16 sm:py-24 lg:py-32 bg-white">
+      <section className="py-16 sm:py-24 lg:py-32 bg-gradient-to-br from-gray-50 to-blue-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
+          <div className="text-center mb-12 sm:mb-16">
             <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-800 mb-4">
               Portfolio Gallery
             </h2>
@@ -351,8 +459,8 @@ export default function Portfolio() {
             </p>
           </div>
 
-          <div className="relative flex flex-wrap justify-center items-center gap-6 sm:gap-8 lg:gap-10">
-            {[
+          <PortfolioCarousel
+            brands={[
               "/images/image1.jpg",
               "/images/image2.png",
               "/images/image3.jpg",
@@ -368,29 +476,8 @@ export default function Portfolio() {
               "/images/image81.jpg",
               "/images/image1.jpg",
               "/images/image4.jpg",
-            ].map((src, index) => (
-              <div
-                key={index}
-                className={`relative bg-white shadow-lg rounded-xl p-4 transform transition-transform duration-300 hover:scale-105 ${
-                  index % 3 === 0
-                    ? "w-36 h-36 sm:w-40 sm:h-40 lg:w-44 lg:h-44"
-                    : index % 3 === 1
-                    ? "w-28 h-28 sm:w-32 sm:h-32 lg:w-36 lg:h-36"
-                    : "w-24 h-24 sm:w-28 sm:h-28 lg:w-32 lg:h-32"
-                }`}
-                style={{
-                  marginTop: `${(index % 4) * 4}px`,
-                  marginLeft: `${(index % 5) * 4}px`,
-                }}
-              >
-                <img
-                  src={src}
-                  alt={`Logo ${index + 1}`}
-                  className="w-full h-full object-contain"
-                />
-              </div>
-            ))}
-          </div>
+            ]}
+          />
         </div>
       </section>
 

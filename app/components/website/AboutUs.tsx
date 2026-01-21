@@ -510,54 +510,7 @@ export default function AboutUs() {
         </div>
       </section>
 
-      {/* Timeline */}
-      <section className="py-16 sm:py-24 lg:py-32 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12 sm:mb-16 lg:mb-24">
-            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-800 mb-6 sm:mb-8">
-              Our Journey
-            </h2>
-            <p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto px-4">
-              Key milestones in our growth story and innovation timeline
-            </p>
-          </div>
 
-          <div className="relative">
-            <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-gradient-to-b from-blue-400 to-blue-600 hidden lg:block"></div>
-            <div className="space-y-8 sm:space-y-12 lg:space-y-16">
-              {milestones.map((milestone, index) => (
-                <div
-                  key={index}
-                  className={`flex flex-col lg:flex-row items-center ${
-                    index % 2 === 0 ? "lg:justify-start" : "lg:justify-end"
-                  }`}
-                >
-                  <div
-                    className={`w-full lg:w-5/12 ${
-                      index % 2 === 0
-                        ? "lg:text-right lg:pr-8 xl:pr-16"
-                        : "lg:text-left lg:pl-8 xl:pl-16"
-                    }`}
-                  >
-                    <div className="bg-white rounded-2xl sm:rounded-3xl shadow-xl p-6 sm:p-8 hover:shadow-2xl transition-all duration-300 border border-gray-200 group">
-                      <div className="text-2xl sm:text-3xl font-bold text-blue-600 mb-3 sm:mb-4">
-                        {milestone.year}
-                      </div>
-                      <h3 className="text-xl sm:text-2xl font-bold text-gray-800 mb-3 sm:mb-4 group-hover:text-blue-600 transition-colors">
-                        {milestone.event}
-                      </h3>
-                      <p className="text-gray-600 leading-relaxed text-base sm:text-lg">
-                        {milestone.description}
-                      </p>
-                    </div>
-                  </div>
-                  <div className="absolute left-1/2 transform -translate-x-1/2 w-6 h-6 sm:w-8 sm:h-8 bg-blue-600 rounded-full border-4 border-white shadow-xl hidden lg:block"></div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
       <section className="py-16 sm:py-24 lg:py-32 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12 sm:mb-16 lg:mb-20">
@@ -675,7 +628,7 @@ export default function AboutUs() {
           .cf-wrapper{perspective:1200px}
           .cf-slider{position:relative;height:clamp(280px,55vw,180px);transform-style:preserve-3d}
           .cf-track{list-style:none;margin:0;padding:0}
-          .cf-card{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:clamp(320px,26vw,400px);height:clamp(140px,32vw,400px);border-radius:18px;overflow:hidden;box-shadow:0 12px 30px rgba(0,0,0,.25);transition:transform 800ms cubic-bezier(.22,.61,.36,1),opacity 800ms ease,z-index 0s;will-change:transform,opacity;backface-visibility:hidden}
+          .cf-card{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:clamp(320px,26vw,400px);height:clamp(140px,26vw,400px);border-radius:18px;overflow:hidden;box-shadow:0 12px 30px rgba(0,0,0,.25);transition:transform 800ms cubic-bezier(.22,.61,.36,1),opacity 800ms ease,z-index 0s;will-change:transform,opacity;backface-visibility:hidden}
           .cf-img{width:100%;height:100%;object-fit:cover;display:block}
           .cf-overlay{position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.35),rgba(0,0,0,.65));opacity:0;transition:opacity 240ms ease;display:flex;align-items:center;justify-content:center}
           .cf-overlay-content{text-align:center;color:#fff;padding:24px}
