@@ -171,11 +171,11 @@ function TestimonialsCarousel({
 // Floating Brand Logos Component
 function BrandLogosFloating() {
   const brandLogos = [
-    "/images/ii1.png",
     "/images/ii2.png",
     "/images/ii3.png",
     "/images/ii4.png",
     "/images/ii5.png",
+    "/images/ii1.png",
     "/images/ii6.png",
     "/images/ii7.png",
     "/images/ii8.png",
@@ -218,7 +218,7 @@ function BrandLogosFloating() {
               ease: "easeInOut",
             }}
           >
-            <div className="w-full h-full bg-white/50 backdrop-blur-lg rounded-xl sm:rounded-2xl p-2 sm:p-3 border border-white/25 shadow-xl hover:shadow-2xl transition-all duration-300">
+            <div className="w-full h-full bg-white/95 backdrop-blur-sm rounded-xl sm:rounded-2xl p-2 sm:p-3 border border-blue-200/60 shadow-xl hover:shadow-2xl transition-all duration-300">
               <img
                 src={src}
                 alt={`Brand ${index + 1}`}
@@ -511,13 +511,13 @@ export default function Home() {
         initial="hidden"
         animate={isHeroInView ? "show" : "hidden"}
         variants={fadeIn}
-        className="relative bg-gradient-to-br from-slate-900 via-blue-900 to-indigo-950 text-white py-20 sm: lg: overflow-hidden min-h-[90vh] flex items-center"
+        className="relative bg-gradient-to-br from-blue-50 via-white to-cyan-50 text-gray-900 py-20 sm: lg: overflow-hidden min-h-[90vh] flex items-center"
       >
         {/* Animated Background Elements */}
         <div className="absolute inset-0 overflow-hidden">
-          <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_30%_20%,rgba(59,130,246,0.15),transparent_50%)]"></div>
-          <div className="absolute bottom-0 right-0 w-full h-full  bg-[radial-gradient(circle_at_70%_80%,rgba(99,102,241,0.15),transparent_50%)]"></div>
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-blue-500/5 rounded-full blur-3xl"></div>
+          <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_30%_20%,rgba(59,130,246,0.08),transparent_50%)]"></div>
+          <div className="absolute bottom-0 right-0 w-full h-full  bg-[radial-gradient(circle_at_70%_80%,rgba(99,102,241,0.08),transparent_50%)]"></div>
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-blue-200/20 rounded-full blur-3xl"></div>
         </div>
 
         {/* Floating Brand Logos */}
@@ -528,10 +528,10 @@ export default function Home() {
             {/* Trust Badge */}
             <motion.div
               variants={item}
-              className="inline-flex items-center bg-white/10 backdrop-blur-md rounded-full px-5 sm:px-7 py-2.5 sm:py-3.5 mb-8 sm:mb-10 border border-white/20 shadow-lg"
+              className="inline-flex items-center bg-blue-100/80 backdrop-blur-md rounded-full px-5 sm:px-7 py-2.5 sm:py-3.5 mb-8 sm:mb-10 border border-blue-200 shadow-lg"
             >
-              <Star className="h-4 w-4 sm:h-5 sm:w-5 text-yellow-400 mr-2 fill-yellow-400" />
-              <span className="text-sm sm:text-base font-semibold">
+              <Star className="h-4 w-4 sm:h-5 sm:w-5 text-yellow-500 mr-2 fill-yellow-500" />
+              <span className="text-sm sm:text-base font-semibold text-gray-800">
                 Trusted E-Commerce Management Partner
               </span>
             </motion.div>
@@ -541,20 +541,20 @@ export default function Home() {
               variants={item}
               className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-extrabold mb-6 sm:mb-8 leading-tight"
             >
-              <span className="block text-white mb-2 inline mr-6  w-full text-6xl">
+              <span className="block text-gray-900 mb-2 inline mr-6  w-full text-6xl">
                 We Handle 
               </span>
-              <span className="block bg-gradient-to-r from-blue-400 via-cyan-400 to-blue-300 bg-clip-text text-transparent inline  text-6xl">
+              <span className="block bg-gradient-to-r from-blue-600 via-cyan-600 to-blue-500 bg-clip-text text-transparent inline  text-6xl">
                  All Kinds of
               </span>
-              <span className="block text-white mt-2 text-6xl">
+              <span className="block text-gray-900 mt-2 text-6xl">
                 E-Commerce Accounts
               </span>
             </motion.h1>
 
             <motion.p
               variants={item}
-              className="text-base sm:text-lg md:text-xl mb-10 sm:mb-12 text-gray-400 max-w-2xl mx-auto leading-relaxed"
+              className="text-base sm:text-lg md:text-xl mb-10 sm:mb-12 text-gray-700 max-w-2xl mx-auto leading-relaxed"
             >
               From Amazon to Shopify, from startups to enterprise—we manage your entire e-commerce operation with precision, automation, and proven results.
             </motion.p>
@@ -572,11 +572,11 @@ export default function Home() {
                 <motion.div
                   key={index}
                   variants={item}
-                  className="bg-white/5 backdrop-blur-sm rounded-2xl p-6 border border-white/10 hover:bg-white/10 transition-all duration-300 hover:scale-105"
+                  className="bg-white/90 backdrop-blur-sm rounded-2xl p-6 border border-blue-200 shadow-lg hover:shadow-xl hover:border-blue-300 transition-all duration-300 hover:scale-105"
                 >
-                  <feature.icon className="h-8 w-8 sm:h-10 sm:w-10 text-blue-400 mx-auto mb-4" />
-                  <h3 className="text-base sm:text-lg font-bold mb-2">{feature.text}</h3>
-                  <p className="text-xs sm:text-sm text-gray-400">{feature.subtext}</p>
+                  <feature.icon className="h-8 w-8 sm:h-10 sm:w-10 text-blue-600 mx-auto mb-4" />
+                  <h3 className="text-base sm:text-lg font-bold mb-2 text-gray-900">{feature.text}</h3>
+                  <p className="text-xs sm:text-sm text-gray-600">{feature.subtext}</p>
                 </motion.div>
               ))}
             </motion.div>
@@ -595,7 +595,7 @@ export default function Home() {
               </button>
               <button
                 onClick={() => navigateToPage("/services")}
-                className="bg-white/10 backdrop-blur-md text-white px-8 sm:px-12 py-4 sm:py-5 rounded-xl text-base sm:text-lg font-semibold hover:bg-white/20 transition-all duration-300 border border-white/20"
+                className="bg-white/90 backdrop-blur-md text-gray-900 px-8 sm:px-12 py-4 sm:py-5 rounded-xl text-base sm:text-lg font-semibold hover:bg-white transition-all duration-300 border-2 border-blue-200 hover:border-blue-400 shadow-lg"
               >
                 View Our Services
               </button>
