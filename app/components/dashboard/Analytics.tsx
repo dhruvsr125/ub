@@ -184,7 +184,7 @@ export default function Analytics() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           <div className="text-center p-4 bg-blue-50 rounded-lg">
             <h3 className="text-lg font-semibold text-blue-900 mb-2">Best Performing Service</h3>
-            <p className="text-blue-700">AI-Optimized Product Listing</p>
+            <p className="text-blue-700">Optimized Product Listing</p>
             <p className="text-sm text-blue-600 mt-1">45% of inquiries</p>
           </div>
           <div className="text-center p-4 bg-green-50 rounded-lg">

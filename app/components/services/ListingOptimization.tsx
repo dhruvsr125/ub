@@ -175,11 +175,11 @@ export default function ListingOptimization() {
           </div>
 
           <Tabs defaultValue="creation" className="w-full">
-            <TabsList className="grid w-full grid-cols-4 mb-8">
-              <TabsTrigger value="creation">Creation</TabsTrigger>
-              <TabsTrigger value="optimization">Optimization</TabsTrigger>
-              <TabsTrigger value="research">Research</TabsTrigger>
-              <TabsTrigger value="compliance">Compliance</TabsTrigger>
+            <TabsList className="grid w-full grid-cols-4 mb-8 bg-white/80 backdrop-blur-sm border-0 shadow-lg">
+              <TabsTrigger value="creation" className="data-[state=active]:bg-blue-600 data-[state=active]:text-white data-[state=inactive]:text-gray-700">Creation</TabsTrigger>
+              <TabsTrigger value="optimization" className="data-[state=active]:bg-blue-600 data-[state=active]:text-white data-[state=inactive]:text-gray-700">Optimization</TabsTrigger>
+              <TabsTrigger value="research" className="data-[state=active]:bg-blue-600 data-[state=active]:text-white data-[state=inactive]:text-gray-700">Research</TabsTrigger>
+              <TabsTrigger value="compliance" className="data-[state=active]:bg-blue-600 data-[state=active]:text-white data-[state=inactive]:text-gray-700">Compliance</TabsTrigger>
             </TabsList>
 
             <TabsContent value="creation" className="space-y-8">

@@ -10,9 +10,9 @@ export default function ServicesManager() {
   const services = [
     {
       id: 1,
-      name: "AI-Optimized Product Listing",
+      name: "Optimized Product Listing",
       type: "Automation",
-      description: "Automated product listing optimization using AI algorithms",
+      description: "Automated product listing optimization using advanced algorithms",
       status: "active",
       clients: 45,
       revenue: "$12,500",

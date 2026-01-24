@@ -161,11 +161,11 @@ export default function PPCAdvertising() {
           </div>
 
           <Tabs defaultValue="campaigns" className="w-full">
-            <TabsList className="grid w-full grid-cols-4 mb-8">
-              <TabsTrigger value="campaigns">Campaigns</TabsTrigger>
-              <TabsTrigger value="optimization">Optimization</TabsTrigger>
-              <TabsTrigger value="analytics">Analytics</TabsTrigger>
-              <TabsTrigger value="strategy">Strategy</TabsTrigger>
+            <TabsList className="grid w-full grid-cols-4 mb-8 bg-white/80 backdrop-blur-sm border-0 shadow-lg">
+              <TabsTrigger value="campaigns" className="data-[state=active]:bg-blue-600 data-[state=active]:text-white data-[state=inactive]:text-gray-700">Campaigns</TabsTrigger>
+              <TabsTrigger value="optimization" className="data-[state=active]:bg-blue-600 data-[state=active]:text-white data-[state=inactive]:text-gray-700">Optimization</TabsTrigger>
+              <TabsTrigger value="analytics" className="data-[state=active]:bg-blue-600 data-[state=active]:text-white data-[state=inactive]:text-gray-700">Analytics</TabsTrigger>
+              <TabsTrigger value="strategy" className="data-[state=active]:bg-blue-600 data-[state=active]:text-white data-[state=inactive]:text-gray-700">Strategy</TabsTrigger>
             </TabsList>
 
             <TabsContent value="campaigns" className="space-y-8">

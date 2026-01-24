@@ -39,7 +39,7 @@ export default function ProcessAutomation() {
     {
       icon: <Database className="h-8 w-8 text-blue-600" />,
       title: "Inventory Forecasting & Management",
-      description: "AI-powered inventory optimization and demand forecasting",
+      description: "Advanced inventory optimization and demand forecasting",
       features: [
         "Demand forecasting algorithms",
         "Automated reorder points",
@@ -191,7 +191,7 @@ export default function ProcessAutomation() {
       logo: "🔧",
     },
     {
-      name: "AI/ML Tools",
+      name: "Advanced Tools",
       description: "Machine learning for intelligent automation",
       logo: "🤖",
     },

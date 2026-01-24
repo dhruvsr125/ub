@@ -110,11 +110,11 @@ export default function CatalogManagement() {
           </div>
 
           <Tabs defaultValue="organization" className="w-full">
-            <TabsList className="grid w-full grid-cols-4 mb-8">
-              <TabsTrigger value="organization">Organization</TabsTrigger>
-              <TabsTrigger value="automation">Automation</TabsTrigger>
-              <TabsTrigger value="optimization">Optimization</TabsTrigger>
-              <TabsTrigger value="maintenance">Maintenance</TabsTrigger>
+            <TabsList className="grid w-full grid-cols-4 mb-8 bg-white/80 backdrop-blur-sm border-0 shadow-lg">
+              <TabsTrigger value="organization" className="data-[state=active]:bg-blue-600 data-[state=active]:text-white data-[state=inactive]:text-gray-700">Organization</TabsTrigger>
+              <TabsTrigger value="automation" className="data-[state=active]:bg-blue-600 data-[state=active]:text-white data-[state=inactive]:text-gray-700">Automation</TabsTrigger>
+              <TabsTrigger value="optimization" className="data-[state=active]:bg-blue-600 data-[state=active]:text-white data-[state=inactive]:text-gray-700">Optimization</TabsTrigger>
+              <TabsTrigger value="maintenance" className="data-[state=active]:bg-blue-600 data-[state=active]:text-white data-[state=inactive]:text-gray-700">Maintenance</TabsTrigger>
             </TabsList>
 
             <TabsContent value="organization" className="space-y-8">

@@ -83,7 +83,7 @@ export default function InventoryManagement() {
               {
                 title: "Inventory Forecasting",
                 description:
-                  "AI-powered demand forecasting and inventory planning",
+                  "Advanced demand forecasting and inventory planning",
                 href: "/services/inventory-management/inventory-forecasting",
                 icon: BarChart3,
                 color: "from-blue-500 to-indigo-600",
@@ -162,11 +162,11 @@ export default function InventoryManagement() {
           </div>
 
           <Tabs defaultValue="forecasting" className="w-full">
-            <TabsList className="grid w-full grid-cols-4 mb-8">
-              <TabsTrigger value="forecasting">Forecasting</TabsTrigger>
-              <TabsTrigger value="optimization">Optimization</TabsTrigger>
-              <TabsTrigger value="automation">Automation</TabsTrigger>
-              <TabsTrigger value="analytics">Analytics</TabsTrigger>
+            <TabsList className="grid w-full grid-cols-4 mb-8 bg-white/80 backdrop-blur-sm border-0 shadow-lg">
+              <TabsTrigger value="forecasting" className="data-[state=active]:bg-blue-600 data-[state=active]:text-white data-[state=inactive]:text-gray-700">Forecasting</TabsTrigger>
+              <TabsTrigger value="optimization" className="data-[state=active]:bg-blue-600 data-[state=active]:text-white data-[state=inactive]:text-gray-700">Optimization</TabsTrigger>
+              <TabsTrigger value="automation" className="data-[state=active]:bg-blue-600 data-[state=active]:text-white data-[state=inactive]:text-gray-700">Automation</TabsTrigger>
+              <TabsTrigger value="analytics" className="data-[state=active]:bg-blue-600 data-[state=active]:text-white data-[state=inactive]:text-gray-700">Analytics</TabsTrigger>
             </TabsList>
 
             <TabsContent value="forecasting" className="space-y-8">
@@ -175,7 +175,7 @@ export default function InventoryManagement() {
                   {
                     title: "Demand Forecasting",
                     description:
-                      "AI-powered predictions for optimal inventory levels",
+                      "Advanced predictions for optimal inventory levels",
                     features: [
                       "Seasonal Trends",
                       "Market Analysis",
@@ -430,7 +430,7 @@ export default function InventoryManagement() {
             {[
               {
                 icon: BarChart3,
-                title: "AI-Powered Forecasting",
+                title: "Advanced Forecasting",
                 description:
                   "Advanced algorithms for accurate demand prediction",
               },

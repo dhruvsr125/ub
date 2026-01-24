@@ -27,7 +27,7 @@ export default function Footer() {
   const footerLinks = {
     services: [
       {
-        name: "AI-Powered Listing Optimization",
+        name: "Advanced Listing Optimization",
         href: "/services/listing-optimization",
       },
       { name: "Advanced PPC Management", href: "/services/marketplace-ads" },
@@ -74,7 +74,7 @@ export default function Footer() {
   return (
     <footer className="bg-gradient-to-br from-gray-900 via-slate-800 to-blue-900 text-white">
       {/* Newsletter Section */}
-      <div className="border-b border-gray-700">
+      {/* <div className="border-b border-gray-700">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
@@ -82,7 +82,7 @@ export default function Footer() {
                 Stay Ahead of the Competition
               </h3>
               <p className="text-gray-300 text-lg leading-relaxed">
-                Get exclusive e-commerce insights, AI-powered strategies, and
+                Get exclusive e-commerce insights, expert strategies, and
                 industry updates delivered to your inbox.
               </p>
             </div>
@@ -99,7 +99,7 @@ export default function Footer() {
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
 
       {/* Main Footer Content */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
@@ -112,7 +112,7 @@ export default function Footer() {
               </h2>
             </Link>
             <p className="text-gray-300 mb-8 leading-relaxed text-lg">
-              Transforming e-commerce businesses with AI-powered solutions and
+              Transforming e-commerce businesses with professional solutions and
               expert strategies. Join 500+ successful brands that trust us for
               their growth.
             </p>
@@ -125,7 +125,7 @@ export default function Footer() {
               </div>
               <div className="flex items-center">
                 <Mail className="h-5 w-5 text-blue-400 mr-3" />
-                <span className="text-gray-300">info@urbantechecom.com</span>
+                <span className="text-gray-300">info@urbantechecomservice.com</span>
               </div>
               <div className="flex items-center">
                 <MapPin className="h-5 w-5 text-blue-400 mr-3" />

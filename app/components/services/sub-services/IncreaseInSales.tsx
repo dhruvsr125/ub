@@ -142,7 +142,7 @@ export default function IncreaseInSales() {
                     icon: Zap,
                     title: "Bid Optimization",
                     description:
-                      "AI-powered bid management to maximize your ad spend efficiency and increase profitable sales.",
+                      "Advanced bid management to maximize your ad spend efficiency and increase profitable sales.",
                   },
                   {
                     icon: Target,

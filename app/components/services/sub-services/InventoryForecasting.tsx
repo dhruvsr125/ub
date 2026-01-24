@@ -30,9 +30,9 @@ export default function InventoryForecasting() {
 
   const forecastingMethods = [
     {
-      title: "AI-Powered Forecasting",
+      title: "Advanced Forecasting",
       description:
-        "Advanced machine learning algorithms for accurate predictions",
+        "Advanced algorithms and data analysis for accurate predictions",
       features: [
         "Historical data analysis",
         "Real-time updates",
@@ -94,7 +94,7 @@ export default function InventoryForecasting() {
               </span>
             </h1>
             <p className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
-              Optimize your inventory levels with AI-powered forecasting that
+              Optimize your inventory levels with advanced forecasting that
               prevents stockouts, reduces storage costs, and maximizes
               profitability.
             </p>

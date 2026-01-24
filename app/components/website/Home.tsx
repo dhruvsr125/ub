@@ -181,15 +181,16 @@ function BrandLogosFloating() {
     "/images/image81.jpg",
   ];
 
+  // Positions distributed to prevent overlaps - ensuring minimum 20% vertical spacing
   const positions = [
-    { top: "8%", left: "2%", delay: 0 },
-    { top: "15%", right: "3%", delay: 0.3 },
-    { top: "65%", left: "1%", delay: 0.6 },
-    { top: "75%", right: "2%", delay: 0.9 },
-    { top: "12%", left: "85%", delay: 1.2 },
-    { top: "82%", left: "88%", delay: 1.5 },
-    { top: "45%", right: "1%", delay: 1.8 },
-    { top: "55%", left: "2%", delay: 2.1 },
+    { top: "10%", left: "4%", delay: 0 },           // Top left
+    { top: "15%", right: "6%", delay: 0.3 },        // Top right-middle
+    { top: "40%", left: "3%", delay: 0.6 },         // Middle left
+    { top: "60%", left: "5%", delay: 0.9 },        // Bottom right-middle
+    { top: "35%", left: "91%", delay: 1.2 },         // Top far right
+    { top: "55%", left: "89%", delay: 1.5 },         // Middle far right
+    { top: "80%", right: "4%", delay: 1.8 },         // Bottom right
+    { top: "80%", left: "3%", delay: 2.1 },          // Bottom left
   ];
 
   return (
@@ -206,9 +207,9 @@ function BrandLogosFloating() {
               right: pos.right,
             }}
             animate={{
-              y: [0, -25, 0],
-              rotate: [0, 8, -8, 0],
-              scale: [1, 1.08, 1],
+              y: [0, -15, 0],
+              rotate: [0, 5, -5, 0],
+              scale: [1, 1.05, 1],
             }}
             transition={{
               duration: 2 + index * 0.6,
@@ -375,9 +376,9 @@ export default function Home() {
   const services = [
     {
       icon: <Zap className="h-8 w-8 text-blue-400" />,
-      title: "AI-Powered Listing Optimization",
+      title: "Advanced Listing Optimization",
       description:
-        "Transform your product listings with cutting-edge AI technology for maximum visibility.",
+        "Transform your product listings with cutting-edge technology and expert strategies for maximum visibility.",
       stats: "500+ Products Optimized",
     },
     {
@@ -433,7 +434,7 @@ export default function Home() {
       name: "Mike Chen",
       company: "Fashion Forward",
       role: "Marketing Director",
-      text: "The AI optimization services are incredible. Our product visibility has never been better.",
+      text: "The optimization services are incredible. Our product visibility has never been better.",
       rating: 5,
     },
     {

@@ -4,14 +4,15 @@ import { Inter } from "next/font/google"
 import "./globals.css"
 import Navbar from "./components/website/Navbar"
 import Footer from "./components/website/Footer"
+import Chatbot from "./components/website/Chatbot"
 
 const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
-  title: "Urbantech Ecom - AI-Powered E-commerce Solutions",
+  title: "Urbantech Ecom - Professional E-commerce Solutions",
   description:
-    "Transform your e-commerce business with cutting-edge AI technology and expert strategies. Join 500+ successful brands achieving 150% average ROI increase.",
-  keywords: "e-commerce optimization, AI-powered solutions, Amazon SEO, PPC management, marketplace automation",
+    "Transform your e-commerce business with cutting-edge technology and expert strategies. Join 500+ successful brands achieving 150% average ROI increase.",
+  keywords: "e-commerce optimization, professional solutions, Amazon SEO, PPC management, marketplace automation",
   authors: [{ name: "Urbantech Ecom" }],
   creator: "Urbantech Ecom",
   publisher: "Urbantech Ecom",
@@ -20,14 +21,14 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_US",
     url: "https://urbantechecom.com",
-    title: "Urbantech Ecom - AI-Powered E-commerce Solutions",
-    description: "Transform your e-commerce business with cutting-edge AI technology and expert strategies.",
+    title: "Urbantech Ecom - Professional E-commerce Solutions",
+    description: "Transform your e-commerce business with cutting-edge technology and expert strategies.",
     siteName: "Urbantech Ecom",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Urbantech Ecom - AI-Powered E-commerce Solutions",
-    description: "Transform your e-commerce business with cutting-edge AI technology and expert strategies.",
+    title: "Urbantech Ecom - Professional E-commerce Solutions",
+    description: "Transform your e-commerce business with cutting-edge technology and expert strategies.",
     creator: "@urbantechecom",
   },
     generator: 'v0.dev'
@@ -44,6 +45,7 @@ export default function RootLayout({
         <Navbar />
         <main>{children}</main>
         <Footer />
+        <Chatbot />
         <script
           dangerouslySetInnerHTML={{
             __html: `

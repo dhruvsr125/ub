@@ -110,11 +110,11 @@ export default function RevenueReclaims() {
           </div>
 
           <Tabs defaultValue="identification" className="w-full">
-            <TabsList className="grid w-full grid-cols-4 mb-8">
-              <TabsTrigger value="identification">Identification</TabsTrigger>
-              <TabsTrigger value="filing">Filing</TabsTrigger>
-              <TabsTrigger value="tracking">Tracking</TabsTrigger>
-              <TabsTrigger value="recovery">Recovery</TabsTrigger>
+            <TabsList className="grid w-full grid-cols-4 mb-8 bg-white/80 backdrop-blur-sm border-0 shadow-lg">
+              <TabsTrigger value="identification" className="data-[state=active]:bg-blue-600 data-[state=active]:text-white data-[state=inactive]:text-gray-700">Identification</TabsTrigger>
+              <TabsTrigger value="filing" className="data-[state=active]:bg-blue-600 data-[state=active]:text-white data-[state=inactive]:text-gray-700">Filing</TabsTrigger>
+              <TabsTrigger value="tracking" className="data-[state=active]:bg-blue-600 data-[state=active]:text-white data-[state=inactive]:text-gray-700">Tracking</TabsTrigger>
+              <TabsTrigger value="recovery" className="data-[state=active]:bg-blue-600 data-[state=active]:text-white data-[state=inactive]:text-gray-700">Recovery</TabsTrigger>
             </TabsList>
 
             <TabsContent value="identification" className="space-y-8">

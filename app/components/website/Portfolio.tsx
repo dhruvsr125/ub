@@ -53,7 +53,7 @@ function PortfolioCarousel({ brands }: { brands: string[] }) {
         // Reset to beginning for infinite loop
         api.scrollTo(0);
       }
-    }, 3000); // Auto-slide every 3 seconds
+    }, 1500); // Auto-slide every 3 seconds
 
     return () => clearInterval(interval);
   }, [api, isPaused]);
@@ -80,22 +80,22 @@ function PortfolioCarousel({ brands }: { brands: string[] }) {
               key={index}
               className="pl-2 md:pl-4 basis-1/2 sm:basis-1/3 md:basis-1/4 lg:basis-1/5 xl:basis-1/6"
             >
-              <div className="relative group mb-4 sm:mb-6">
-                <div className="bg-white rounded-xl sm:rounded-2xl shadow-lg p-4 sm:p-6 lg:p-8 transform transition-all duration-300 hover:scale-110 hover:shadow-2xl border border-gray-200 hover:border-blue-300 aspect-square flex items-center justify-center overflow-hidden">
+              <div className="relative group mb-4 sm:mb-6 px-2 sm:px-3 py-2 sm:py-3">
+                <div className="relative bg-white rounded-xl sm:rounded-2xl shadow-lg p-4 sm:p-6 lg:p-8 transform transition-all duration-300 hover:scale-110 hover:shadow-2xl hover:z-[100] border border-gray-200 hover:border-blue-300 aspect-square flex items-center justify-center">
                   <img
                     src={src}
                     alt={`Brand Logo ${index + 1}`}
-                    className="w-full h-full object-contain grayscale group-hover:grayscale-0 transition-all duration-300"
+                    className="w-full h-full object-contain transition-all duration-300 group-hover:scale-105 relative z-10"
                   />
+                  {/* Hover overlay effect - subtle background glow */}
+                  <div className="absolute inset-0 bg-gradient-to-br from-blue-50/0 to-blue-100/0 group-hover:from-blue-50/30 group-hover:to-blue-100/20 rounded-xl sm:rounded-2xl transition-all duration-300 pointer-events-none z-0" />
                 </div>
-                {/* Hover overlay effect */}
-                <div className="absolute inset-0 bg-gradient-to-t from-blue-600/0 to-blue-600/0 group-hover:from-blue-600/5 group-hover:to-transparent rounded-xl sm:rounded-2xl transition-all duration-300 pointer-events-none" />
               </div>
             </CarouselItem>
           ))}
         </CarouselContent>
-        <CarouselPrevious className="left-2 sm:left-4 md:-left-12 h-10 w-10 sm:h-12 sm:w-12 bg-white/90 hover:bg-white shadow-lg border-2 border-gray-200 hover:border-blue-500 transition-all duration-300 z-10" />
-        <CarouselNext className="right-2 sm:right-4 md:-right-12 h-10 w-10 sm:h-12 sm:w-12 bg-white/90 hover:bg-white shadow-lg border-2 border-gray-200 hover:border-blue-500 transition-all duration-300 z-10" />
+        <CarouselPrevious className="left-2 sm:left-4 md:-left-12 h-10 w-10 sm:h-12 sm:w-12 bg-white/90 hover:bg-white shadow-lg border-2 border-gray-200 hover:border-blue-500 transition-all duration-300 z-10" style={{ top: 'calc(50% - 2rem)' }} />
+        <CarouselNext className="right-2 sm:right-4 md:-right-12 h-10 w-10 sm:h-12 sm:w-12 bg-white/90 hover:bg-white shadow-lg border-2 border-gray-200 hover:border-blue-500 transition-all duration-300 z-10" style={{ top: 'calc(50% - 2rem)' }} />
       </Carousel>
       
       {/* Slide indicators */}
@@ -343,8 +343,7 @@ export default function Portfolio() {
                       <span className="bg-gradient-to-r from-blue-100 to-blue-200 text-blue-800 px-4 sm:px-6 py-2 sm:py-3 rounded-full text-sm font-bold">
                         {study.industry}
                       </span>
-                      <ExternalLink className="h-5 w-5 sm:h-6 sm:w-6 text-gray-400 group-hover:text-blue-600 transition-colors" />
-                    </div>
+                      </div>
 
                     <h3 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-800 mb-4 sm:mb-6 group-hover:text-blue-600 transition-colors">
                       {study.title}
@@ -478,64 +477,6 @@ export default function Portfolio() {
               "/images/image4.jpg",
             ]}
           />
-        </div>
-      </section>
-
-      {/* Testimonials */}
-      <section className="py-16 sm:py-24 lg:py-32 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12 sm:mb-16 lg:mb-24">
-            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-800 mb-6 sm:mb-8">
-              What Our Clients Say
-            </h2>
-            <p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto px-4">
-              Hear directly from the businesses we've helped transform with our
-              innovative solutions
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 lg:gap-10">
-            {testimonials.map((testimonial, index) => (
-              <div
-                key={index}
-                className="bg-white rounded-2xl sm:rounded-3xl shadow-xl p-6 sm:p-8 lg:p-10 hover:shadow-2xl transition-all duration-300 border border-gray-200 group"
-              >
-                <div className="flex items-center mb-6 sm:mb-8">
-                  {[...Array(testimonial.rating)].map((_, i) => (
-                    <Star
-                      key={i}
-                      className="h-5 w-5 sm:h-6 sm:w-6 text-yellow-400 fill-current"
-                    />
-                  ))}
-                </div>
-
-                <blockquote className="text-gray-700 mb-8 sm:mb-10 leading-relaxed text-base sm:text-lg">
-                  "{testimonial.quote}"
-                </blockquote>
-
-                <div className="flex items-center">
-                  {/* Client Photo Placeholder */}
-                  <div className="bg-gradient-to-br from-gray-200 to-blue-200 rounded-full p-2 mr-4 sm:mr-6 flex-shrink-0">
-                    <div className="w-12 h-12 sm:w-16 sm:h-16 bg-white rounded-full flex items-center justify-center">
-                      <ImageIcon className="h-6 w-6 sm:h-8 sm:w-8 text-gray-400" />
-                    </div>
-                  </div>
-
-                  <div className="min-w-0 flex-1">
-                    <div className="font-bold text-gray-800 text-base sm:text-lg truncate">
-                      {testimonial.author}
-                    </div>
-                    <div className="text-gray-600 font-semibold text-sm sm:text-base truncate">
-                      {testimonial.role}
-                    </div>
-                    <div className="text-blue-600 font-bold text-sm sm:text-base truncate">
-                      {testimonial.company}
-                    </div>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
         </div>
       </section>
 

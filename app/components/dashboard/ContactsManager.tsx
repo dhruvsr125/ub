@@ -16,8 +16,8 @@ export default function ContactsManager() {
       phone: "+1 (555) 123-4567",
       company: "TechStart Inc",
       message:
-        "Interested in AI-optimized product listing services for our e-commerce platform. We have over 500 products that need optimization.",
-      service: "AI-Optimized Product Listing",
+        "Interested in optimized product listing services for our e-commerce platform. We have over 500 products that need optimization.",
+      service: "Optimized Product Listing",
       status: "new",
       priority: "high",
       submittedAt: "2024-01-15 14:30",

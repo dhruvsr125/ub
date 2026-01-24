@@ -49,7 +49,7 @@ export default function Dashboard() {
       name: "Sarah Johnson",
       email: "sarah@example.com",
       company: "TechStart Inc",
-      message: "Interested in AI-optimized product listing services",
+      message: "Interested in optimized product listing services",
       time: "2 hours ago",
       status: "new",
     },

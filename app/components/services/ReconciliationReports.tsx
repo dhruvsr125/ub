@@ -110,11 +110,11 @@ export default function ReconciliationReports() {
           </div>
 
           <Tabs defaultValue="reconciliation" className="w-full">
-            <TabsList className="grid w-full grid-cols-4 mb-8">
-              <TabsTrigger value="reconciliation">Reconciliation</TabsTrigger>
-              <TabsTrigger value="reporting">Reporting</TabsTrigger>
-              <TabsTrigger value="analysis">Analysis</TabsTrigger>
-              <TabsTrigger value="automation">Automation</TabsTrigger>
+            <TabsList className="grid w-full grid-cols-4 mb-8 bg-white/80 backdrop-blur-sm border-0 shadow-lg">
+              <TabsTrigger value="reconciliation" className="data-[state=active]:bg-blue-600 data-[state=active]:text-white data-[state=inactive]:text-gray-700">Reconciliation</TabsTrigger>
+              <TabsTrigger value="reporting" className="data-[state=active]:bg-blue-600 data-[state=active]:text-white data-[state=inactive]:text-gray-700">Reporting</TabsTrigger>
+              <TabsTrigger value="analysis" className="data-[state=active]:bg-blue-600 data-[state=active]:text-white data-[state=inactive]:text-gray-700">Analysis</TabsTrigger>
+              <TabsTrigger value="automation" className="data-[state=active]:bg-blue-600 data-[state=active]:text-white data-[state=inactive]:text-gray-700">Automation</TabsTrigger>
             </TabsList>
 
             <TabsContent value="reconciliation" className="space-y-8">
@@ -315,7 +315,7 @@ export default function ReconciliationReports() {
                       {
                         title: "Smart Matching",
                         items: [
-                          "AI-Powered Matching",
+                          "Advanced Matching",
                           "Pattern Recognition",
                           "Learning Algorithms",
                           "Accuracy Improvement",

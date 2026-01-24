@@ -10,15 +10,15 @@ export default function BlogManager() {
   const blogPosts = [
     {
       id: 1,
-      title: "10 AI Tools Every E-Commerce Business Needs in 2024",
-      slug: "ai-tools-ecommerce-2024",
+      title: "10 Essential Tools Every E-Commerce Business Needs in 2024",
+      slug: "essential-tools-ecommerce-2024",
       author: "Admin",
       status: "published",
       category: "Technology",
       publishDate: "2024-01-15",
       views: 1250,
-      excerpt: "Discover the latest AI tools that can transform your e-commerce business and boost your sales...",
-      tags: ["AI", "E-commerce", "Tools", "2024"],
+      excerpt: "Discover the latest tools that can transform your e-commerce business and boost your sales...",
+      tags: ["E-commerce", "Tools", "2024"],
     },
     {
       id: 2,

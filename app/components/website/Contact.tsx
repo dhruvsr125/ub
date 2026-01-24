@@ -51,7 +51,7 @@ export default function Contact() {
     {
       icon: <Mail className="h-6 w-6 text-blue-400" />,
       title: "Email",
-      details: "info@urbantechecom.com",
+      details: "info@urbantechecomservice.com",
       description: "We'll respond within 24 hours",
     },
     {
@@ -69,7 +69,7 @@ export default function Contact() {
   ];
 
   const services = [
-    "AI-Powered Listing Optimization",
+    "Advanced Listing Optimization",
     "Advanced PPC Management",
     "Complete Account Management",
     "Advanced Analytics & Insights",
