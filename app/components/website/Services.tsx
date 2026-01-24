@@ -20,42 +20,98 @@ import {
 
 const marketplaces = [
   {
-    logo: "🛒",
+    logo: (
+      <img
+        src="/images/ii2.png"
+        alt="Amazon"
+        className="h-10 w-10 mx-auto object-contain"
+        loading="lazy"
+      />
+    ),
     name: "Amazon",
     description: "World's largest marketplace",
   },
   {
-    logo: "🛍️",
+    logo: (
+      <img
+        src="/images/ii3.png"
+        alt="Flipkart"
+        className="h-10 w-10 mx-auto object-contain"
+        loading="lazy"
+      />
+    ),
     name: "Flipkart",
     description: "India's leading e-commerce",
   },
   {
-    logo: "🏪",
+    logo: (
+      <img
+        src="/images/ii4.png"
+        alt="Meesho"
+        className="h-10 w-10 mx-auto object-contain"
+        loading="lazy"
+      />
+    ),
     name: "Meesho",
     description: "Social commerce platform",
   },
   {
-    logo: "👗",
-    name: "Myntra",
+    logo: (
+      <img
+        src="/images/ii6.png"
+        alt="Temu"
+        className="h-10 w-10 mx-auto object-contain"
+        loading="lazy"
+      />
+    ),
+    name: "Temu",
     description: "Fashion & lifestyle",
   },
   {
-    logo: "📦",
+    logo: (
+      <img
+        src="/images/ii5.png"
+        alt="TikTok Shop"
+        className="h-10 w-10 mx-auto object-contain"
+        loading="lazy"
+      />
+    ),
     name: "TikTok Shop",
     description: "Home & garden marketplace",
   },
   {
-    logo: "🔨",
+    logo: (
+      <img
+        src="/images/ii8.png"
+        alt="eBay"
+        className="h-12 w-12 mx-auto object-contain"
+        loading="lazy"
+      />
+    ),
     name: "eBay",
     description: "Global auction platform",
   },
   {
-    logo: "🛒",
-    name: "JioMart",
+    logo: (
+      <img
+        src="/images/ii1.png"
+        alt="linnworks"
+        className="h-12 w-13 mx-auto object-contain"
+        loading="lazy"
+      />
+    ),
+    name: "linnworks",
     description: "Digital commerce platform",
   },
   {
-    logo: "✨",
+    logo: (
+      <img
+        src="/images/ii7.png"
+        alt="ManoMano"
+        className="h-12 w-12 mx-auto object-contain"
+        loading="lazy"
+      />
+    ),
     name: "ManoMano",
     description: "Fashion & lifestyle brand",
   },
