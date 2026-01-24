@@ -56,9 +56,9 @@ export default function Footer() {
       { name: "Contact Us", href: "/contact" },
     ],
     resources: [
-      { name: "E-commerce Guide", href: "/blog" },
-      { name: "Amazon SEO Tips", href: "/blog" },
-      { name: "PPC Best Practices", href: "/blog" },
+      { name: "E-commerce Guide", href: "/blog/ecommerce-complete-guide" },
+      { name: "Amazon SEO Tips", href: "/blog/amazon-seo-ranking-higher-search" },
+      { name: "PPC Best Practices", href: "/blog/ppc-best-practices" },
       { name: "Case Studies", href: "/portfolio" },
       { name: "Free Consultation", href: "/contact" },
     ],
