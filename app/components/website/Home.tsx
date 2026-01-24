@@ -171,26 +171,26 @@ function TestimonialsCarousel({
 // Floating Brand Logos Component
 function BrandLogosFloating() {
   const brandLogos = [
-    "/images/image1.jpg",
-    "/images/image2.png",
-    "/images/image3.jpg",
-    "/images/image4.jpg",
-    "/images/image5.png",
-    "/images/image6.jpg",
-    "/images/image7.png",
-    "/images/image81.jpg",
+    "/images/ii1.png",
+    "/images/ii2.png",
+    "/images/ii3.png",
+    "/images/ii4.png",
+    "/images/ii5.png",
+    "/images/ii6.png",
+    "/images/ii7.png",
+    "/images/ii8.png",
   ];
 
   // Positions distributed to prevent overlaps - ensuring minimum 20% vertical spacing
   const positions = [
-    { top: "10%", left: "4%", delay: 0 },           // Top left
-    { top: "15%", right: "6%", delay: 0.3 },        // Top right-middle
-    { top: "40%", left: "3%", delay: 0.6 },         // Middle left
-    { top: "60%", left: "5%", delay: 0.9 },        // Bottom right-middle
-    { top: "35%", left: "91%", delay: 1.2 },         // Top far right
+    { top: "10%", left: "10%", delay: 0 },           // Top left
+    { top: "10%", right: "13%", delay: 0.3 },        // Top right-middle
+    { top: "35%", left: "7%", delay: 0.6 },         // Middle left
+    { top: "65%", left: "5%", delay: 0.9 },        // Bottom right-middle
+    { top: "35%", left: "84%", delay: 1.2 },         // Top far right
     { top: "55%", left: "89%", delay: 1.5 },         // Middle far right
     { top: "80%", right: "4%", delay: 1.8 },         // Bottom right
-    { top: "80%", left: "3%", delay: 2.1 },          // Bottom left
+    { top: "84%", left: "16%", delay: 2.1 },          // Bottom left
   ];
 
   return (
@@ -200,7 +200,7 @@ function BrandLogosFloating() {
         return (
           <motion.div
             key={index}
-            className="absolute w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 lg:w-28 lg:h-28 opacity-60 hover:opacity-100 transition-opacity duration-300"
+            className="absolute w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 lg:w-28 lg:h-28 opacity-100 hover:opacity-100 transition-opacity duration-300"
             style={{
               top: pos.top,
               left: pos.left,
@@ -218,11 +218,11 @@ function BrandLogosFloating() {
               ease: "easeInOut",
             }}
           >
-            <div className="w-full h-full bg-white/15 backdrop-blur-lg rounded-xl sm:rounded-2xl p-2 sm:p-3 border border-white/25 shadow-xl hover:shadow-2xl transition-all duration-300">
+            <div className="w-full h-full bg-white/50 backdrop-blur-lg rounded-xl sm:rounded-2xl p-2 sm:p-3 border border-white/25 shadow-xl hover:shadow-2xl transition-all duration-300">
               <img
                 src={src}
                 alt={`Brand ${index + 1}`}
-                className="w-full h-full object-contain grayscale hover:grayscale-0 transition-all duration-500"
+                className="w-full h-full object-contain transition-all duration-500"
               />
             </div>
           </motion.div>
